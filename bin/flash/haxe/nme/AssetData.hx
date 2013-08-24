@@ -98,6 +98,8 @@ class AssetData {
 			type.set ("assets/HaxeFlixel.svg", Reflect.field (AssetType, "text".toUpperCase ()));
 			className.set ("assets/tiled/rock.png", nme.NME_assets_tiled_rock_png);
 			type.set ("assets/tiled/rock.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			className.set ("assets/tiled/ScreenSize.png", nme.NME_assets_tiled_screensize_png);
+			type.set ("assets/tiled/ScreenSize.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/tiled/testmap.tmx", nme.NME_assets_tiled_testmap_tmx);
 			type.set ("assets/tiled/testmap.tmx", Reflect.field (AssetType, "text".toUpperCase ()));
 			className.set ("assets/tiled/tiles.png", nme.NME_assets_tiled_tiles_png);
@@ -156,6 +158,7 @@ class NME_assets_data_vcr_stop_png extends flash.display.BitmapData { public fun
 class NME_assets_data_vis_bounds_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_haxeflixel_svg extends flash.utils.ByteArray { }
 class NME_assets_tiled_rock_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class NME_assets_tiled_screensize_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_tiled_testmap_tmx extends flash.utils.ByteArray { }
 class NME_assets_tiled_tiles_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_tiled_tree_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
