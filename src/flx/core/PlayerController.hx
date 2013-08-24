@@ -1,4 +1,6 @@
 package flx.core;
+import haxe.Timer;
+import haxe.Timer;
 import flash.ui.Keyboard;
 import haxe.ds.IntMap;
 import flash.events.KeyboardEvent;
@@ -15,12 +17,25 @@ class PlayerController {
         pressed = new IntMap<Int>();
         FlxG.stage.addEventListener(KeyboardEvent.KEY_UP, onUp);
         FlxG.stage.addEventListener(KeyboardEvent.KEY_DOWN, onDown);
+
+        SWING_LOCK = false;
     }
 
     private var pressed:IntMap<Int>;
 
     public var accX:Int;
     public var accY:Int;
+
+    public static var SWING_LOCK:Bool;
+
+//    public function checkSwingLock():Void {
+//        if (Timer.stamp() - swingTime > 350) {
+//            swingTime = 0;
+//        }
+//        if (swingTime == 0) {
+//            swingLock = false;
+//        }
+//    }
 
     public function destroy():Void {
         pressed = null;
@@ -41,7 +56,7 @@ class PlayerController {
 
         var newYAccVal:Int = 100;
         var newXAccVal:Int = 100;
-        var newFireVal:Bool = false;
+        var newSwingVal:Bool = false;
 
         // вверх
         if (keyCode == 87 || keyCode == 38) {
@@ -153,8 +168,11 @@ class PlayerController {
 
         if (keyCode == Keyboard.SPACE) {
             if (status == KeyStatus.START) {
-                newFireVal = true;
-                changed = true;
+//                pressed.set(keyCode, keyCode);
+//                newSwingVal = true;
+//                changed = true;
+                SWING_LOCK = true;
+            } else if (status == KeyStatus.FINISH) {
             }
         }
 
@@ -165,7 +183,11 @@ class PlayerController {
             if (newXAccVal != 100) {
                 accX = newXAccVal;
             }
-            if (newFireVal) {
+            if (newSwingVal) {
+//                if (!swingLock) {
+//                    swingLock = true;
+//                    swingTime = Timer.stamp();
+//                }
             }
         }
     }

@@ -87,6 +87,12 @@ class LevelBase extends FlxState {
 
         var moveSpd:Float = Facade.I.getMoveSpd() * timeDiff;
         var wasMove:Bool = true;
+
+        if (PlayerController.SWING_LOCK) {
+            if (player.curAnim != Player.ANIM_SWING) {
+                player.play(Player.ANIM_SWING);
+            }
+        } else
         if (controller.accX != 0 && controller.accY != 0) {
             var diffX:Float = (moveSpd * controller.accX) * Math.cos(asRadian);
             var diffY:Float = (moveSpd * controller.accY) * Math.cos(asRadian);
@@ -94,10 +100,23 @@ class LevelBase extends FlxState {
             player.x = MathHelp.roundExp(player.x + diffX, 5);
             player.y = MathHelp.roundExp(player.y + diffY, 5);
 
+            if (controller.accX > 0) {
+                player.facing = FlxObject.LEFT;
+            } else {
+                player.facing = FlxObject.RIGHT;
+            }
+            player.play(Player.ANIM_MOVE);
         } else if (controller.accX != 0) {
             player.x = MathHelp.roundExp(player.x + controller.accX * moveSpd, 5);
+            if (controller.accX > 0) {
+                player.facing = FlxObject.LEFT;
+            } else {
+                player.facing = FlxObject.RIGHT;
+            }
+            player.play(Player.ANIM_MOVE);
         } else if (controller.accY != 0) {
             player.y = MathHelp.roundExp(player.y + controller.accY * moveSpd, 5);
+            player.play(Player.ANIM_MOVE);
         } else {
             wasMove = false;
             player.play(Player.ANIM_IDLE);
