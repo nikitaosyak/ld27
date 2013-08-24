@@ -113,7 +113,7 @@ class LevelBase extends FlxState {
 //            player.velocity.y = -player.maxVelocity.y / 2;
 //        }
 
-//        layoutObjects.sort();
+        layoutObjects.sort();
         super.update();
 
 //        FlxG.overlap(coins, player, getCoin);

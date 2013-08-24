@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5badb44c-c72e-4bca-9867-0a1db1336274" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" afterPath="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ld27.iws" afterPath="$PROJECT_DIR$/ld27.iws" />
     </list>
     <ignored path="ld27.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,7 +26,7 @@
     <file path="/TmxPropertySet.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377334928406" ignored="false" />
     <file path="/TmxTileSet.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377334949941" ignored="false" />
     <file path="/TmxLayer.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377338269178" ignored="false" />
-    <file path="/TiledLevel.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377349385957" ignored="false" />
+    <file path="/TiledLevel.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377352552812" ignored="false" />
     <file path="/SortingGroup.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377348034989" ignored="false" />
     <file path="/PlayerController.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377350170488" ignored="false" />
     <file path="/Game.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377350555828" ignored="false" />
@@ -103,7 +104,7 @@
           <file leaf-file-name="TiledLevel.hx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/tmx/TiledLevel.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="101" column="33" selection-start="3838" selection-end="3838" vertical-scroll-proportion="0.0">
+                <state line="89" column="31" selection-start="3277" selection-end="3277" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -112,7 +113,7 @@
           <file leaf-file-name="LevelBase.hx" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/flx/state/level/LevelBase.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="116" column="23" selection-start="3883" selection-end="3883" vertical-scroll-proportion="0.85216343">
+                <state line="116" column="18" selection-start="3876" selection-end="3876" vertical-scroll-proportion="0.95423955">
                   <folding />
                 </state>
               </provider>
@@ -206,7 +207,7 @@
           <file leaf-file-name="Facade.hx" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/flx/core/Facade.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="47" column="12" selection-start="881" selection-end="881" vertical-scroll-proportion="0.811344">
+                <state line="47" column="12" selection-start="881" selection-end="881" vertical-scroll-proportion="0.91135734">
                   <folding />
                 </state>
               </provider>
@@ -241,12 +242,12 @@
         <option value="$PROJECT_DIR$/src/flx/core/SortingGroup.hx" />
         <option value="$PROJECT_DIR$/build.xml" />
         <option value="$PROJECT_DIR$/src/flx/core/Player.hx" />
-        <option value="$PROJECT_DIR$/src/tmx/TiledLevel.hx" />
         <option value="$PROJECT_DIR$/src/flx/core/Facade.hx" />
         <option value="$PROJECT_DIR$/src/flx/Game.hx" />
         <option value="$PROJECT_DIR$/src/flx/core/PlayerController.hx" />
         <option value="$PROJECT_DIR$/src/util/MathHelp.hx" />
         <option value="$PROJECT_DIR$/src/Main.hx" />
+        <option value="$PROJECT_DIR$/src/tmx/TiledLevel.hx" />
         <option value="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" />
       </list>
     </option>
@@ -621,12 +622,12 @@
     <frame x="766" y="0" width="1732" height="1440" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33021078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33021078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943013" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39968774" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39968774" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289166" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -634,7 +635,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16167665" sideWeight="0.66978925" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16167665" sideWeight="0.60031223" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943013" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -764,7 +765,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/flx/core/Facade.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="12" selection-start="881" selection-end="881" vertical-scroll-proportion="0.811344">
+        <state line="47" column="12" selection-start="881" selection-end="881" vertical-scroll-proportion="0.91135734">
           <folding />
         </state>
       </provider>
@@ -804,13 +805,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tmx/TiledLevel.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="33" selection-start="3838" selection-end="3838" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.hx">
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="43" selection-start="888" selection-end="888" vertical-scroll-proportion="0.0">
@@ -818,9 +812,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/tmx/TiledLevel.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="31" selection-start="3277" selection-end="3277" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/flx/state/level/LevelBase.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="23" selection-start="3883" selection-end="3883" vertical-scroll-proportion="0.85216343">
+        <state line="116" column="18" selection-start="3876" selection-end="3876" vertical-scroll-proportion="0.95423955">
           <folding />
         </state>
       </provider>
