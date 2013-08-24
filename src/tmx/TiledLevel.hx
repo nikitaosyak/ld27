@@ -100,7 +100,7 @@ class TiledLevel extends TiledMap {
             case "player":
                 var player:Player = new Player();
                 player.initialize(x, y - player.height/2);
-                FlxG.camera.follow(player);
+                FlxG.camera.follow(player, 0, null, 2);
                 state.layoutObjects.add(player);
                 state.player = player;
 //            case "player":
@@ -140,8 +140,8 @@ class TiledLevel extends TiledMap {
     public function collideWithLevel(obj:FlxObject, ?notifyCallback:FlxObject -> FlxObject -> Void, ?processCallback:FlxObject -> FlxObject -> Bool):Bool {
         if (collidableTileLayers != null) {
             for (map in collidableTileLayers) {
-// IMPORTANT: Always collide the map with objects, not the other way around.
-//			  This prevents odd collision errors (collision separation code off by 1 px).
+                // IMPORTANT: Always collide the map with objects, not the other way around.
+                //			  This prevents odd collision errors (collision separation code off by 1 px).
                 return FlxG.overlap(map, obj, notifyCallback, processCallback != null ? processCallback : FlxObject.separate);
             }
         }

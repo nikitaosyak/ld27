@@ -45,7 +45,7 @@ class Facade {
         health = 100;
         armor = 0;
 
-        moveSpd = 100;
+        moveSpd = 200;
         attackSpd = 1.0;
         regen = 0.8;
     }

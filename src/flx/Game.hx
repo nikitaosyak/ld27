@@ -1,4 +1,5 @@
 package flx;
+import org.flixel.FlxG;
 import flx.core.Facade;
 import flx.state.level.LevelBase;
 import flash.Lib;

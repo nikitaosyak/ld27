@@ -1,4 +1,6 @@
 package flx.state.level;
+import haxe.Timer;
+import util.MathHelp;
 import util.MathHelp;
 import flx.core.Facade;
 import flx.core.PlayerController;
@@ -29,6 +31,8 @@ class LevelBase extends FlxState {
 //    private var _bullets:FlxTypedGroup<Bullet>;
 
     private var controller:PlayerController;
+    private var level:TiledLevel;
+
     public var player:Player;
 
     private var layout:FlxTypedGroup<FlxBasic>;
@@ -52,13 +56,16 @@ class LevelBase extends FlxState {
 //    private var _jamTimer:Float;
 
     override public function create():Void {
+        FlxG.visualDebug = true;
         controller = new PlayerController();
-
+        asRadian = MathHelp.deg2rad(45);
+//        this.persistantUpdate = true;
+//        this.persistantDraw = true;
 // Load the level's tilemaps
-        var level:TiledLevel = new TiledLevel("assets/tiled/testmap.tmx");
+        level = new TiledLevel("assets/tiled/testmap.tmx");
 
-        FlxG.camera.setBounds(0, 0, level.fullWidth, level.fullHeight);
-//        FlxG.camera.followLerp = 0.5;
+        FlxG.camera.setBounds(0, 0, level.fullWidth, level.fullHeight, true);
+        FlxG.camera.followLerp = 0.5;
 //        FlxG.camera.followAdjust(5, 5);
 // Add tilemaps
         add(level.backgroundTiles);
@@ -70,51 +77,43 @@ class LevelBase extends FlxState {
         layoutObjects.sort();
     }
 
+    private static var asRadian:Float;
 
     override public function update():Void {
+        var tt:Float = Timer.stamp();
         var timeDiff:Float = FlxG.elapsed;
 
         var moveSpd:Float = Facade.I.getMoveSpd() * timeDiff;
+        var wasMove:Bool = true;
         if (controller.accX != 0 && controller.accY != 0) {
-            var asRadian:Float = 0;
-            if (controller.accX == 1 && controller.accY == 1) {
-                asRadian = MathHelp.deg2rad(45);
-            } else
-            if (controller.accX == 1 && controller.accY == -1) {
-                asRadian = MathHelp.deg2rad(45);
-            } else
-            if (controller.accX == -1 && controller.accY == 1) {
-                asRadian = MathHelp.deg2rad(45);
-            } else
-            if (controller.accX == -1 && controller.accY == -1) {
-                asRadian = MathHelp.deg2rad(45);
-            }
+            var diffX:Float = (moveSpd * controller.accX) * Math.cos(asRadian);
+            var diffY:Float = (moveSpd * controller.accY) * Math.cos(asRadian);
+//            player.last.make(player.x, player.y);
+            player.x = MathHelp.roundExp(player.x + diffX, 5);
+            player.y = MathHelp.roundExp(player.y + diffY, 5);
 
-            player.x += (moveSpd * controller.accX) * Math.cos(asRadian);
-            player.y += (moveSpd * controller.accY) * Math.sin(asRadian);
         } else if (controller.accX != 0) {
-            player.x += controller.accX * moveSpd;
+//            player.last.make(player.x, player.y);
+            player.x = MathHelp.roundExp(player.x + controller.accX * moveSpd, 5);
         } else if (controller.accY != 0) {
-            player.y += controller.accY * moveSpd;
+//            player.last.make(player.x, player.y);
+            player.y = MathHelp.roundExp(player.y + controller.accY * moveSpd, 5);
+        } else {
+            wasMove = false;
         }
-//        var pastAccX = player.acceleration.x = 0;
-//        var pastAccY = player.acceleration.y = 0;
-//        if (FlxG.keys.pressed('LEFT') && FlxG.keys.pressed('RIGHT')) {
-//            player.acceleration.x =
-//        } else
-//        if (FlxG.keys.pressed('LEFT')) {
-//            player.acceleration.x = -player.maxVelocity.x * 4;
-//        } else
-//        if (FlxG.keys.pressed('RIGHT')) {
-//            player.acceleration.x = player.maxVelocity.x * 4;
-//        }
-//        if (FlxG.keys.pressed('SPACE') && player.isTouching(FlxObject.FLOOR))
-//        {
-//            player.velocity.y = -player.maxVelocity.y / 2;
-//        }
 
-        layoutObjects.sort();
+        if (wasMove) {
+//            trace(player.x, player.last.x);
+            level.collideWithLevel(player, onCollide, null);
+        }
+
+        if (wasMove) {
+            layoutObjects.sort();
+        }
+
         super.update();
+//        trace('time took: ' + (Timer.stamp() - tt));
+
 
 //        FlxG.overlap(coins, player, getCoin);
 
@@ -130,6 +129,10 @@ class LevelBase extends FlxState {
 //        }
 
 //        super.update();
+    }
+
+    private function onCollide(some:FlxObject, some2:FlxObject):Void {
+//        trace(some);
     }
 
 // this is purely for code completion
