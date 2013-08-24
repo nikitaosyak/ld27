@@ -16,6 +16,9 @@ class Facade {
     private var attackSpd:Float;// per second!
     private var regen:Float;    // per second!
 
+    private var spawnTime:Float;
+    private var spawnChance:Float;
+
     public function getXp():Int {
         return xp;
     }
@@ -40,6 +43,14 @@ class Facade {
         return regen;
     }
 
+    public function getSpawnTime():Float {
+        return spawnTime;
+    }
+
+    public function getSpawnChance():Float {
+        return spawnChance;
+    }
+
     public function init():Void {
         xp = 0;
         health = 100;
@@ -48,5 +59,8 @@ class Facade {
         moveSpd = 200;
         attackSpd = 1.0;
         regen = 0.8;
+
+        spawnTime = 10;
+        spawnChance = 0.05;
     }
 }

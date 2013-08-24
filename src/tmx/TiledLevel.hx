@@ -1,4 +1,7 @@
 package tmx;
+import flx.core.DeathTrap;
+import org.flixel.util.FlxPoint;
+import org.flixel.FlxPath;
 import flx.core.SpawnPlace;
 import flx.core.Player;
 import flx.state.level.LevelBase;
@@ -106,7 +109,9 @@ class TiledLevel extends TiledMap {
                 state.player = player;
 
             case 'spawn':
-                state.spawnPlaces.add(new SpawnPlace(x, y));
+                state.spawnPlaces.add(new SpawnPlace(x, y, state));
+            case 'death':
+                state.collideObjects.add(new DeathTrap(x, y));
 //                for (enemySpawn in g.objects)
 //            case "player":
 //                var ti
@@ -151,5 +156,14 @@ class TiledLevel extends TiledMap {
             }
         }
         return false;
+    }
+
+    public function findCollidePath(start:FlxPoint, end:FlxPoint):FlxPath {
+        if (collidableTileLayers != null) {
+            for (map in collidableTileLayers) {
+                return map.findPath(start, end, false, false, true);
+            }
+        }
+        return null;
     }
 }

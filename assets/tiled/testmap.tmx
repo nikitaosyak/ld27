@@ -87,13 +87,17 @@
   <object gid="4" x="1390" y="232"/>
  </objectgroup>
  <objectgroup name="player" width="39" height="30">
-  <object name="player_spawn" x="64" y="64" width="64" height="64"/>
+  <object name="player_spawn" x="128" y="128" width="64" height="64"/>
  </objectgroup>
  <objectgroup name="spawn" width="39" height="30">
   <object name="enemy_spawn" x="384" y="256" width="64" height="64"/>
   <object name="enemy_spawn" x="704" y="512" width="64" height="64"/>
-  <object name="enemy_spawn" x="960" y="704" width="64" height="64"/>
-  <object name="enemy_spawn" x="1408" y="768" width="64" height="64"/>
-  <object name="enemy_spawn" x="1536" y="128" width="64" height="64"/>
+  <object name="enemy_spawn" x="256" y="704" width="64" height="64"/>
+ </objectgroup>
+ <objectgroup name="death" width="39" height="30">
+  <object name="death_trap" x="384" y="64" width="64" height="64"/>
+  <object name="death_trap" x="320" y="64" width="64" height="64"/>
+  <object name="death_trap" x="320" y="128" width="64" height="64"/>
+  <object name="death_trap" x="384" y="128" width="64" height="64"/>
  </objectgroup>
 </map>

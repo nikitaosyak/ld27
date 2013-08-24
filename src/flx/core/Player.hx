@@ -28,17 +28,15 @@ class Player extends FlxSprite {
     public function initialize(spawnX:Float, spawnY:Float):Void {
         this.x = MathHelp.roundExp(spawnX, 0);
         this.y = MathHelp.roundExp(spawnY, 0);
-
-//        play(ANIM_IDLE_LEFT);
     }
 
     private function onSwing(name:String, frame:Int, idx:Int):Void {
         if (name != ANIM_SWING) return;
-//        trace(frame, idx);
+
         if (frame == 6) {
             Timer.delay(function():Void {
                 PlayerController.SWING_LOCK = false;
-            }, 20);
+            }, 25);
         }
     }
 }
