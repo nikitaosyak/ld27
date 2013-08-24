@@ -1,4 +1,5 @@
 package ;
+import openfl.display.FPS;
 import flash.display.StageScaleMode;
 import flash.display.StageAlign;
 import flx.Game;
@@ -33,5 +34,6 @@ class Main extends Sprite {
         Lib.current.stage.scaleMode = StageScaleMode.NO_SCALE;
 
         addChild(new Game());
+        addChild(new FPS(10, 10, 0xFFFFFF));
     }
 }

@@ -1,11 +1,12 @@
 package flx.state.level;
+import util.MathHelp;
+import flx.core.Facade;
+import flx.core.PlayerController;
 import flx.core.SortingGroup;
 import org.flixel.FlxObject;
 import org.flixel.FlxSprite;
 import tmx.TiledLevel;
 import org.flixel.FlxG;
-import org.flixel.tmx.TmxMap;
-import tmx.Parser;
 import openfl.Assets;
 import org.flixel.FlxTilemap;
 import flx.core.SpawnPlace;
@@ -26,8 +27,11 @@ class LevelBase extends FlxState {
 // Major game object storage
 //    private var _decorations:FlxGroup;
 //    private var _bullets:FlxTypedGroup<Bullet>;
+
+    private var controller:PlayerController;
+    public var player:Player;
+
     private var layout:FlxTypedGroup<FlxBasic>;
-    private var player:Player;
     private var enemies:FlxTypedGroup<Enemy>;
     private var spawnPlaces:FlxTypedGroup<SpawnPlace>;
 //    private var _enemyBullets:FlxTypedGroup<EnemyBullet>;
@@ -48,11 +52,15 @@ class LevelBase extends FlxState {
 //    private var _jamTimer:Float;
 
     override public function create():Void {
+        controller = new PlayerController();
 
-        // Load the level's tilemaps
+// Load the level's tilemaps
         var level:TiledLevel = new TiledLevel("assets/tiled/testmap.tmx");
 
-        // Add tilemaps
+        FlxG.camera.setBounds(0, 0, level.fullWidth, level.fullHeight);
+//        FlxG.camera.followLerp = 0.5;
+//        FlxG.camera.followAdjust(5, 5);
+// Add tilemaps
         add(level.backgroundTiles);
         add(level.foregroundTiles);
 
@@ -60,33 +68,68 @@ class LevelBase extends FlxState {
         add(layoutObjects);
         level.loadObjects(this);
         layoutObjects.sort();
-
-//Add background tiles after adding level objects, so these tiles render on top of player
-//        add(level.backgroundTiles);
-
-//        var hero:Player = new Player();
-//        add(hero)
-
     }
 
 
     override public function update():Void {
-// Tilemaps can be collided just like any other FlxObject, and flixel
-// automatically collides each individual tile with the object.
-//        FlxG.collide(_player, _collisionMap);
-//
-//        _highlightBox.x = Math.floor(FlxG.mouse.x / TILE_WIDTH) * TILE_WIDTH;
-//        _highlightBox.y = Math.floor(FlxG.mouse.y / TILE_HEIGHT) * TILE_HEIGHT;
-//
-//        if (FlxG.mouse.pressed)
+        var timeDiff:Float = FlxG.elapsed;
+
+        var moveSpd:Float = Facade.I.getMoveSpd() * timeDiff;
+        if (controller.accX != 0 && controller.accY != 0) {
+            var asRadian:Float = 0;
+            if (controller.accX == 1 && controller.accY == 1) {
+                asRadian = MathHelp.deg2rad(45);
+            } else
+            if (controller.accX == 1 && controller.accY == -1) {
+                asRadian = MathHelp.deg2rad(45);
+            } else
+            if (controller.accX == -1 && controller.accY == 1) {
+                asRadian = MathHelp.deg2rad(45);
+            } else
+            if (controller.accX == -1 && controller.accY == -1) {
+                asRadian = MathHelp.deg2rad(45);
+            }
+
+            player.x += (moveSpd * controller.accX) * Math.cos(asRadian);
+            player.y += (moveSpd * controller.accY) * Math.sin(asRadian);
+        } else if (controller.accX != 0) {
+            player.x += controller.accX * moveSpd;
+        } else if (controller.accY != 0) {
+            player.y += controller.accY * moveSpd;
+        }
+//        var pastAccX = player.acceleration.x = 0;
+//        var pastAccY = player.acceleration.y = 0;
+//        if (FlxG.keys.pressed('LEFT') && FlxG.keys.pressed('RIGHT')) {
+//            player.acceleration.x =
+//        } else
+//        if (FlxG.keys.pressed('LEFT')) {
+//            player.acceleration.x = -player.maxVelocity.x * 4;
+//        } else
+//        if (FlxG.keys.pressed('RIGHT')) {
+//            player.acceleration.x = player.maxVelocity.x * 4;
+//        }
+//        if (FlxG.keys.pressed('SPACE') && player.isTouching(FlxObject.FLOOR))
 //        {
-// FlxTilemaps can be manually edited at runtime as well.
-// Setting a tile to 0 removes it, and setting it to anything else will place a tile.
-// If auto map is on, the map will automatically update all surrounding tiles.
-//            _collisionMap.setTile(Std.int(FlxG.mouse.x / TILE_WIDTH), Std.int(FlxG.mouse.y / TILE_HEIGHT), FlxG.keys.pressed.SHIFT ? 0 : 1);
+//            player.velocity.y = -player.maxVelocity.y / 2;
 //        }
 
+        layoutObjects.sort();
         super.update();
+
+//        FlxG.overlap(coins, player, getCoin);
+
+// Collide with foreground tile layer
+//        level.collideWithLevel(player);
+
+//        FlxG.overlap(exit, player, win);
+
+//        if (FlxG.overlap(player, floor))
+//        {
+//            youDied = true;
+//            FlxG.resetState();
+//        }
+
+//        super.update();
     }
 
 // this is purely for code completion
@@ -99,5 +142,9 @@ class LevelBase extends FlxState {
 
     override public function remove(object:FlxBasic, Splice:Bool = false):FlxBasic {
         return super.remove(object, Splice);
+    }
+
+    override public function destroy():Void {
+        controller.destroy();
     }
 }

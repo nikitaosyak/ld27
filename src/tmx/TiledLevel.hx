@@ -1,4 +1,5 @@
 package tmx;
+import flx.core.Player;
 import flx.state.level.LevelBase;
 import org.flixel.FlxG;
 import org.flixel.FlxState;
@@ -96,6 +97,12 @@ class TiledLevel extends TiledMap {
                 var rock = new FlxSprite(x, y, c_PATH_LEVEL_TILESHEETS + tileset.imageSource);
                 state.layoutObjects.add(rock);
 
+            case "player":
+                var player:Player = new Player();
+                player.initialize(x, y - player.height/2);
+                FlxG.camera.follow(player);
+                state.layoutObjects.add(player);
+                state.player = player;
 //            case "player":
 //                var ti
 

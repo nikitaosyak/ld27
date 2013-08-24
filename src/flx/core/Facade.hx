@@ -1,6 +1,10 @@
 package flx.core;
 class Facade {
 
+    private function new() {
+
+    }
+
     @:allow
     public static var I(default, null):Facade = new Facade();
 
@@ -8,9 +12,33 @@ class Facade {
     private var health:Int;
     private var armor:Int;
 
-    private var moveSpd:Float;  // per second!
+    private var moveSpd:Float; // per second!
     private var attackSpd:Float;// per second!
     private var regen:Float;    // per second!
+
+    public function getXp():Int {
+        return xp;
+    }
+
+    public function getHealth():Int {
+        return health;
+    }
+
+    public function getArmor():Int {
+        return armor;
+    }
+
+    public function getMoveSpd():Float {
+        return moveSpd;
+    }
+
+    public function getAttackSpd():Float {
+        return attackSpd;
+    }
+
+    public function getRegen():Float {
+        return regen;
+    }
 
     public function init():Void {
         xp = 0;
