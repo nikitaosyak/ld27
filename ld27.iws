@@ -2,56 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5badb44c-c72e-4bca-9867-0a1db1336274" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/autotiles.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/autotiles_alt.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/base.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/beep.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/beep.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/vis/bounds.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/button.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/button_a.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/button_b.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/button_c.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/button_down.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/button_left.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/button_right.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/button_up.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/button_x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/button_y.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/courier.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/cursor.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/default.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/vcr/flixel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/fontData10pt.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/fontData11pt.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/handle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/logo_corners.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/logo_light.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/nokiafc22.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/vcr/open.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/vcr/pause.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/vcr/play.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/vcr/record_off.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/vcr/record_on.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/vcr/restart.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/vcr/step.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/stick.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/vcr/stop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/HaxeFlixel.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Main.hx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ld27.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ld27.ipr" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ld27.iws" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/nokiafc22.ttf.hash" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ld27.iws" afterPath="$PROJECT_DIR$/ld27.iws" />
     </list>
     <ignored path="ld27.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377311418165" ignored="false" />
+    <file path="/Dummy.txt" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377326276124" ignored="false" />
     <file path="/build.xml" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377312018936" ignored="false" />
     <file path="/Main.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377312028216" ignored="false" />
-    <file path="$PROJECT_DIR$/../tanks/tanks.iws" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377312131208" ignored="false" />
+    <file path="$PROJECT_DIR$/../tanks/tanks.iws" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377326576929" ignored="false" />
     <file path="/.gitignore" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377312130704" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -134,7 +92,7 @@
       <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="4" selection-start="8" selection-end="8" vertical-scroll-proportion="0.011155378">
+            <state line="1" column="4" selection-start="8" selection-end="8" vertical-scroll-proportion="0.016786572">
               <folding />
             </state>
           </provider>
@@ -196,6 +154,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -230,21 +189,20 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Project" />
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="recentsLimit" value="5" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="restartRequiresConfirmation" value="true" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$HAXE_LIB$/flixel" />
+    <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
-    <property name="project.structure.side.proportion" value="0.2" />
     <property name="GoToClass.includeLibraries" value="false" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
   </component>
   <component name="RecentsManager">
@@ -354,28 +312,28 @@
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="ToolWindowManager">
     <frame x="897" y="0" width="1601" height="1440" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33021078" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32969603" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943013" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3983106" sideWeight="0.6705699" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40415853" sideWeight="0.670304" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943013" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -443,6 +401,27 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="46" selection-start="186" selection-end="186" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="16" selection-start="129" selection-end="129" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="4" selection-start="8" selection-end="8" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/data/vcr/flixel.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -450,16 +429,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/HaxeFlixel.svg">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/flash/haxe/ApplicationMain.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="44" selection-end="44" vertical-scroll-proportion="0.05121951">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build.xml">
@@ -478,7 +448,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="4" selection-start="8" selection-end="8" vertical-scroll-proportion="0.011155378">
+        <state line="1" column="4" selection-start="8" selection-end="8" vertical-scroll-proportion="0.016786572">
           <folding />
         </state>
       </provider>
