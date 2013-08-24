@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="30" height="20" tilewidth="64" tileheight="64">
+<map version="1.0" orientation="orthogonal" width="39" height="30" tilewidth="64" tileheight="64">
  <tileset firstgid="1" name="tiles" tilewidth="64" tileheight="64">
   <image source="tiles.png" width="128" height="64"/>
  </tileset>
@@ -9,24 +9,24 @@
  <tileset firstgid="4" name="tree" tilewidth="64" tileheight="150">
   <image source="tree.png" width="64" height="150"/>
  </tileset>
- <layer name="background" width="30" height="20">
+ <layer name="background" width="39" height="30" visible="0">
   <properties>
    <property name="nocollide" value="true"/>
    <property name="tileset" value="tiles"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztw0ENAAAMA6Grf9MzsSckrJqqqm8PCzUCWQ==
+   eJztwwENAAAMw6DOv+lLuAFIWDVVVVVVfR7kWwST
   </data>
  </layer>
- <layer name="collide" width="30" height="20">
+ <layer name="collide" width="39" height="30">
   <properties>
    <property name="tileset" value="tiles"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzNlVEKwDAIQ4v3P/R+y3DmpTpooBScMbZWtxZHiDUJGpv6UD0XFU/Fo5pffpXdyYNon9QgEh/Fz2K4by62feLsjr/LpW+kOrO6V2JXubu29zfCd/qI1qXLPe0lcleUv3Mn6u/ouujM0b91uzVR2lUvVHlk/s7/1Z2LGZfEPoE7syif8G7AA8CzASM=
+   eJzt1UEKACAIRFHp/oduUwRRkQttgv/AVQuHkjTzKa0UKWfDf07zVKa6PYvOpUA9X/c6567/an6ys3r6vb5HxFN9X2ZvmP+N2z0Uva/go/z3KmcDAOSrCEsAbw==
   </data>
  </layer>
- <objectgroup name="rocks" width="30" height="20">
+ <objectgroup name="rocks" width="39" height="30">
   <object name="rock" gid="3" x="832" y="384"/>
   <object gid="3" x="512" y="640"/>
   <object gid="3" x="384" y="640"/>
@@ -47,7 +47,7 @@
   <object name="rock" gid="3" x="896" y="896"/>
   <object gid="3" x="882" y="948"/>
  </objectgroup>
- <objectgroup name="trees" width="30" height="20">
+ <objectgroup name="trees" width="39" height="30">
   <object gid="4" x="576" y="256"/>
   <object gid="4" x="468" y="666"/>
   <object gid="4" x="192" y="512"/>
@@ -72,10 +72,10 @@
   <object gid="4" x="1422" y="219"/>
   <object gid="4" x="1390" y="232"/>
  </objectgroup>
- <objectgroup name="player" width="30" height="20">
+ <objectgroup name="player" width="39" height="30">
   <object name="player_spawn" x="64" y="64" width="64" height="64"/>
  </objectgroup>
- <objectgroup name="spawn" width="30" height="20">
+ <objectgroup name="spawn" width="39" height="30">
   <object name="enemy_spawn" x="384" y="256" width="64" height="64"/>
   <object name="enemy_spawn" x="704" y="512" width="64" height="64"/>
   <object name="enemy_spawn" x="960" y="704" width="64" height="64"/>

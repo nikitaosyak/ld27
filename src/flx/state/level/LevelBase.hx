@@ -68,7 +68,7 @@ class LevelBase extends FlxState {
 
         FlxG.camera.setBounds(0, 0, level.fullWidth, level.fullHeight, true);
 // Add tilemaps
-//        add(level.backgroundTiles);
+        add(level.backgroundTiles);
         add(level.foregroundTiles);
 
         layoutObjects = new SortingGroup();
@@ -100,6 +100,7 @@ class LevelBase extends FlxState {
             player.y = MathHelp.roundExp(player.y + controller.accY * moveSpd, 5);
         } else {
             wasMove = false;
+            player.play(Player.ANIM_IDLE);
         }
 
         if (wasMove) {
