@@ -168,11 +168,16 @@ class PlayerController {
 
         if (keyCode == Keyboard.SPACE) {
             if (status == KeyStatus.START) {
-//                pressed.set(keyCode, keyCode);
-//                newSwingVal = true;
-//                changed = true;
-                SWING_LOCK = true;
+                if (!pressed.exists(Keyboard.SPACE)) {
+                    if (!SWING_LOCK) {
+                        pressed.set(keyCode, keyCode);
+                        SWING_LOCK = true;
+                    }
+                }
             } else if (status == KeyStatus.FINISH) {
+                if (pressed.exists(Keyboard.SPACE)) {
+                    pressed.remove(keyCode);
+                }
             }
         }
 
