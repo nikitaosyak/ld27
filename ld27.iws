@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5badb44c-c72e-4bca-9867-0a1db1336274" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ld27.iws" afterPath="$PROJECT_DIR$/ld27.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" afterPath="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" />
     </list>
     <ignored path="ld27.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -112,7 +112,7 @@
           <file leaf-file-name="LevelBase.hx" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/flx/state/level/LevelBase.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="117" column="19" selection-start="3882" selection-end="3882" vertical-scroll-proportion="0.86899036">
+                <state line="116" column="23" selection-start="3883" selection-end="3883" vertical-scroll-proportion="0.85216343">
                   <folding />
                 </state>
               </provider>
@@ -820,7 +820,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/flx/state/level/LevelBase.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="19" selection-start="3882" selection-end="3882" vertical-scroll-proportion="0.86899036">
+        <state line="116" column="23" selection-start="3883" selection-end="3883" vertical-scroll-proportion="0.85216343">
           <folding />
         </state>
       </provider>
