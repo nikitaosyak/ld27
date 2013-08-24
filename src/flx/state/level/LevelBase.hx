@@ -1,4 +1,7 @@
 package flx.state.level;
+import flx.core.SortingGroup;
+import org.flixel.FlxObject;
+import org.flixel.FlxSprite;
 import tmx.TiledLevel;
 import org.flixel.FlxG;
 import org.flixel.tmx.TmxMap;
@@ -23,7 +26,7 @@ class LevelBase extends FlxState {
 // Major game object storage
 //    private var _decorations:FlxGroup;
 //    private var _bullets:FlxTypedGroup<Bullet>;
-    private var layout:FlxTypedGroup<FlxTilemap>;
+    private var layout:FlxTypedGroup<FlxBasic>;
     private var player:Player;
     private var enemies:FlxTypedGroup<Enemy>;
     private var spawnPlaces:FlxTypedGroup<SpawnPlace>;
@@ -39,58 +42,31 @@ class LevelBase extends FlxState {
 
 // HUD/User Interface stuff
     private var helpText:FlxText;
+    public var layoutObjects:SortingGroup;
 //    private var _score2:FlxText;
 //    private var _scoreTimer:Float;
 //    private var _jamTimer:Float;
 
     override public function create():Void {
-        layout = new FlxTypedGroup<FlxTilemap>();
-        add(layout);
 
+        // Load the level's tilemaps
+        var level:TiledLevel = new TiledLevel("assets/tiled/testmap.tmx");
 
-//        var tmxMap:TmxMap = new TmxMap(Assets.getText('assets/testmap.tmx'));
-//        var mapCsv:String = tmxMap.getLayer('grass').toCsv(tmxMap.getTileSet('grass'));
-//
-//        var collideMap:FlxTilemap = new FlxTilemap();
-//        collideMap.loadMap(mapCsv, "assets/grass.png", 64, 64, 0, 1, 1, 0);
-//        layout.add(collideMap);
-//
-//        var mapCsv1:String = tmxMap.getLayer('CollideLayer').toCsv(tmxMap.getTileSet('collider'));
-//
-//        var collideMap1:FlxTilemap = new FlxTilemap();
-//        collideMap1.loadMap(mapCsv1, "assets/collider.png", 64, 64, 0, 1, 1, 0);
-//        layout.add(collideMap1);
-//
-//        var mapCsv2:String = tmxMap.getLayer('stuff').toCsv(tmxMap.getTileSet('rock'));
-//
-//        var collideMap2:FlxTilemap = new FlxTilemap();
-//        collideMap2.loadMap(mapCsv2, "assets/rock.png", 64, 128, 0, 1, 1, 0, 0, 0);
-//        layout.add(collideMap2);
-
-// Load the level's tilemaps
-        var level:TiledLevel = new TiledLevel("assets/testmap.tmx");
-
-// Add tilemaps
+        // Add tilemaps
+        add(level.backgroundTiles);
         add(level.foregroundTiles);
 
-// Draw coins first
-//        coins = new FlxGroup();
-//        add(coins);
-
-// Load player objects
-//        level.loadObjects(this);
+        layoutObjects = new SortingGroup();
+        add(layoutObjects);
+        level.loadObjects(this);
+        layoutObjects.sort();
 
 //Add background tiles after adding level objects, so these tiles render on top of player
 //        add(level.backgroundTiles);
 
 //        var hero:Player = new Player();
 //        add(hero)
-//        hero.follo
 
-//        var mapCsv:String = tmxMap.getLayer('collidelayer').toCsv(tmxMap.getTileSet('testTile'));
-//        var t1:FlxTilemap = new FlxTilemap();
-//        t1.loadMap(mapCsv, "assets/testMap/testTile.png", 64, 64, 0, 1, 1, 0);
-//        add(t1);
     }
 
 
