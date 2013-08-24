@@ -1,4 +1,6 @@
 package flx.state.level;
+import tmx.TiledLevel;
+import org.flixel.FlxG;
 import org.flixel.tmx.TmxMap;
 import tmx.Parser;
 import openfl.Assets;
@@ -21,6 +23,7 @@ class LevelBase extends FlxState {
 // Major game object storage
 //    private var _decorations:FlxGroup;
 //    private var _bullets:FlxTypedGroup<Bullet>;
+    private var layout:FlxTypedGroup<FlxTilemap>;
     private var player:Player;
     private var enemies:FlxTypedGroup<Enemy>;
     private var spawnPlaces:FlxTypedGroup<SpawnPlace>;
@@ -41,24 +44,72 @@ class LevelBase extends FlxState {
 //    private var _jamTimer:Float;
 
     override public function create():Void {
+        layout = new FlxTypedGroup<FlxTilemap>();
+        add(layout);
 
 
-//        Parser.parseLevel(Assets.getText('assets/testMap/test.tmx'));
-//        var tile:FlxTilemap = new FlxTilemap();
-//        tile.loadMap('assets/testMap/test.txt', 'assets/testMap/testTile.png', 64, 64, 0, 1, 1, 0);
-//        add(tile);
+//        var tmxMap:TmxMap = new TmxMap(Assets.getText('assets/testmap.tmx'));
+//        var mapCsv:String = tmxMap.getLayer('grass').toCsv(tmxMap.getTileSet('grass'));
+//
+//        var collideMap:FlxTilemap = new FlxTilemap();
+//        collideMap.loadMap(mapCsv, "assets/grass.png", 64, 64, 0, 1, 1, 0);
+//        layout.add(collideMap);
+//
+//        var mapCsv1:String = tmxMap.getLayer('CollideLayer').toCsv(tmxMap.getTileSet('collider'));
+//
+//        var collideMap1:FlxTilemap = new FlxTilemap();
+//        collideMap1.loadMap(mapCsv1, "assets/collider.png", 64, 64, 0, 1, 1, 0);
+//        layout.add(collideMap1);
+//
+//        var mapCsv2:String = tmxMap.getLayer('stuff').toCsv(tmxMap.getTileSet('rock'));
+//
+//        var collideMap2:FlxTilemap = new FlxTilemap();
+//        collideMap2.loadMap(mapCsv2, "assets/rock.png", 64, 128, 0, 1, 1, 0, 0, 0);
+//        layout.add(collideMap2);
 
-        var tmx:TmxMap = new TmxMap(Assets.getText('assets/testMap/test.tmx'));
-        var mapCsv:String = tmx.getLayer('collidelayer').toCsv(tmx.getTileSet('testTile'));
+// Load the level's tilemaps
+        var level:TiledLevel = new TiledLevel("assets/testmap.tmx");
 
-        var t:FlxTilemap = new FlxTilemap();
-        t.loadMap(mapCsv, "assets/testMap/testTile.png", 64, 64, 0, 1, 1, 0);
-//        t.follow();
-        add(t);
+// Add tilemaps
+        add(level.foregroundTiles);
+
+// Draw coins first
+//        coins = new FlxGroup();
+//        add(coins);
+
+// Load player objects
+//        level.loadObjects(this);
+
+//Add background tiles after adding level objects, so these tiles render on top of player
+//        add(level.backgroundTiles);
+
+//        var hero:Player = new Player();
+//        add(hero)
+//        hero.follo
+
+//        var mapCsv:String = tmxMap.getLayer('collidelayer').toCsv(tmxMap.getTileSet('testTile'));
+//        var t1:FlxTilemap = new FlxTilemap();
+//        t1.loadMap(mapCsv, "assets/testMap/testTile.png", 64, 64, 0, 1, 1, 0);
+//        add(t1);
     }
 
 
     override public function update():Void {
+// Tilemaps can be collided just like any other FlxObject, and flixel
+// automatically collides each individual tile with the object.
+//        FlxG.collide(_player, _collisionMap);
+//
+//        _highlightBox.x = Math.floor(FlxG.mouse.x / TILE_WIDTH) * TILE_WIDTH;
+//        _highlightBox.y = Math.floor(FlxG.mouse.y / TILE_HEIGHT) * TILE_HEIGHT;
+//
+//        if (FlxG.mouse.pressed)
+//        {
+// FlxTilemaps can be manually edited at runtime as well.
+// Setting a tile to 0 removes it, and setting it to anything else will place a tile.
+// If auto map is on, the map will automatically update all surrounding tiles.
+//            _collisionMap.setTile(Std.int(FlxG.mouse.x / TILE_WIDTH), Std.int(FlxG.mouse.y / TILE_HEIGHT), FlxG.keys.pressed.SHIFT ? 0 : 1);
+//        }
+
         super.update();
     }
 

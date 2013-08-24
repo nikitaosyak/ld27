@@ -17,6 +17,7 @@
     <orderEntry type="library" name="msignal" level="application" />
     <orderEntry type="library" name="openfl" level="application" />
     <orderEntry type="library" name="flixel" level="application" />
+    <orderEntry type="library" name="flixel-addons" level="application" />
   </component>
 </module>
 
