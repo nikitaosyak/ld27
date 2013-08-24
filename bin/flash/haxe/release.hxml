@@ -15,6 +15,6 @@
 -D web
 -swf-version 11.1
 -swf bin/flash/bin/ld27game.swf
--swf-header 1200:1200:30:FFFFFF
+-swf-header 800:600:30:FFFFFF
 -cp bin/flash/haxe
 #--remap nme:flash

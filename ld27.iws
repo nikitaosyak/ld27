@@ -2,28 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5badb44c-c72e-4bca-9867-0a1db1336274" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/an_hero.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/util/MathHelp.hx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/flx/core/PlayerController.hx" />
-      <change type="DELETED" beforePath="D:\projects\my\haxe\ld27\src\org\flixel\tmx\TmxLayer.hx" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\my\haxe\ld27\src\org\flixel\tmx\TmxMap.hx" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\my\haxe\ld27\src\org\flixel\tmx\TmxObject.hx" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\my\haxe\ld27\src\org\flixel\tmx\TmxObjectGroup.hx" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\my\haxe\ld27\src\org\flixel\tmx\TmxPropertySet.hx" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\my\haxe\ld27\src\org\flixel\tmx\TmxTileSet.hx" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\my\haxe\ld27\src\tmx\Parser.hx" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/core/Facade.hx" afterPath="$PROJECT_DIR$/src/flx/core/Facade.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/Game.hx" afterPath="$PROJECT_DIR$/src/flx/Game.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" afterPath="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.hx" afterPath="$PROJECT_DIR$/src/Main.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/core/Player.hx" afterPath="$PROJECT_DIR$/src/flx/core/Player.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tmx/TiledLevel.hx" afterPath="$PROJECT_DIR$/src/tmx/TiledLevel.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ld27.iws" afterPath="$PROJECT_DIR$/ld27.iws" />
     </list>
     <ignored path="ld27.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377348139836" ignored="false" />
+    <file path="/Dummy.txt" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377351762356" ignored="false" />
     <file path="/build.xml" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377339832333" ignored="false" />
     <file path="/Main.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377351639204" ignored="false" />
     <file path="$PROJECT_DIR$/../tanks/tanks.iws" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377341002560" ignored="false" />
@@ -702,7 +685,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="утряс стандарт по TMX.&#10;прикрутил сортировку к объектам на сцене." />
+    <option name="LAST_COMMIT_MESSAGE" value="прикрутил героя и ходьбу" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -718,6 +701,7 @@
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="поменял расположение ассетов для tiled" />
     <MESSAGE value="утряс стандарт по TMX.&#10;прикрутил сортировку к объектам на сцене." />
+    <MESSAGE value="прикрутил героя и ходьбу" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
