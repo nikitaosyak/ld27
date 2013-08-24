@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+
+    <meta title="ld27jam" package="com.grozamorei.game" version="0.0.0" company="none" />
+    <app main="Main" path="bin" file="ld27game" swf-version="11.1" />
+
+    <window width="800" height="600" resizable="false"/>
+
+    <source path="src" />
+
+    <haxelib name="openfl" />
+    <haxelib name="actuate"/>
+    <haxelib name="flixel"/>
+    <haxelib name="msignal"/>
+
+    <ndll name="std" />
+    <ndll name="regexp" />
+    <ndll name="zlib" />
+
+    <assets path="assets" if="flash" >
+        <sound path="data/beep.mp3" id="Beep" />
+    </assets>
+
+    <assets path="assets" if="html5" >
+        <sound path="data/beep.mp3" id="Beep" />
+    </assets>
+
+    <assets path="assets" exclude="*.wav" if="flash" />
+    <assets path="assets" exclude="*.svg" if="html5" />
+
+    <icon name="assets/HaxeFlixel.svg" />
+
+</project>
