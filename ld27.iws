@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5badb44c-c72e-4bca-9867-0a1db1336274" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/core/DeathTrap.hx" afterPath="$PROJECT_DIR$/src/flx/core/DeathTrap.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" afterPath="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/core/Player.hx" afterPath="$PROJECT_DIR$/src/flx/core/Player.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ld27.iws" afterPath="$PROJECT_DIR$/ld27.iws" />
     </list>
     <ignored path="ld27.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -177,7 +174,7 @@
           <file leaf-file-name="Player.hx" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/flx/core/Player.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="49" column="23" selection-start="1672" selection-end="1672" vertical-scroll-proportion="0.7171381">
+                <state line="26" column="72" selection-start="900" selection-end="900" vertical-scroll-proportion="0.1514143">
                   <folding />
                 </state>
               </provider>
@@ -901,7 +898,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/flx/core/Player.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="23" selection-start="1672" selection-end="1672" vertical-scroll-proportion="0.7171381">
+        <state line="26" column="72" selection-start="900" selection-end="900" vertical-scroll-proportion="0.1514143">
           <folding />
         </state>
       </provider>
