@@ -37,7 +37,7 @@
    <property name="tileset" value="tiles"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt1UEKACAIRFHp/oduUwRRkQttgv/AVQuHkjTzKa0UKWfDf07zVKa6PYvOpUA9X/c6567/an6ys3r6vb5HxFN9X2ZvmP+N2z0Uva/go/z3KmcDAOSrCEsAbw==
+   eJztlFsKwDAIBCX3P3Qu0Ca6PliDA/lqNgxid4nIIj4WmDMI44YR5XZ657Snmm8et6w5VswNJWPfojw9bl+5v/3RdKW1W6P6t9rNwmT8GW222s2S7TJrNIP+y7d7zDNA6OAW2b3W3tW8yeqWTYfdyc4gjBvGuGG86sZ6NnOAApM=
   </data>
  </layer>
  <objectgroup name="rocks" width="39" height="30">

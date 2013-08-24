@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5badb44c-c72e-4bca-9867-0a1db1336274" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/flx/core/CameraOverride.hx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" afterPath="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/core/Player.hx" afterPath="$PROJECT_DIR$/src/flx/core/Player.hx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/core/PlayerController.hx" afterPath="$PROJECT_DIR$/src/flx/core/PlayerController.hx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tmx/TiledLevel.hx" afterPath="$PROJECT_DIR$/src/tmx/TiledLevel.hx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ld27.iws" afterPath="$PROJECT_DIR$/ld27.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/tiled/testmap.tmx" afterPath="$PROJECT_DIR$/assets/tiled/testmap.tmx" />
     </list>
     <ignored path="ld27.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -18,11 +21,11 @@
     <file path="/LabyrinthGame.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377332754426" ignored="false" />
     <file path="/EnterScreenState.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377331685392" ignored="false" />
     <file path="/Level0.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377334850872" ignored="false" />
-    <file path="/Player.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377373231627" ignored="false" />
+    <file path="/Player.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377375983621" ignored="false" />
     <file path="/EnemyBase.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377332784040" ignored="false" />
     <file path="/SpawnPlace.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377368106981" ignored="false" />
     <file path="/Facade.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377350437801" ignored="false" />
-    <file path="/LevelBase.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377373272920" ignored="false" />
+    <file path="/LevelBase.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377375443080" ignored="false" />
     <file path="/Parser.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377334177068" ignored="false" />
     <file path="/TmxMap.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377334892025" ignored="false" />
     <file path="/TmxPropertySet.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377334928406" ignored="false" />
@@ -30,11 +33,12 @@
     <file path="/TmxLayer.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377338269178" ignored="false" />
     <file path="/TiledLevel.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377367947457" ignored="false" />
     <file path="/SortingGroup.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377348034989" ignored="false" />
-    <file path="/PlayerController.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377373212174" ignored="false" />
+    <file path="/PlayerController.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377374820632" ignored="false" />
     <file path="/Game.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377356818628" ignored="false" />
     <file path="/FlxTilemap.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377355504745" ignored="false" />
     <file path="/FlxG.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377357995887" ignored="false" />
     <file path="/FlxCamera.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377368866826" ignored="false" />
+    <file path="/CameraOverride.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377375151166" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +102,7 @@
       <file leaf-file-name="TiledLevel.hx" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tmx/TiledLevel.hx">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="103" column="46" selection-start="3938" selection-end="3938" vertical-scroll-proportion="0.0">
+            <state line="103" column="33" selection-start="3925" selection-end="3925" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -107,7 +111,7 @@
       <file leaf-file-name="LevelBase.hx" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/flx/state/level/LevelBase.hx">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="0" selection-start="2690" selection-end="2690" vertical-scroll-proportion="0.0">
+            <state line="115" column="32" selection-start="3547" selection-end="3547" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -116,7 +120,16 @@
       <file leaf-file-name="Player.hx" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/flx/core/Player.hx">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="22" selection-start="1232" selection-end="1232" vertical-scroll-proportion="1.1616666">
+            <state line="40" column="17" selection-start="1268" selection-end="1268" vertical-scroll-proportion="0.7737105">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CameraOverride.hx" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/flx/core/CameraOverride.hx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="89" selection-start="109" selection-end="109" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -126,15 +139,6 @@
         <entry file="file://$PROJECT_DIR$/src/flx/core/SpawnPlace.hx">
           <provider selected="true" editor-type-id="text-editor">
             <state line="8" column="45" selection-start="243" selection-end="243" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.hx" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.hx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="50" selection-start="620" selection-end="620" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -152,7 +156,7 @@
       <file leaf-file-name="PlayerController.hx" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/flx/core/PlayerController.hx">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="0" selection-start="461" selection-end="461" vertical-scroll-proportion="0.0">
+            <state line="173" column="24" selection-start="5374" selection-end="5374" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -176,7 +180,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/assets/tiled/testmap.tmx" />
         <option value="$PROJECT_DIR$/src/flx/core/SortingGroup.hx" />
         <option value="$PROJECT_DIR$/src/util/MathHelp.hx" />
         <option value="$PROJECT_DIR$/src/Main.hx" />
@@ -186,11 +189,12 @@
         <option value="$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/FlxG.hx" />
         <option value="$HAXE_LIB$/flixel-addons/git/flixel/addons/editors/tiled/TiledObject.hx" />
         <option value="$PROJECT_DIR$/src/flx/core/SpawnPlace.hx" />
-        <option value="$PROJECT_DIR$/src/tmx/TiledLevel.hx" />
-        <option value="$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/FlxCamera.hx" />
         <option value="$PROJECT_DIR$/build.xml" />
+        <option value="$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/FlxCamera.hx" />
         <option value="$PROJECT_DIR$/src/flx/core/PlayerController.hx" />
+        <option value="$PROJECT_DIR$/src/flx/core/CameraOverride.hx" />
         <option value="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" />
+        <option value="$PROJECT_DIR$/src/tmx/TiledLevel.hx" />
         <option value="$PROJECT_DIR$/src/flx/core/Player.hx" />
       </list>
     </option>
@@ -668,12 +672,12 @@
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="ToolWindowManager">
     <frame x="2" y="0" width="1270" height="1080" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32976446" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869378" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32869378" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3993576" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
@@ -682,7 +686,7 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32655245" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23108552" sideWeight="0.6702356" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23108552" sideWeight="0.6713062" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32762313" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -763,28 +767,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/tiled/testmap.tmx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="35" selection-start="916" selection-end="916" vertical-scroll-proportion="0.29782608" />
-      </provider>
-    </entry>
-    <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/system/FlxAnim.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="8" selection-start="1321" selection-end="1321" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$HAXE_LIB$/flixel-addons/git/flixel/addons/editors/tiled/TiledObject.hx">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="147" selection-start="602" selection-end="602" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/FlxG.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1446" column="29" selection-start="39314" selection-end="39314" vertical-scroll-proportion="0.4489796">
           <folding />
         </state>
       </provider>
@@ -796,20 +781,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/FlxCamera.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="594" column="52" selection-start="15305" selection-end="15305" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tmx/TiledLevel.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="46" selection-start="3938" selection-end="3938" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/FlxObject.hx">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="29" selection-start="975" selection-end="975" vertical-scroll-proportion="0.33215547">
@@ -817,9 +788,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/char_tilesheet.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/FlxSprite.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="6" selection-start="905" selection-end="905" vertical-scroll-proportion="-1.2425629">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.hx">
@@ -829,16 +802,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/flx/core/SpawnPlace.hx">
+    <entry file="file://$PROJECT_DIR$/assets/an_hero.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/char_tilesheet.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/FlxG.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="45" selection-start="243" selection-end="243" vertical-scroll-proportion="0.0">
+        <state line="1432" column="46" selection-start="39006" selection-end="39006" vertical-scroll-proportion="0.33295193">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/FlxSprite.hx">
+    <entry file="file://$PROJECT_DIR$/src/flx/state/level/LevelBase.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1361" column="0" selection-start="37224" selection-end="37224" vertical-scroll-proportion="0.0">
+        <state line="115" column="32" selection-start="3547" selection-end="3547" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tmx/TiledLevel.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="103" column="33" selection-start="3925" selection-end="3925" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/FlxCamera.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="754" column="101" selection-start="19448" selection-end="19448" vertical-scroll-proportion="0.3321033">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/flx/core/SpawnPlace.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="45" selection-start="243" selection-end="243" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -852,21 +856,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/flx/core/PlayerController.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="461" selection-end="461" vertical-scroll-proportion="0.0">
+        <state line="173" column="24" selection-start="5374" selection-end="5374" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/flx/state/level/LevelBase.hx">
+    <entry file="file://$PROJECT_DIR$/src/flx/core/CameraOverride.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="0" selection-start="2690" selection-end="2690" vertical-scroll-proportion="0.0">
+        <state line="3" column="89" selection-start="109" selection-end="109" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/flx/core/Player.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="22" selection-start="1232" selection-end="1232" vertical-scroll-proportion="1.1616666">
+        <state line="40" column="17" selection-start="1268" selection-end="1268" vertical-scroll-proportion="0.7737105">
           <folding />
         </state>
       </provider>

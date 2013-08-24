@@ -101,7 +101,7 @@ class TiledLevel extends TiledMap {
             case "player":
                 var player:Player = new Player();
                 player.initialize(x, y - player.height/2);
-                FlxG.camera.follow(player, 4, null, 0);
+                FlxG.camera.follow(player, 4, null, 12);
                 state.layoutObjects.add(player);
                 state.player = player;
 
