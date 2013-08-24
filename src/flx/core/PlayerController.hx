@@ -12,7 +12,6 @@ enum KeyStatus {
 
 class PlayerController {
     public function new() {
-
         pressed = new IntMap<Int>();
         FlxG.stage.addEventListener(KeyboardEvent.KEY_UP, onUp);
         FlxG.stage.addEventListener(KeyboardEvent.KEY_DOWN, onDown);

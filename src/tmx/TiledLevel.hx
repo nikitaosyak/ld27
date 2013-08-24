@@ -1,4 +1,5 @@
 package tmx;
+import flx.core.SpawnPlace;
 import flx.core.Player;
 import flx.state.level.LevelBase;
 import org.flixel.FlxG;
@@ -100,9 +101,13 @@ class TiledLevel extends TiledMap {
             case "player":
                 var player:Player = new Player();
                 player.initialize(x, y - player.height/2);
-                FlxG.camera.follow(player, 0, null, 2);
+                FlxG.camera.follow(player, 4, null, 0);
                 state.layoutObjects.add(player);
                 state.player = player;
+
+            case 'spawn':
+                state.spawnPlaces.add(new SpawnPlace(x, y));
+//                for (enemySpawn in g.objects)
 //            case "player":
 //                var ti
 

@@ -34,10 +34,10 @@ class LevelBase extends FlxState {
     private var level:TiledLevel;
 
     public var player:Player;
+    public var spawnPlaces:FlxTypedGroup<SpawnPlace>;
 
     private var layout:FlxTypedGroup<FlxBasic>;
     private var enemies:FlxTypedGroup<Enemy>;
-    private var spawnPlaces:FlxTypedGroup<SpawnPlace>;
 //    private var _enemyBullets:FlxTypedGroup<EnemyBullet>;
 //    private var _littleGibs:FlxEmitter;
 //    private var _bigGibs:FlxEmitter;
@@ -58,6 +58,8 @@ class LevelBase extends FlxState {
     override public function create():Void {
         FlxG.visualDebug = true;
         controller = new PlayerController();
+        spawnPlaces = new FlxTypedGroup<SpawnPlace>();
+
         asRadian = MathHelp.deg2rad(45);
 //        this.persistantUpdate = true;
 //        this.persistantDraw = true;
@@ -65,16 +67,16 @@ class LevelBase extends FlxState {
         level = new TiledLevel("assets/tiled/testmap.tmx");
 
         FlxG.camera.setBounds(0, 0, level.fullWidth, level.fullHeight, true);
-        FlxG.camera.followLerp = 0.5;
-//        FlxG.camera.followAdjust(5, 5);
 // Add tilemaps
-        add(level.backgroundTiles);
+//        add(level.backgroundTiles);
         add(level.foregroundTiles);
 
         layoutObjects = new SortingGroup();
         add(layoutObjects);
         level.loadObjects(this);
         layoutObjects.sort();
+
+        add(spawnPlaces);
     }
 
     private static var asRadian:Float;
@@ -88,22 +90,19 @@ class LevelBase extends FlxState {
         if (controller.accX != 0 && controller.accY != 0) {
             var diffX:Float = (moveSpd * controller.accX) * Math.cos(asRadian);
             var diffY:Float = (moveSpd * controller.accY) * Math.cos(asRadian);
-//            player.last.make(player.x, player.y);
+
             player.x = MathHelp.roundExp(player.x + diffX, 5);
             player.y = MathHelp.roundExp(player.y + diffY, 5);
 
         } else if (controller.accX != 0) {
-//            player.last.make(player.x, player.y);
             player.x = MathHelp.roundExp(player.x + controller.accX * moveSpd, 5);
         } else if (controller.accY != 0) {
-//            player.last.make(player.x, player.y);
             player.y = MathHelp.roundExp(player.y + controller.accY * moveSpd, 5);
         } else {
             wasMove = false;
         }
 
         if (wasMove) {
-//            trace(player.x, player.last.x);
             level.collideWithLevel(player, onCollide, null);
         }
 

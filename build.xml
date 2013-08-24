@@ -4,7 +4,7 @@
     <meta title="ld27jam" package="com.grozamorei.game" version="0.0.0" company="none" />
     <app main="Main" path="bin" file="ld27game" swf-version="11.1" />
 
-    <window width="800" height="600" resizable="false"/>
+    <window width="640" height="640" resizable="false"/>
 
     <source path="src" />
 
