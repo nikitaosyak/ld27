@@ -95,6 +95,9 @@ class LevelBase extends FlxState {
         var moveSpd:Float = Facade.I.getMoveSpd() * timeDiff;
         var wasMove:Bool = true;
 
+        if (player.curAnim == Player.ANIM_DEATH) {
+
+        } else
         if (PlayerController.SWING_LOCK) {
             wasMove = false;
             if (player.curAnim != Player.ANIM_SWING) {
@@ -171,6 +174,7 @@ class LevelBase extends FlxState {
 
     private function onObjectCollide(some:FlxObject, some2:FlxObject):Void {
 //        trace(some, some2);
+        player.play(Player.ANIM_DEATH);
     }
 
 // this is purely for code completion
