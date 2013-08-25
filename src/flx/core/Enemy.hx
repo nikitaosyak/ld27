@@ -13,7 +13,7 @@ import org.flixel.FlxSprite;
 
 class Enemy extends FlxSprite {
 
-    public function new(x:Float, y:Float, spawnPlaces:Array<SpawnPlace>, map:TiledLevel) {
+    public function new(x:Float, y:Float, spawnPlaces:Array<SpawnPlace>, map:TiledLevel, hero:Player) {
         super();
 
         loadGraphic('assets/monster1_tilesheet.png', false, true, 192, 192);
@@ -31,6 +31,7 @@ class Enemy extends FlxSprite {
         _moving = false;
         _spawnPts = spawnPlaces;
         _level = map;
+        _hero = hero;
     }
 
     private var _level:TiledLevel;
@@ -41,6 +42,7 @@ class Enemy extends FlxSprite {
 
     private var _path:FlxPath;
     private var _moving:Bool;
+    private var _hero:Player;
 
     public function isIdle():Bool { return _path == null; }
 
@@ -74,7 +76,6 @@ class Enemy extends FlxSprite {
     }
 
     private function tweenNext():Void {
-//        FlxG.tween(object, { x: 500, y: 350 }, 2.0, { ease: easeFunction, complete: onComplete } );
         if (_path != null) {
             _moving = true;
             var tt:FlxPoint = _path.head();

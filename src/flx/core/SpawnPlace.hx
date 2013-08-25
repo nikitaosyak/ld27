@@ -79,7 +79,7 @@ class SpawnPlace extends FlxSprite {
 
     private function spawnEnemy():Void {
         var targ:Point = _spawnRanges[MathHelp.randomIntRange(0, _spawnRanges.length-1)];
-        var enemyGen:Enemy = new Enemy(targ.x, targ.y, _level.spawnPlaces, _level.level);
+        var enemyGen:Enemy = new Enemy(targ.x, targ.y, _level.spawnPlaces, _level.level, _level.player);
 //        _level.collideObjects.add(enemyGen);
         _level.layoutObjects.add(enemyGen);
         currentEnemies++;

@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5badb44c-c72e-4bca-9867-0a1db1336274" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/core/CameraOverride.hx" afterPath="$PROJECT_DIR$/src/flx/core/CameraOverride.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/core/InvisibleCollider.hx" afterPath="$PROJECT_DIR$/src/flx/core/InvisibleCollider.hx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/core/Enemy.hx" afterPath="$PROJECT_DIR$/src/flx/core/Enemy.hx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" afterPath="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/core/SpriteFromAtlas.hx" afterPath="$PROJECT_DIR$/src/flx/core/SpriteFromAtlas.hx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/core/SpawnPlace.hx" afterPath="$PROJECT_DIR$/src/flx/core/SpawnPlace.hx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tmx/TiledLevel.hx" afterPath="$PROJECT_DIR$/src/tmx/TiledLevel.hx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ld27.iws" afterPath="$PROJECT_DIR$/ld27.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/tiled/testmap.tmx" afterPath="$PROJECT_DIR$/assets/tiled/testmap.tmx" />
     </list>
     <ignored path="ld27.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377425093228" ignored="false" />
+    <file path="/Dummy.txt" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377427802320" ignored="false" />
     <file path="/build.xml" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377339832333" ignored="false" />
     <file path="/Main.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377351639204" ignored="false" />
     <file path="$PROJECT_DIR$/../tanks/tanks.iws" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377341002560" ignored="false" />
@@ -23,15 +21,15 @@
     <file path="/Level0.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377334850872" ignored="false" />
     <file path="/Player.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377382258307" ignored="false" />
     <file path="/EnemyBase.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377332784040" ignored="false" />
-    <file path="/SpawnPlace.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377424693792" ignored="false" />
+    <file path="/SpawnPlace.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377428003297" ignored="false" />
     <file path="/Facade.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377421027065" ignored="false" />
-    <file path="/LevelBase.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377426089157" ignored="false" />
+    <file path="/LevelBase.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377428093253" ignored="false" />
     <file path="/Parser.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377334177068" ignored="false" />
     <file path="/TmxMap.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377334892025" ignored="false" />
     <file path="/TmxPropertySet.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377334928406" ignored="false" />
     <file path="/TmxTileSet.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377334949941" ignored="false" />
     <file path="/TmxLayer.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377338269178" ignored="false" />
-    <file path="/TiledLevel.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377425818646" ignored="false" />
+    <file path="/TiledLevel.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377428120918" ignored="false" />
     <file path="/SortingGroup.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377348034989" ignored="false" />
     <file path="/PlayerController.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377374820632" ignored="false" />
     <file path="/Game.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377356818628" ignored="false" />
@@ -39,7 +37,7 @@
     <file path="/FlxG.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377357995887" ignored="false" />
     <file path="/FlxCamera.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377368866826" ignored="false" />
     <file path="/CameraOverride.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377375151166" ignored="false" />
-    <file path="/Enemy.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377424741812" ignored="false" />
+    <file path="/Enemy.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377427988412" ignored="false" />
     <file path="/DeathTrap.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377381952561" ignored="false" />
     <file path="/MathHelp.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377420641044" ignored="false" />
     <file path="/InvisibleCollider.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377425527307" ignored="false" />
@@ -106,19 +104,19 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="TiledLevel.hx" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="TiledLevel.hx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/tmx/TiledLevel.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="95" column="30" selection-start="3453" selection-end="3465" vertical-scroll-proportion="0.121751025">
+                <state line="108" column="39" selection-start="4145" selection-end="4145" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="LevelBase.hx" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="LevelBase.hx" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/flx/state/level/LevelBase.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="77" column="18" selection-start="2381" selection-end="2381" vertical-scroll-proportion="0.0">
+                <state line="80" column="16" selection-start="2503" selection-end="2503" vertical-scroll-proportion="0.76603323">
                   <folding />
                 </state>
               </provider>
@@ -145,7 +143,7 @@
           <file leaf-file-name="Enemy.hx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/flx/core/Enemy.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="87" column="36" selection-start="2689" selection-end="2689" vertical-scroll-proportion="0.0">
+                <state line="73" column="47" selection-start="2057" selection-end="2057" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -163,7 +161,7 @@
           <file leaf-file-name="SpawnPlace.hx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/flx/core/SpawnPlace.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="83" column="23" selection-start="2639" selection-end="2639" vertical-scroll-proportion="0.0">
+                <state line="81" column="99" selection-start="2578" selection-end="2578" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -200,15 +198,6 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="FlxG.hx" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/FlxG.hx">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="1953" column="0" selection-start="54760" selection-end="54760" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="Facade.hx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/flx/core/Facade.hx">
               <provider selected="true" editor-type-id="text-editor">
@@ -221,16 +210,25 @@
           <file leaf-file-name="SpriteFromAtlas.hx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/flx/core/SpriteFromAtlas.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="11" column="23" selection-start="354" selection-end="354" vertical-scroll-proportion="0.0">
+                <state line="7" column="17" selection-start="276" selection-end="276" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="CameraOverride.hx" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="FlxSprite.hx" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/FlxSprite.hx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="1182" column="69" selection-start="31676" selection-end="31676" vertical-scroll-proportion="0.33293125">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CameraOverride.hx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/flx/core/CameraOverride.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="38" column="52" selection-start="1380" selection-end="1380" vertical-scroll-proportion="0.6703146">
+                <state line="46" column="41" selection-start="1671" selection-end="1671" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -265,19 +263,19 @@
         <option value="$PROJECT_DIR$/assets/data/nokiafc22.ttf.hash" />
         <option value="$PROJECT_DIR$/src/util/MathHelp.hx" />
         <option value="$PROJECT_DIR$/src/flx/core/Facade.hx" />
-        <option value="$PROJECT_DIR$/src/flx/core/Enemy.hx" />
-        <option value="$PROJECT_DIR$/src/flx/core/SpawnPlace.hx" />
         <option value="$PROJECT_DIR$/src/flx/core/InvisibleCollider.hx" />
         <option value="$PROJECT_DIR$/src/flx/core/SpriteFromAtlas.hx" />
-        <option value="$PROJECT_DIR$/src/tmx/TiledLevel.hx" />
         <option value="$PROJECT_DIR$/src/flx/core/CameraOverride.hx" />
+        <option value="$PROJECT_DIR$/src/flx/core/SpawnPlace.hx" />
+        <option value="$PROJECT_DIR$/src/flx/core/Enemy.hx" />
+        <option value="$PROJECT_DIR$/src/tmx/TiledLevel.hx" />
         <option value="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="94" />
-    <option name="width" value="2393" />
+    <option name="x" value="98" />
+    <option name="width" value="2385" />
     <option name="height" value="1440" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -306,8 +304,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -616,15 +614,15 @@
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="ToolWindowManager">
-    <frame x="94" y="0" width="2393" height="1440" extended-state="0" />
-    <editor active="true" />
+    <frame x="98" y="0" width="2385" height="1440" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943013" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32921174" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286495" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843894" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3989071" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39876354" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32827735" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -632,7 +630,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15100814" sideWeight="0.6010929" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15229516" sideWeight="0.6707882" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32762313" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -713,23 +711,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/FlxTilemap.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="786" column="18" selection-start="22394" selection-end="22394" vertical-scroll-proportion="0.4112676">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/FlxObject.hx">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1183" column="65" selection-start="36251" selection-end="36251" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/FlxG.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1953" column="0" selection-start="54760" selection-end="54760" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -760,30 +744,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/FlxSprite.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="409" column="43" selection-start="11592" selection-end="11592" vertical-scroll-proportion="-2.6935704">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/flx/core/Enemy.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="36" selection-start="2689" selection-end="2689" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/util/MathHelp.hx">
       <provider selected="true" editor-type-id="text-editor">
         <state line="51" column="75" selection-start="1550" selection-end="1560" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/flx/core/SpawnPlace.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="23" selection-start="2639" selection-end="2639" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -795,30 +758,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/flx/core/SpriteFromAtlas.hx">
+    <entry file="file://$PROJECT_DIR$/src/flx/core/SpawnPlace.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="23" selection-start="354" selection-end="354" vertical-scroll-proportion="0.0">
+        <state line="81" column="99" selection-start="2578" selection-end="2578" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/flx/core/CameraOverride.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="52" selection-start="1380" selection-end="1380" vertical-scroll-proportion="0.6703146">
+        <state line="46" column="41" selection-start="1671" selection-end="1671" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/flx/state/level/LevelBase.hx">
+    <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/FlxG.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="18" selection-start="2381" selection-end="2381" vertical-scroll-proportion="0.0">
+        <state line="1933" column="27" selection-start="54009" selection-end="54009" vertical-scroll-proportion="0.36057693">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/flx/core/Player.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="23" selection-start="778" selection-end="778" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/flx/core/SpriteFromAtlas.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="17" selection-start="276" selection-end="276" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/FlxSprite.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1182" column="69" selection-start="31676" selection-end="31676" vertical-scroll-proportion="0.33293125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/flx/core/Enemy.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="47" selection-start="2057" selection-end="2057" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tmx/TiledLevel.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="30" selection-start="3453" selection-end="3465" vertical-scroll-proportion="0.121751025">
+        <state line="108" column="39" selection-start="4145" selection-end="4145" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/flx/state/level/LevelBase.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="16" selection-start="2503" selection-end="2503" vertical-scroll-proportion="0.76603323">
           <folding />
         </state>
       </provider>

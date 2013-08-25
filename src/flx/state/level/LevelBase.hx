@@ -52,7 +52,7 @@ class LevelBase extends FlxState {
 
 // HUD/User Interface stuff
     private var helpText:FlxText;
-//    public var backGroundObjects:FlxTypedGroup;
+    public var backGroundObjects:FlxTypedGroup<FlxSprite>;
     public var layoutObjects:SortingGroup;
 //    private var _score2:FlxText;
 //    private var _scoreTimer:Float;
@@ -65,6 +65,7 @@ class LevelBase extends FlxState {
         spawnPlaces = new Array<SpawnPlace>();
         enemies = new FlxTypedGroup<Enemy>();
         collideObjects = new FlxTypedGroup<FlxSprite>();
+        backGroundObjects = new FlxTypedGroup<FlxSprite>();
 
         asRadian = MathHelp.deg2rad(45);
 //        this.persistantUpdate = true;
@@ -77,6 +78,7 @@ class LevelBase extends FlxState {
         FlxG.resetCameras(cam);
 // Add tilemaps
         add(level.backgroundTiles);
+        add(backGroundObjects);
         add(level.foregroundTiles);
 
         layoutObjects = new SortingGroup();
