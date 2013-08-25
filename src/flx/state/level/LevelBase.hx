@@ -1,4 +1,5 @@
 package flx.state.level;
+import flx.core.CameraOverride;
 import haxe.Timer;
 import util.MathHelp;
 import util.MathHelp;
@@ -31,13 +32,14 @@ class LevelBase extends FlxState {
 //    private var _bullets:FlxTypedGroup<Bullet>;
 
     private var controller:PlayerController;
-    private var level:TiledLevel;
+    public var level:TiledLevel;
 
     public var player:Player;
+    public var spawnPlaces:FlxTypedGroup<SpawnPlace>;
+    public var enemies:FlxTypedGroup<Enemy>;
+    public var collideObjects:FlxTypedGroup<FlxSprite>;
 
-    private var layout:FlxTypedGroup<FlxBasic>;
-    private var enemies:FlxTypedGroup<Enemy>;
-    private var spawnPlaces:FlxTypedGroup<SpawnPlace>;
+//    private var layout:FlxTypedGroup<FlxBasic>;
 //    private var _enemyBullets:FlxTypedGroup<EnemyBullet>;
 //    private var _littleGibs:FlxEmitter;
 //    private var _bigGibs:FlxEmitter;
@@ -58,15 +60,19 @@ class LevelBase extends FlxState {
     override public function create():Void {
         FlxG.visualDebug = true;
         controller = new PlayerController();
+        spawnPlaces = new FlxTypedGroup<SpawnPlace>();
+        enemies = new FlxTypedGroup<Enemy>();
+        collideObjects = new FlxTypedGroup<FlxSprite>();
+
         asRadian = MathHelp.deg2rad(45);
 //        this.persistantUpdate = true;
 //        this.persistantDraw = true;
 // Load the level's tilemaps
         level = new TiledLevel("assets/tiled/testmap.tmx");
 
-        FlxG.camera.setBounds(0, 0, level.fullWidth, level.fullHeight, true);
-        FlxG.camera.followLerp = 0.5;
-//        FlxG.camera.followAdjust(5, 5);
+        var cam:CameraOverride = new CameraOverride();
+        cam.setBounds(0, 0, level.fullWidth, level.fullHeight, true);
+        FlxG.resetCameras(cam);
 // Add tilemaps
         add(level.backgroundTiles);
         add(level.foregroundTiles);
@@ -75,6 +81,9 @@ class LevelBase extends FlxState {
         add(layoutObjects);
         level.loadObjects(this);
         layoutObjects.sort();
+//        layoutObjects.add(enemies);
+        add(collideObjects);
+        add(spawnPlaces);
     }
 
     private static var asRadian:Float;
@@ -85,26 +94,54 @@ class LevelBase extends FlxState {
 
         var moveSpd:Float = Facade.I.getMoveSpd() * timeDiff;
         var wasMove:Bool = true;
+
+        if (player.curAnim == Player.ANIM_DEATH) {
+
+        } else
+        if (PlayerController.SWING_LOCK) {
+            wasMove = false;
+            if (player.curAnim != Player.ANIM_SWING) {
+                player.play(Player.ANIM_SWING);
+            }
+        } else
         if (controller.accX != 0 && controller.accY != 0) {
+
             var diffX:Float = (moveSpd * controller.accX) * Math.cos(asRadian);
             var diffY:Float = (moveSpd * controller.accY) * Math.cos(asRadian);
-//            player.last.make(player.x, player.y);
+
             player.x = MathHelp.roundExp(player.x + diffX, 5);
             player.y = MathHelp.roundExp(player.y + diffY, 5);
 
+            if (controller.accX > 0) {
+                player.facing = FlxObject.LEFT;
+            } else {
+                player.facing = FlxObject.RIGHT;
+            }
+            player.play(Player.ANIM_MOVE);
         } else if (controller.accX != 0) {
-//            player.last.make(player.x, player.y);
+//            trace(PlayerController.SWING_LOCK);
             player.x = MathHelp.roundExp(player.x + controller.accX * moveSpd, 5);
+            if (controller.accX > 0) {
+                player.facing = FlxObject.LEFT;
+            } else {
+                player.facing = FlxObject.RIGHT;
+            }
+            player.play(Player.ANIM_MOVE);
         } else if (controller.accY != 0) {
-//            player.last.make(player.x, player.y);
             player.y = MathHelp.roundExp(player.y + controller.accY * moveSpd, 5);
+            player.play(Player.ANIM_MOVE);
         } else {
             wasMove = false;
+            player.play(Player.ANIM_IDLE);
         }
 
         if (wasMove) {
-//            trace(player.x, player.last.x);
             level.collideWithLevel(player, onCollide, null);
+        }
+
+        if (wasMove) {
+//            level.collide
+            FlxG.overlap(collideObjects, player, onObjectCollide, FlxObject.separate);
         }
 
         if (wasMove) {
@@ -133,6 +170,11 @@ class LevelBase extends FlxState {
 
     private function onCollide(some:FlxObject, some2:FlxObject):Void {
 //        trace(some);
+    }
+
+    private function onObjectCollide(some:FlxObject, some2:FlxObject):Void {
+//        trace(some, some2);
+        player.play(Player.ANIM_DEATH);
     }
 
 // this is purely for code completion
