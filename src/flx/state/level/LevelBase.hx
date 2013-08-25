@@ -141,7 +141,6 @@ class LevelBase extends FlxState {
         }
 
         if (wasMove) {
-//            level.collide
             FlxG.overlap(collideObjects, player, onObjectCollide, FlxObject.separate);
         }
 

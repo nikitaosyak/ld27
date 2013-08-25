@@ -1,4 +1,8 @@
 package flx.core;
+import haxe.ds.IntMap;
+import flash.geom.Point;
+import flash.geom.Point;
+import motion.Actuate.ObjectHash;
 import flx.state.level.LevelBase;
 import org.flixel.FlxG;
 import haxe.Timer;
@@ -30,10 +34,13 @@ class Player extends FlxSprite {
 
         dead = false;
         this.level = level;
+
+        hittableEnemies = new List<Enemy>();
     }
 
     private var level:LevelBase;
     public var dead:Bool;
+    public var hittableEnemies:List<Enemy>;
 
     public function initialize(spawnX:Float, spawnY:Float):Void {
         this.x = MathHelp.roundExp(spawnX, 0);
@@ -43,10 +50,12 @@ class Player extends FlxSprite {
     private function onSwing(name:String, frame:Int, idx:Int):Void {
         if (name == ANIM_SWING) {
             if (frame == 4 || frame == 5 || frame == 6) {
-                if (level.enemies.first() != null) {
-                    level.enemies.first().play(Enemy.ANIM_DEATH);
-                    level.enemies.last().play(Enemy.ANIM_DEATH);
+                var iter:Iterator<Enemy> = hittableEnemies.iterator();
+                while (iter.hasNext()) {
+                    var enemy:Enemy = iter.next();
+                    enemy.play(Enemy.ANIM_DEATH);
                 }
+
             }
             if (frame == 6) {
                 Timer.delay(function():Void {

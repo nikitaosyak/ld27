@@ -102,6 +102,8 @@ class AssetData {
 			type.set ("assets/HaxeFlixel.svg", Reflect.field (AssetType, "text".toUpperCase ()));
 			className.set ("assets/monster1_tilesheet.png", nme.NME_assets_monster1_tilesheet_png);
 			type.set ("assets/monster1_tilesheet.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			className.set ("assets/powerUps.png", nme.NME_assets_powerups_png);
+			type.set ("assets/powerUps.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/tiled/bush.png", nme.NME_assets_tiled_bush_png);
 			type.set ("assets/tiled/bush.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/tiled/edge.png", nme.NME_assets_tiled_edge_png);
@@ -172,6 +174,7 @@ class NME_assets_data_vcr_stop_png extends flash.display.BitmapData { public fun
 class NME_assets_data_vis_bounds_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_haxeflixel_svg extends flash.utils.ByteArray { }
 class NME_assets_monster1_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class NME_assets_powerups_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_tiled_bush_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_tiled_edge_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_tiled_grave1_png extends flash.display.BitmapData { public function new () { super (0, 0); } }

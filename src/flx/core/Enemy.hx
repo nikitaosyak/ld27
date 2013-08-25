@@ -101,6 +101,7 @@ class Enemy extends FlxSprite {
 
     override public function update():Void {
         if (curAnim == ANIM_DEATH) {
+            _hero.hittableEnemies.remove(this);
             super.update();
             return;
         }
@@ -119,6 +120,25 @@ class Enemy extends FlxSprite {
         if (!_hero.dead && chasePath < 200) {
             _patrolPath = null;
             _currentFl.setTo(-1000, -1000);
+            if (chasePath <= 50) {
+                var tt:Point = new Point(_myPt.x - _heroFl.x, _myPt.y - _heroFl.y);
+
+                var angle:Float = MathHelp.rad2deg(Math.atan2(tt.y, tt.x));
+
+                if (MathHelp.isInRange(angle, -40, 40) && _hero.facing == FlxObject.LEFT) {
+                    _hero.hittableEnemies.add(this);
+                }else
+                if (angle < -140 && _hero.facing == FlxObject.RIGHT) {
+                    _hero.hittableEnemies.add(this);
+                }else
+                if (angle > 140 && _hero.facing == FlxObject.RIGHT) {
+                    _hero.hittableEnemies.add(this);
+                }
+            } else {
+                if (_hero.hittableEnemies.remove(this)) {
+
+                }
+            }
             if (chasePath <= 40) {
                 play(ANIM_ATTACK);
             } else {
