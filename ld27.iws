@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5badb44c-c72e-4bca-9867-0a1db1336274" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/core/Player.hx" afterPath="$PROJECT_DIR$/src/flx/core/Player.hx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ld27.iws" afterPath="$PROJECT_DIR$/ld27.iws" />
     </list>
     <ignored path="ld27.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -124,10 +124,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="LevelBase.hx" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="LevelBase.hx" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/flx/state/level/LevelBase.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="95" column="50" selection-start="2878" selection-end="2878" vertical-scroll-proportion="0.46031746">
+                <state line="94" column="33" selection-start="2817" selection-end="2817" vertical-scroll-proportion="0.4310954">
                   <folding />
                 </state>
               </provider>
@@ -171,10 +171,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Player.hx" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="Player.hx" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/flx/core/Player.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="26" column="72" selection-start="900" selection-end="900" vertical-scroll-proportion="0.1514143">
+                <state line="22" column="40" selection-start="653" selection-end="653" vertical-scroll-proportion="0.43666667">
                   <folding />
                 </state>
               </provider>
@@ -700,9 +700,9 @@
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="ToolWindowManager">
     <frame x="2" y="0" width="1686" height="1080" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32976446" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869378" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -710,11 +710,11 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3993576" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32869378" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869378" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32655245" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17218137" sideWeight="0.6713062" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17218137" sideWeight="0.6702356" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32762313" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -870,7 +870,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/flx/core/SpawnPlace.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="10" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0">
+        <state line="1" column="21" selection-start="39" selection-end="39" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -889,16 +889,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/flx/state/level/LevelBase.hx">
+    <entry file="file://$PROJECT_DIR$/src/flx/core/Player.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="50" selection-start="2878" selection-end="2878" vertical-scroll-proportion="0.46031746">
+        <state line="22" column="40" selection-start="653" selection-end="653" vertical-scroll-proportion="0.43666667">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/flx/core/Player.hx">
+    <entry file="file://$PROJECT_DIR$/src/flx/state/level/LevelBase.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="72" selection-start="900" selection-end="900" vertical-scroll-proportion="0.1514143">
+        <state line="94" column="33" selection-start="2817" selection-end="2817" vertical-scroll-proportion="0.4310954">
           <folding />
         </state>
       </provider>
