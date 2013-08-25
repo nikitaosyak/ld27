@@ -46,6 +46,10 @@ class MathHelp {
     }
 
     public static inline function randomRange(lowerBound:Float, upperBound:Float):Float {
+        return (Math.random()*(upperBound - lowerBound)) + lowerBound;
+    }
+
+    public static inline function randomIntRange(lowerBound:Int, upperBound:Int):Int {
         return Math.round((Math.random()*(upperBound - lowerBound)) + lowerBound);
     }
 }

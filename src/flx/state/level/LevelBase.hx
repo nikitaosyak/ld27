@@ -35,7 +35,7 @@ class LevelBase extends FlxState {
     public var level:TiledLevel;
 
     public var player:Player;
-    public var spawnPlaces:FlxTypedGroup<SpawnPlace>;
+    public var spawnPlaces:Array<SpawnPlace>;
     public var enemies:FlxTypedGroup<Enemy>;
     public var collideObjects:FlxTypedGroup<FlxSprite>;
 
@@ -52,17 +52,20 @@ class LevelBase extends FlxState {
 
 // HUD/User Interface stuff
     private var helpText:FlxText;
+    public var backGroundObjects:FlxTypedGroup<FlxSprite>;
     public var layoutObjects:SortingGroup;
 //    private var _score2:FlxText;
 //    private var _scoreTimer:Float;
 //    private var _jamTimer:Float;
 
     override public function create():Void {
-        FlxG.visualDebug = true;
+        SpawnPlace.currentEnemies = 0;
+        FlxG.visualDebug = false;
         controller = new PlayerController();
-        spawnPlaces = new FlxTypedGroup<SpawnPlace>();
+        spawnPlaces = new Array<SpawnPlace>();
         enemies = new FlxTypedGroup<Enemy>();
         collideObjects = new FlxTypedGroup<FlxSprite>();
+        backGroundObjects = new FlxTypedGroup<FlxSprite>();
 
         asRadian = MathHelp.deg2rad(45);
 //        this.persistantUpdate = true;
@@ -75,15 +78,13 @@ class LevelBase extends FlxState {
         FlxG.resetCameras(cam);
 // Add tilemaps
         add(level.backgroundTiles);
+        add(backGroundObjects);
         add(level.foregroundTiles);
 
         layoutObjects = new SortingGroup();
         add(layoutObjects);
         level.loadObjects(this);
         layoutObjects.sort();
-//        layoutObjects.add(enemies);
-        add(collideObjects);
-        add(spawnPlaces);
     }
 
     private static var asRadian:Float;
@@ -92,7 +93,7 @@ class LevelBase extends FlxState {
         var tt:Float = Timer.stamp();
         var timeDiff:Float = FlxG.elapsed;
 
-        var moveSpd:Float = Facade.I.getMoveSpd() * timeDiff;
+        var moveSpd:Float = Facade.I.moveSpd * timeDiff;
         var wasMove:Bool = true;
 
         if (player.curAnim == Player.ANIM_DEATH) {
@@ -107,7 +108,7 @@ class LevelBase extends FlxState {
         if (controller.accX != 0 && controller.accY != 0) {
 
             var diffX:Float = (moveSpd * controller.accX) * Math.cos(asRadian);
-            var diffY:Float = (moveSpd * controller.accY) * Math.cos(asRadian);
+            var diffY:Float = (moveSpd * controller.accY) * Math.sin(asRadian);
 
             player.x = MathHelp.roundExp(player.x + diffX, 5);
             player.y = MathHelp.roundExp(player.y + diffY, 5);
@@ -149,23 +150,6 @@ class LevelBase extends FlxState {
         }
 
         super.update();
-//        trace('time took: ' + (Timer.stamp() - tt));
-
-
-//        FlxG.overlap(coins, player, getCoin);
-
-// Collide with foreground tile layer
-//        level.collideWithLevel(player);
-
-//        FlxG.overlap(exit, player, win);
-
-//        if (FlxG.overlap(player, floor))
-//        {
-//            youDied = true;
-//            FlxG.resetState();
-//        }
-
-//        super.update();
     }
 
     private function onCollide(some:FlxObject, some2:FlxObject):Void {
@@ -173,8 +157,14 @@ class LevelBase extends FlxState {
     }
 
     private function onObjectCollide(some:FlxObject, some2:FlxObject):Void {
-//        trace(some, some2);
-        player.play(Player.ANIM_DEATH);
+//        trace(Type.typeof(some2), Type.typeof(player));
+
+        var tt:FlxObject = cast(player, FlxObject);
+        if (Type.getClass(some2) == Type.getClass(tt)) {
+//            trace('player detected');
+        }
+//        if (Type.typeof(some))
+//        player.play(Player.ANIM_DEATH);
     }
 
 // this is purely for code completion

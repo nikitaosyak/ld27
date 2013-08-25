@@ -1,4 +1,6 @@
 package tmx;
+import flx.core.SpriteFromAtlas;
+import flx.core.InvisibleCollider;
 import flx.core.DeathTrap;
 import org.flixel.util.FlxPoint;
 import org.flixel.FlxPath;
@@ -86,20 +88,56 @@ class TiledLevel extends TiledMap {
         var x:Int = o.x;
         var y:Int = o.y;
 
-//objects in tiled are aligned bottom-left (top-left in flixel)
+        //objects in tiled are aligned bottom-left (top-left in flixel)
         if (o.gid != -1)
             y -= g.map.getGidOwner(o.gid).tileHeight;
 
         switch (o.type.toLowerCase()) {
+            case "edgescollide":
+                var coll:InvisibleCollider = new InvisibleCollider(o.x, o.y, o.width, o.height);
+                state.collideObjects.add(coll);
+                state.add(coll);
+
             case "rocks":
                 var tileset:TiledTileSet = g.map.getGidOwner(o.gid);
                 var rock = new FlxSprite(x, y, c_PATH_LEVEL_TILESHEETS + tileset.imageSource);
                 state.layoutObjects.add(rock);
 
+            case "edges":
+                var tileset:TiledTileSet = g.map.getGidOwner(o.gid);
+                var edge = new SpriteFromAtlas(x, y, c_PATH_LEVEL_TILESHEETS + tileset.imageSource, o.gid, tileset.firstGID);
+                state.backGroundObjects.add(edge);
+
             case "trees":
+                var tileset:TiledTileSet = g.map.getGidOwner(o.gid);
+                var tree = new FlxSprite(x, y, c_PATH_LEVEL_TILESHEETS + tileset.imageSource);
+                tree.setOriginToCenter();
+                tree.offset.make(40, 155);
+                tree.width = 40;
+                tree.height = 30;
+                tree.immovable = true;
+                tree.x += tree.offset.x;
+                tree.y += tree.offset.y;
+                state.layoutObjects.add(tree);
+                state.collideObjects.add(tree);
+
+            case "bushes":
                 var tileset:TiledTileSet = g.map.getGidOwner(o.gid);
                 var rock = new FlxSprite(x, y, c_PATH_LEVEL_TILESHEETS + tileset.imageSource);
                 state.layoutObjects.add(rock);
+
+            case "graves1":
+                var tileset:TiledTileSet = g.map.getGidOwner(o.gid);
+                var grave = new FlxSprite(x, y, c_PATH_LEVEL_TILESHEETS + tileset.imageSource);
+                grave.setOriginToCenter();
+                grave.offset.make(35, 90);
+                grave.width = 58;
+                grave.height = 33;
+                grave.immovable = true;
+                grave.x += grave.offset.x;
+                grave.y += grave.offset.y;
+                state.layoutObjects.add(grave);
+                state.collideObjects.add(grave);
 
             case "player":
                 var player:Player = new Player();
@@ -109,41 +147,12 @@ class TiledLevel extends TiledMap {
                 state.player = player;
 
             case 'spawn':
-                state.spawnPlaces.add(new SpawnPlace(x, y, state));
+                var spawnPl:SpawnPlace = new SpawnPlace(x, y, state);
+                state.spawnPlaces.push(spawnPl);
+                state.layoutObjects.add(spawnPl);
+                state.collideObjects.add(spawnPl);
             case 'death':
-                state.collideObjects.add(new DeathTrap(x, y));
-//                for (enemySpawn in g.objects)
-//            case "player":
-//                var ti
-
-
-//            case "player_start":
-//                var player = new FlxSprite(x, y);
-//                player.makeGraphic(32, 32, 0xffaa1111);
-//                player.maxVelocity.x = 160;
-//                player.maxVelocity.y = 400;
-//                player.acceleration.y = 400;
-//                player.drag.x = player.maxVelocity.x * 4;
-//                FlxG.camera.follow(player);
-//                state.player = player;
-//                state.add(player);
-
-//            case "floor":
-//                var floor = new FlxObject(x, y, o.width, o.height);
-//                state.floor = floor;
-
-//            case "coin":
-//                var tileset = g.map.getGidOwner(o.gid);
-//                var coin = new FlxSprite(x, y, c_PATH_LEVEL_TILESHEETS + tileset.imageSource);
-//                state.coins.add(coin);
-
-//            case "exit":
-//Create the level exit
-//                var exit = new FlxSprite(x, y);
-//                exit.makeGraphic(32, 32, 0xff3f3f3f);
-//                exit.exists = false;
-//                state.exit = exit;
-//                state.add(exit);
+//                state.collideObjects.add(new DeathTrap(x, y));
         }
     }
 
@@ -158,10 +167,10 @@ class TiledLevel extends TiledMap {
         return false;
     }
 
-    public function findCollidePath(start:FlxPoint, end:FlxPoint):FlxPath {
+    public function findCollidePath(start:FlxPoint, end:FlxPoint, simple:Bool = false):FlxPath {
         if (collidableTileLayers != null) {
             for (map in collidableTileLayers) {
-                return map.findPath(start, end, false, false, true);
+                return map.findPath(start, end, simple, false, true);
             }
         }
         return null;

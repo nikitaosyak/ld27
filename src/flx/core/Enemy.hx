@@ -1,4 +1,12 @@
 package flx.core;
+import haxe.Timer;
+import util.MathHelp;
+import motion.easing.Linear;
+import motion.Actuate;
+import org.flixel.tweens.misc.MultiVarTween;
+import tmx.TiledLevel;
+import org.flixel.FlxPath;
+import org.flixel.FlxObject;
 import flash.geom.Point;
 import org.flixel.tweens.util.Ease.EaseFunction;
 import org.flixel.FlxG;
@@ -6,61 +14,210 @@ import org.flixel.util.FlxPoint;
 import org.flixel.FlxPath;
 import flx.state.level.LevelBase;
 import org.flixel.FlxSprite;
+
 class Enemy extends FlxSprite {
 
-    public function new(x:Float, y:Float, level:LevelBase) {
+    public static inline var ANIM_MOVE:String = 'move';
+    public static inline var ANIM_ATTACK:String = 'attack';
+
+    public function new(x:Float, y:Float, spawnPlaces:Array<SpawnPlace>, map:TiledLevel, hero:Player) {
         super();
 
-        loadGraphic('assets/an_enemy.png', false, false, 64, 64);
+        loadGraphic('assets/monster1_tilesheet.png', true, true, 192, 192);
         this.antialiasing = true;
         immovable = false;
 
-        width = 60;
-        height = 30;
-        offset.make(2, 32);
+        width = 50;
+        height = 40;
+        offset.make(66, 90);
         setOriginToCenter();
 
-        this.x = x;
-        this.y = y;
+        this.x = x - this.width / 2;
+        this.y = y - this.height / 2;
+
+
 
         _moving = false;
-        _level = level;
-        _path = _level.level.findCollidePath(new FlxPoint(this.x + this.width/2, this.y + this.height/2), new FlxPoint(this.x + this.width/2 + 500, this.y + this.height/2 + 500));
+        _chasing = false;
+        _spawnPts = spawnPlaces;
+        _level = map;
+        _hero = hero;
+
+        _lastHeroFl = new Point(0, 0);
+        _currentFl = new Point(-1000, -1000);
+
+        _attackSpeed = Facade.I.monsterInitialAttackSpeed;
+        _speed = Facade.I.initialMonsterSpeed;
+        _damage = Facade.I.initialMonsterDmg;
+        _exp = Facade.I.initialMonsterExp;
+        _maxHealth = Facade.I.initialMonsterHealth;
+        _currentHealth = _maxHealth;
+
+
+        _heroFl = new Point();
+        _myPt = new Point();
+
+        addAnimationCallback(onAttack);
+
+        _currLevel = 0;
+        _lvlUpTimer = 0;
+
+        addAnimation(ANIM_MOVE, [0, 1, 2, 3], 4);
+        addAnimation(ANIM_ATTACK, [4, 5, 6, 7], Math.floor(_attackSpeed));
     }
 
-    private var _level:LevelBase;
-    private var _path:FlxPath;
-    private var _moving:Bool;
+    private var _myPt:Point;
 
-    public function isIdle():Bool { return _path == null; }
+    private var _level:TiledLevel;
+    private var _spawnPts:Array<SpawnPlace>;
+
+    var _stopFl:Point;
+    private var _nextStop:SpawnPlace;
+
+    private var _patrolPath:FlxPath;
+    private var _currentFl:Point;
+    private var _moving:Bool;
+    private var _hero:Player;
+
+    private var _chasePath:FlxPath;
+    private var _chasing:Bool;
+    private var _lastHeroFl:Point;
+    private var _heroFl:Point;
+    private var _chaseTween:MultiVarTween;
+
+    private var _currLevel:Int;
+    private var _speed:Float;
+    private var _attackSpeed:Float;
+    private var _exp:Float;
+    private var _damage:Float;
+    private var _maxHealth:Float;
+    private var _currentHealth:Float;
+
+    private var _lvlUpTimer:Float;
+
+    public function isIdle():Bool { return _patrolPath == null; }
 
     override public function update():Void {
-        super.update();
+        _lvlUpTimer += FlxG.elapsed;
+        if (_lvlUpTimer > Facade.I.lvlUpTime) {
+            lvlUp();
+            _lvlUpTimer = 0;
+            super.update();
+            return;
+        }
 
-        if (_path == null) {
+        _heroFl.setTo(_hero.x + _hero.width / 2, _hero.y + _hero.height / 2);
+        _myPt = new Point(x + width/2, y + width/2);
 
-        } else {
-            if (!_moving) {
-                tweenNext();
+        var chasePath:Float = Math.abs(Point.distance(_heroFl, _myPt));
+        if (!_hero.dead && chasePath < 200) {
+            _patrolPath = null;
+            _currentFl.setTo(-1000, -1000);
+            if (chasePath <= 40) {
+                play(ANIM_ATTACK);
+            } else {
+                play(ANIM_MOVE);
+                var accX:Int = 0;
+                var accY:Int = 0;
+                if (_myPt.x < _heroFl.x) {
+                    accX = 1;
+                    this.facing = FlxObject.LEFT;
+                } else if (_myPt.x > _heroFl.x) {
+                    accX = -1;
+                    this.facing = FlxObject.RIGHT;
+                } else {
+                    accX = 0;
+                }
+
+                var tt:Point = new Point(_heroFl.x - _myPt.x, _heroFl.y - _myPt.y);
+
+                this.x += FlxG.elapsed * _speed * Math.cos(Math.atan2(tt.y, tt.x));
+                this.y += FlxG.elapsed * _speed * Math.sin(Math.atan2(tt.y, tt.x));
+                this.x = MathHelp.roundExp(x, 2);
+                this.y = MathHelp.roundExp(y, 2);
             }
+        } else {
+            play(ANIM_MOVE);
+            if (_patrolPath == null) {
+                findPatrolPath();
+            } else {
+                if (_patrolPath.head() != null) {
+                    if ((_currentFl.x == -1000 && _currentFl.y == -1000) || Math.abs(Point.distance(_myPt, _currentFl)) < 1) {
+                        _currentFl.setTo(_patrolPath.head().x, _patrolPath.head().y);
+                        _patrolPath.removeAt(0);
+                    }
+
+                    if (Math.abs(Point.distance(_myPt, _stopFl)) < 50) {
+                        findPatrolPath();
+                    } else {
+
+                        var accX:Int = 0;
+                        var accY:Int = 0;
+                        if (_myPt.x < _currentFl.x) {
+                            accX = 1;
+                            this.facing = FlxObject.LEFT;
+                        } else if (_myPt.x > _currentFl.x) {
+                            accX = -1;
+                            this.facing = FlxObject.RIGHT;
+                        } else {
+                            accX = 0;
+                        }
+                        var tt:Point = new Point(_currentFl.x - _myPt.x, _currentFl.y - _myPt.y);
+
+                        this.x += FlxG.elapsed * _speed * Math.cos(Math.atan2(tt.y, tt.x));
+                        this.y += FlxG.elapsed * _speed * Math.sin(Math.atan2(tt.y, tt.x));
+                        this.x = MathHelp.roundExp(x, 2);
+                        this.y = MathHelp.roundExp(y, 2);
+                    }
+                } else {
+                    _patrolPath = null;
+                    _currentFl.setTo(-1000, -1000);
+                }
+            }
+        }
+
+        super.update();
+    }
+
+    private function findPatrolPath():Void {
+        _nextStop = _spawnPts[MathHelp.randomIntRange(0, _spawnPts.length - 1)];
+        _stopFl = new Point(_nextStop.x + _nextStop.width / 2, _nextStop.y + _nextStop.height / 2);
+
+        _patrolPath = _level.findCollidePath(new FlxPoint(this.x + this.width / 2, this.y + this.height / 2), new FlxPoint(_nextStop.x + _nextStop.width / 2, _nextStop.y + _nextStop.height / 2), true);
+        if (_patrolPath != null) {
+            _patrolPath.ignoreDrawDebug = true;
         }
     }
 
-    private function tweenNext():Void {
-//        FlxG.tween(object, { x: 500, y: 350 }, 2.0, { ease: easeFunction, complete: onComplete } );
-        if (_path != null) {
-            _moving = true;
-            var tt:FlxPoint = _path.head();
-            if (tt != null) {
-                var fl1:Point = new Point(tt.x, tt.y);
-                var fl2:Point = new Point(this.x, this.y);
-                var dist:Float = Point.distance(fl1, fl2);
-                var time:Float = dist / 100;
+    private function lvlUp():Void {
+        _currLevel++;
+        color = Facade.I.colors[Std.int(Math.min(_currLevel, Facade.I.colors.length-1))];
+        alpha = Facade.I.alphas[Std.int(Math.min(_currLevel, Facade.I.alphas.length-1))];
 
-                FlxG.tween(this, {x:tt.x - this.width/2, y:tt.y - this.height/2}, time, {complete: tweenNext});
-                _path.removeAt(0);
-            } else {
-                trace('nowhere to go');
+        _speed = Math.min(_speed * Facade.I.monsterSpeedMultiplier, Facade.I.monsterMaxSpeed);
+        _damage = Math.min(_damage * Facade.I.monsterDmgMultiplier, Facade.I.monsterMaxDmg);
+
+        _exp = _exp * Facade.I.monsterExpMultiplier;
+
+        var healthM:Float = _currentHealth / _maxHealth;
+        _maxHealth = _maxHealth * Facade.I.monsterHealthMultiplier;
+        _currentHealth = _maxHealth * healthM;
+
+        _attackSpeed *= Facade.I.monsterAttackSpeedMultiplier;
+        addAnimation(ANIM_ATTACK, [4, 5, 6, 7], Math.floor(Math.min(_attackSpeed, Facade.I.monsterMaxAttackSpeed)));
+
+        var scale:Float = Math.min(Facade.I.monsterMaxScale, scale.x * Facade.I.monsterScaleMultiplier);
+        this.scale.make(scale, scale);
+
+        offset.make(Math.round(66*scale), Math.round(90*scale));
+//        width /= scale;
+//        height /= scale;
+    }
+
+    private function onAttack(name:String, frame:Int, idx:Int):Void {
+        if (name == ANIM_ATTACK) {
+            if (frame == 3) {
+                this._hero.play(Player.ANIM_DEATH);
             }
         }
     }

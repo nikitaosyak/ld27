@@ -26,18 +26,18 @@ class CameraOverride extends FlxCamera {
                 var targetY:Float = target.y - 10;
 
                 if (style == FlxCamera.STYLE_SCREEN_BY_SCREEN) {
-                    if (targetX > scroll.x + width) {
-                        _scrollTarget.x += width;
+                    if (targetX > scroll.x + width + 32) {
+                        _scrollTarget.x += width + 64;
                     }
-                    else if (targetX < scroll.x) {
-                        _scrollTarget.x -= width;
+                    else if (targetX < scroll.x - 32) {
+                        _scrollTarget.x -= width + 64;
                     }
 
-                    if (targetY > scroll.y + height) {
-                        _scrollTarget.y += height;
+                    if (targetY > scroll.y + height + 32) {
+                        _scrollTarget.y += height + 64;
                     }
-                    else if (targetY < scroll.y) {
-                        _scrollTarget.y -= height;
+                    else if (targetY < scroll.y - 32) {
+                        _scrollTarget.y -= height + 64;
                     }
                 }
                 else {
