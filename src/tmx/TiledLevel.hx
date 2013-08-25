@@ -1,4 +1,6 @@
 package tmx;
+import flx.core.SpriteFromAtlas;
+import flx.core.InvisibleCollider;
 import flx.core.DeathTrap;
 import org.flixel.util.FlxPoint;
 import org.flixel.FlxPath;
@@ -91,10 +93,20 @@ class TiledLevel extends TiledMap {
             y -= g.map.getGidOwner(o.gid).tileHeight;
 
         switch (o.type.toLowerCase()) {
+            case "edgesCollide":
+                var coll:InvisibleCollider = new InvisibleCollider(o.x, o.y, o.width, o.height);
+                state.collideObjects.add(coll);
+                state.add(coll);
+
             case "rocks":
                 var tileset:TiledTileSet = g.map.getGidOwner(o.gid);
                 var rock = new FlxSprite(x, y, c_PATH_LEVEL_TILESHEETS + tileset.imageSource);
                 state.layoutObjects.add(rock);
+
+            case "edges":
+                var tileset:TiledTileSet = g.map.getGidOwner(o.gid);
+                var edge = new SpriteFromAtlas(x, y, c_PATH_LEVEL_TILESHEETS + tileset.imageSource, o.gid, tileset.firstGID);
+                state.layoutObjects.add(edge);
 
             case "trees":
                 var tileset:TiledTileSet = g.map.getGidOwner(o.gid);

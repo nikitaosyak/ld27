@@ -52,6 +52,7 @@ class LevelBase extends FlxState {
 
 // HUD/User Interface stuff
     private var helpText:FlxText;
+//    public var backGroundObjects:FlxTypedGroup;
     public var layoutObjects:SortingGroup;
 //    private var _score2:FlxText;
 //    private var _scoreTimer:Float;
@@ -155,7 +156,7 @@ class LevelBase extends FlxState {
     }
 
     private function onObjectCollide(some:FlxObject, some2:FlxObject):Void {
-//        trace(some, some2);
+        trace(some, some2);
 //        if (Type.typeof(some))
 //        player.play(Player.ANIM_DEATH);
     }
