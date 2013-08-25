@@ -39,6 +39,7 @@ class SpawnPlace extends FlxSprite {
         _spawnRanges.push(new Point(cent.x - 64, cent.y));
         _spawnRanges.push(new Point(cent.x - 64, cent.y - 64));
 
+        if (currentEnemies >= Facade.I.maxMonsters) return;
         spawnEnemy();
     }
 
@@ -79,7 +80,7 @@ class SpawnPlace extends FlxSprite {
 
     private function spawnEnemy():Void {
         var targ:Point = _spawnRanges[MathHelp.randomIntRange(0, _spawnRanges.length-1)];
-        var enemyGen:Enemy = new Enemy(targ.x, targ.y, _level.spawnPlaces, _level.level);
+        var enemyGen:Enemy = new Enemy(targ.x, targ.y, _level.spawnPlaces, _level.level, _level.player);
 //        _level.collideObjects.add(enemyGen);
         _level.layoutObjects.add(enemyGen);
         currentEnemies++;

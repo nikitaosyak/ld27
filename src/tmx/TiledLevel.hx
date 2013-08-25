@@ -88,12 +88,12 @@ class TiledLevel extends TiledMap {
         var x:Int = o.x;
         var y:Int = o.y;
 
-//objects in tiled are aligned bottom-left (top-left in flixel)
+        //objects in tiled are aligned bottom-left (top-left in flixel)
         if (o.gid != -1)
             y -= g.map.getGidOwner(o.gid).tileHeight;
 
         switch (o.type.toLowerCase()) {
-            case "edgesCollide":
+            case "edgescollide":
                 var coll:InvisibleCollider = new InvisibleCollider(o.x, o.y, o.width, o.height);
                 state.collideObjects.add(coll);
                 state.add(coll);
@@ -106,12 +106,38 @@ class TiledLevel extends TiledMap {
             case "edges":
                 var tileset:TiledTileSet = g.map.getGidOwner(o.gid);
                 var edge = new SpriteFromAtlas(x, y, c_PATH_LEVEL_TILESHEETS + tileset.imageSource, o.gid, tileset.firstGID);
-                state.layoutObjects.add(edge);
+                state.backGroundObjects.add(edge);
 
             case "trees":
                 var tileset:TiledTileSet = g.map.getGidOwner(o.gid);
+                var tree = new FlxSprite(x, y, c_PATH_LEVEL_TILESHEETS + tileset.imageSource);
+                tree.setOriginToCenter();
+                tree.offset.make(40, 155);
+                tree.width = 40;
+                tree.height = 30;
+                tree.immovable = true;
+                tree.x += tree.offset.x;
+                tree.y += tree.offset.y;
+                state.layoutObjects.add(tree);
+                state.collideObjects.add(tree);
+
+            case "bushes":
+                var tileset:TiledTileSet = g.map.getGidOwner(o.gid);
                 var rock = new FlxSprite(x, y, c_PATH_LEVEL_TILESHEETS + tileset.imageSource);
                 state.layoutObjects.add(rock);
+
+            case "graves1":
+                var tileset:TiledTileSet = g.map.getGidOwner(o.gid);
+                var grave = new FlxSprite(x, y, c_PATH_LEVEL_TILESHEETS + tileset.imageSource);
+                grave.setOriginToCenter();
+                grave.offset.make(35, 90);
+                grave.width = 58;
+                grave.height = 33;
+                grave.immovable = true;
+                grave.x += grave.offset.x;
+                grave.y += grave.offset.y;
+                state.layoutObjects.add(grave);
+                state.collideObjects.add(grave);
 
             case "player":
                 var player:Player = new Player();
@@ -126,7 +152,7 @@ class TiledLevel extends TiledMap {
                 state.layoutObjects.add(spawnPl);
                 state.collideObjects.add(spawnPl);
             case 'death':
-                state.collideObjects.add(new DeathTrap(x, y));
+//                state.collideObjects.add(new DeathTrap(x, y));
         }
     }
 
@@ -141,10 +167,10 @@ class TiledLevel extends TiledMap {
         return false;
     }
 
-    public function findCollidePath(start:FlxPoint, end:FlxPoint):FlxPath {
+    public function findCollidePath(start:FlxPoint, end:FlxPoint, simple:Bool = false):FlxPath {
         if (collidableTileLayers != null) {
             for (map in collidableTileLayers) {
-                return map.findPath(start, end, false, false, true);
+                return map.findPath(start, end, simple, false, true);
             }
         }
         return null;
