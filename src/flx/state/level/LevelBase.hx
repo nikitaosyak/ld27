@@ -85,7 +85,6 @@ class LevelBase extends FlxState {
         add(layoutObjects);
         level.loadObjects(this);
         layoutObjects.sort();
-//        add(collideObjects);
     }
 
     private static var asRadian:Float;
@@ -109,7 +108,7 @@ class LevelBase extends FlxState {
         if (controller.accX != 0 && controller.accY != 0) {
 
             var diffX:Float = (moveSpd * controller.accX) * Math.cos(asRadian);
-            var diffY:Float = (moveSpd * controller.accY) * Math.cos(asRadian);
+            var diffY:Float = (moveSpd * controller.accY) * Math.sin(asRadian);
 
             player.x = MathHelp.roundExp(player.x + diffX, 5);
             player.y = MathHelp.roundExp(player.y + diffY, 5);
@@ -158,7 +157,12 @@ class LevelBase extends FlxState {
     }
 
     private function onObjectCollide(some:FlxObject, some2:FlxObject):Void {
-        trace(some, some2);
+//        trace(Type.typeof(some2), Type.typeof(player));
+
+        var tt:FlxObject = cast(player, FlxObject);
+        if (Type.getClass(some2) == Type.getClass(tt)) {
+            trace('player detected');
+        }
 //        if (Type.typeof(some))
 //        player.play(Player.ANIM_DEATH);
     }

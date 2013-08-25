@@ -110,8 +110,34 @@ class TiledLevel extends TiledMap {
 
             case "trees":
                 var tileset:TiledTileSet = g.map.getGidOwner(o.gid);
+                var tree = new FlxSprite(x, y, c_PATH_LEVEL_TILESHEETS + tileset.imageSource);
+                tree.setOriginToCenter();
+                tree.offset.make(40, 155);
+                tree.width = 40;
+                tree.height = 30;
+                tree.immovable = true;
+                tree.x += tree.offset.x;
+                tree.y += tree.offset.y;
+                state.layoutObjects.add(tree);
+                state.collideObjects.add(tree);
+
+            case "bushes":
+                var tileset:TiledTileSet = g.map.getGidOwner(o.gid);
                 var rock = new FlxSprite(x, y, c_PATH_LEVEL_TILESHEETS + tileset.imageSource);
                 state.layoutObjects.add(rock);
+
+            case "graves1":
+                var tileset:TiledTileSet = g.map.getGidOwner(o.gid);
+                var grave = new FlxSprite(x, y, c_PATH_LEVEL_TILESHEETS + tileset.imageSource);
+                grave.setOriginToCenter();
+                grave.offset.make(35, 90);
+                grave.width = 58;
+                grave.height = 33;
+                grave.immovable = true;
+                grave.x += grave.offset.x;
+                grave.y += grave.offset.y;
+                state.layoutObjects.add(grave);
+                state.collideObjects.add(grave);
 
             case "player":
                 var player:Player = new Player();
@@ -126,7 +152,7 @@ class TiledLevel extends TiledMap {
                 state.layoutObjects.add(spawnPl);
                 state.collideObjects.add(spawnPl);
             case 'death':
-                state.collideObjects.add(new DeathTrap(x, y));
+//                state.collideObjects.add(new DeathTrap(x, y));
         }
     }
 

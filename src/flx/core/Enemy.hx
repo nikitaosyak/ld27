@@ -1,4 +1,6 @@
 package flx.core;
+import util.MathHelp;
+import motion.easing.Linear;
 import motion.Actuate;
 import org.flixel.tweens.misc.MultiVarTween;
 import util.MathHelp;
@@ -27,8 +29,8 @@ class Enemy extends FlxSprite {
         offset.make(66, 90);
         setOriginToCenter();
 
-        this.x = x - this.width/2;
-        this.y = y - this.height/2;
+        this.x = x - this.width / 2;
+        this.y = y - this.height / 2;
 
         _moving = false;
         _chasing = false;
@@ -37,6 +39,14 @@ class Enemy extends FlxSprite {
         _hero = hero;
 
         _lastHeroFl = new Point(0, 0);
+        _currentFl = new Point(-1000, -1000);
+
+        _speed = Facade.I.initialMonsterSped;
+        _damage = Facade.I.initialMonsterDmg;
+        _exp = Facade.I.monsterExp;
+        _health = Facade.I.initialMonsterHealth;
+
+//        this.scale.make(1.5, 1.5);
     }
 
     private var _level:TiledLevel;
@@ -46,6 +56,7 @@ class Enemy extends FlxSprite {
     private var _nextStop:SpawnPlace;
 
     private var _patrolPath:FlxPath;
+    private var _currentFl:Point;
     private var _moving:Bool;
     private var _hero:Player;
 
@@ -55,81 +66,105 @@ class Enemy extends FlxSprite {
     private var _heroFl:Point;
     private var _chaseTween:MultiVarTween;
 
+    private var _speed:Float;
+    private var _exp:Float;
+    private var _damage:Float;
+    private var _health:Float;
+
     public function isIdle():Bool { return _patrolPath == null; }
 
     override public function update():Void {
 
         if (last.x < this.x) {
             this.facing = FlxObject.LEFT;
-        } else {
+        } else if (last.x > this.x) {
             this.facing = FlxObject.RIGHT;
         }
 
-        super.update();
-
-        _heroFl = new Point(_hero.x + _hero.width/2, _hero.y + _hero.height/2);
-        var myPt:Point = new Point(x + width/2, y + height/2);
+        _heroFl = new Point(_hero.x + _hero.width / 2, _hero.y + _hero.height / 2);
+        var myPt:Point = new Point(x + width/2, y + width/2);
 
         var chasePath:Float = Math.abs(Point.distance(_heroFl, myPt));
-        if (chasePath < 300) {
-            if (chasePath >= 30) {
-                if (!_chasing) {
-                    _chasing = true;
-                    _patrolPath = null;
-                    _moving = false;
-                } else {
-                    if (_lastHeroFl.x != 0 && _lastHeroFl.y != 0) {
-                        if (Math.abs(Point.distance(_heroFl, _lastHeroFl)) > 20) {
-                            _chasePath = null;
-                            _lastHeroFl.setTo(_heroFl.x, _heroFl.y);
-                        }
-                    } else {
-                        _lastHeroFl.setTo(_heroFl.x, _heroFl.y);
-                    }
-                }
-            }
-        } else {
-            if (_chasing) {
-                _chasing = false;
-                _chasePath = null;
-                _patrolPath = null;
-                _moving = false;
-                Actuate.stop(this);
-            }
-        }
-
-
-        if (_chasing) {
-            if (_chasePath == null) {
-                findChasePath();
+        if (chasePath < 200) {
+            _patrolPath = null;
+            _currentFl.setTo(-1000, -1000);
+            if (chasePath <= 30) {
+                trace('aquired');
             } else {
-                if (!_moving) {
-                    tweenChase();
+                var accX:Int = 0;
+                var accY:Int = 0;
+                if (myPt.x < _heroFl.x) {
+                    accX = 1;
+                    this.facing = FlxObject.LEFT;
+                } else if (myPt.x > _heroFl.x) {
+                    accX = -1;
+                    this.facing = FlxObject.RIGHT;
+                } else {
+                    accX = 0;
                 }
+
+                var tt:Point = new Point(_heroFl.x - myPt.x, _heroFl.y - myPt.y);
+
+                trace(MathHelp.roundExp(MathHelp.rad2deg(Math.atan2(tt.y, tt.x)), 2));
+                this.x += FlxG.elapsed * _speed * Math.cos(Math.atan2(tt.y, tt.x));
+                this.y += FlxG.elapsed * _speed * Math.sin(Math.atan2(tt.y, tt.x));
+                this.x = MathHelp.roundExp(x, 2);
+                this.y = MathHelp.roundExp(y, 2);
             }
         } else {
             if (_patrolPath == null) {
                 findPatrolPath();
             } else {
-                if (!_moving) {
-                    tweenPatrol();
+                if (_patrolPath.head() != null) {
+                    if ((_currentFl.x == -1000 && _currentFl.y == -1000) || Math.abs(Point.distance(myPt, _currentFl)) < 1) {
+                        _currentFl.setTo(_patrolPath.head().x, _patrolPath.head().y);
+                        _patrolPath.removeAt(0);
+                    }
+
+                    if (Math.abs(Point.distance(myPt, _stopFl)) < 50) {
+                        findPatrolPath();
+                    } else {
+
+                        var accX:Int = 0;
+                        var accY:Int = 0;
+                        if (myPt.x < _currentFl.x) {
+                            accX = 1;
+                            this.facing = FlxObject.LEFT;
+                        } else if (myPt.x > _currentFl.x) {
+                            accX = -1;
+                            this.facing = FlxObject.RIGHT;
+                        } else {
+                            accX = 0;
+                        }
+                        var tt:Point = new Point(_currentFl.x - myPt.x, _currentFl.y - myPt.y);
+
+                        this.x += FlxG.elapsed * _speed * Math.cos(Math.atan2(tt.y, tt.x));
+                        this.y += FlxG.elapsed * _speed * Math.sin(Math.atan2(tt.y, tt.x));
+                        this.x = MathHelp.roundExp(x, 2);
+                        this.y = MathHelp.roundExp(y, 2);
+                    }
+                } else {
+                    _patrolPath = null;
+                    _currentFl.setTo(-1000, -1000);
                 }
             }
         }
+
+        super.update();
     }
 
     private function findPatrolPath():Void {
-        _nextStop = _spawnPts[MathHelp.randomIntRange(0, _spawnPts.length-1)];
-        _stopFl = new Point(_nextStop.x + _nextStop.width/2, _nextStop.y + _nextStop.height/2);
+        _nextStop = _spawnPts[MathHelp.randomIntRange(0, _spawnPts.length - 1)];
+        _stopFl = new Point(_nextStop.x + _nextStop.width / 2, _nextStop.y + _nextStop.height / 2);
 
-        _patrolPath = _level.findCollidePath(new FlxPoint(this.x + this.width/2, this.y + this.height/2), new FlxPoint(_nextStop.x + _nextStop.width/2, _nextStop.y+ _nextStop.height/2));
+        _patrolPath = _level.findCollidePath(new FlxPoint(this.x + this.width / 2, this.y + this.height / 2), new FlxPoint(_nextStop.x + _nextStop.width / 2, _nextStop.y + _nextStop.height / 2), true);
         if (_patrolPath != null) {
-            _patrolPath.ignoreDrawDebug = true;
+            _patrolPath.ignoreDrawDebug = false;
         }
     }
 
     private function findChasePath():Void {
-        _chasePath = _level.findCollidePath(new FlxPoint(this.x + this.width/2, this.y + this.height/2), new FlxPoint(_hero.x + _hero.width/2, _hero.y + _hero.height/2), true);
+        _chasePath = _level.findCollidePath(new FlxPoint(this.x + this.width / 2, this.y + this.height / 2), new FlxPoint(_hero.x + _hero.width / 2, _hero.y + _hero.height / 2), false);
         if (_patrolPath != null) {
             _patrolPath.ignoreDrawDebug = false;
         }
@@ -141,8 +176,8 @@ class Enemy extends FlxSprite {
             _moving = true;
             var tt:FlxPoint = _patrolPath.head();
             if (tt != null) {
-                var fl1:Point = new Point(tt.x - this.width/2, tt.y - this.height/2);
-                var fl2:Point = new Point(this.x + this.width/2, this.y + this.height/2);
+                var fl1:Point = new Point(tt.x - this.width / 2, tt.y - this.height / 2);
+                var fl2:Point = new Point(this.x + this.width / 2, this.y + this.height / 2);
 
                 if (Math.abs(Point.distance(fl2, _stopFl)) < 150) {
                     _patrolPath = _nextStop.makePathAround(new FlxPoint(this.x, this.y));
@@ -156,9 +191,9 @@ class Enemy extends FlxSprite {
                         _patrolPath.removeAt(0);
                         tweenPatrol();
                     }
-                    var time:Float = Math.abs(dist) / 30;
+                    var time:Float = Math.abs(dist) / _speed;
 
-                    FlxG.tween(this, {x:fl1.x, y:fl1.y}, time, {complete: tweenPatrol});
+                    Actuate.tween(this, time, {x:fl1.x, y:fl1.y}, true).ease(Linear.easeNone).onComplete(tweenPatrol);
                     _patrolPath.removeAt(0);
                 }
             } else {
@@ -173,8 +208,8 @@ class Enemy extends FlxSprite {
             _moving = true;
             var tt:FlxPoint = _chasePath.head();
             if (tt != null) {
-                var fl1:Point = new Point(tt.x - this.width/2, tt.y - this.height/2);
-                var fl2:Point = new Point(this.x + this.width/2, this.y + this.height/2);
+                var fl1:Point = new Point(tt.x - this.width / 2, tt.y - this.height / 2);
+                var fl2:Point = new Point(this.x + this.width / 2, this.y + this.height / 2);
 
                 if (Math.abs(Point.distance(fl2, _heroFl)) < 30) {
 //                    _patrolPath = _nextStop.makePathAround(new FlxPoint(this.x, this.y));
@@ -189,14 +224,15 @@ class Enemy extends FlxSprite {
                         _chasePath.removeAt(0);
                         tweenChase();
                     }
-                    var time:Float = Math.abs(dist) / 30;
+                    var time:Float = Math.abs(dist) / 50;
 
                     Actuate.stop(this);
-                    Actuate.tween(this, time, {x:fl1.x, y:fl1.y}, true).onComplete(tweenChase);
+                    Actuate.tween(this, time, {x:fl1.x, y:fl1.y}, true).ease(Linear.easeNone).onComplete(tweenChase);
 //                    _chaseTween = FlxG.tween();
                     _chasePath.removeAt(0);
                 }
             } else {
+                _chasePath = null;
                 _moving = false;
             }
         }
