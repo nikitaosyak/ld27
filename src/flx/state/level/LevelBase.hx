@@ -36,7 +36,7 @@ class LevelBase extends FlxState {
 
     public var player:Player;
     public var spawnPlaces:Array<SpawnPlace>;
-    public var enemies:FlxTypedGroup<Enemy>;
+    public var enemies:List<Enemy>;
     public var collideObjects:FlxTypedGroup<FlxSprite>;
 
 //    private var layout:FlxTypedGroup<FlxBasic>;
@@ -63,7 +63,7 @@ class LevelBase extends FlxState {
         FlxG.visualDebug = false;
         controller = new PlayerController();
         spawnPlaces = new Array<SpawnPlace>();
-        enemies = new FlxTypedGroup<Enemy>();
+        enemies = new List<Enemy>();
         collideObjects = new FlxTypedGroup<FlxSprite>();
         backGroundObjects = new FlxTypedGroup<FlxSprite>();
 

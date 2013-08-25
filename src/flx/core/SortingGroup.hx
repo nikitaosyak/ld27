@@ -7,6 +7,9 @@ class SortingGroup extends FlxTypedGroup<FlxSprite>{
     }
 
     override private function sortHandler(Obj1:FlxSprite, Obj2:FlxSprite):Int {
+        if (Obj1 == null) return 0;
+        if (Obj2 == null) return 0;
+
         var prop1 = Obj1.y + Obj1.height;
         var prop2 = Obj2.y + Obj2.height;
 

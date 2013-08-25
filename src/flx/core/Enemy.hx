@@ -19,8 +19,9 @@ class Enemy extends FlxSprite {
 
     public static inline var ANIM_MOVE:String = 'move';
     public static inline var ANIM_ATTACK:String = 'attack';
+    public static inline var ANIM_DEATH:String = 'death';
 
-    public function new(x:Float, y:Float, spawnPlaces:Array<SpawnPlace>, map:TiledLevel, hero:Player) {
+    public function new(x:Float, y:Float, level:LevelBase) {
         super();
 
         loadGraphic('assets/monster1_tilesheet.png', true, true, 192, 192);
@@ -35,13 +36,12 @@ class Enemy extends FlxSprite {
         this.x = x - this.width / 2;
         this.y = y - this.height / 2;
 
-
-
         _moving = false;
         _chasing = false;
-        _spawnPts = spawnPlaces;
-        _level = map;
-        _hero = hero;
+        _spawnPts = level.spawnPlaces;
+        _level = level.level;
+        _hero = level.player;
+        _levelBase = level;
 
         _lastHeroFl = new Point(0, 0);
         _currentFl = new Point(-1000, -1000);
@@ -57,13 +57,14 @@ class Enemy extends FlxSprite {
         _heroFl = new Point();
         _myPt = new Point();
 
-        addAnimationCallback(onAttack);
+        addAnimationCallback(onAnimation);
 
         _currLevel = 0;
         _lvlUpTimer = 0;
 
         addAnimation(ANIM_MOVE, [0, 1, 2, 3], 4);
         addAnimation(ANIM_ATTACK, [4, 5, 6, 7], Math.floor(_attackSpeed));
+        addAnimation(ANIM_DEATH, [8, 9, 10, 11, 12], 7);
     }
 
     private var _myPt:Point;
@@ -78,6 +79,7 @@ class Enemy extends FlxSprite {
     private var _currentFl:Point;
     private var _moving:Bool;
     private var _hero:Player;
+    private var _levelBase:LevelBase;
 
     private var _chasePath:FlxPath;
     private var _chasing:Bool;
@@ -98,6 +100,10 @@ class Enemy extends FlxSprite {
     public function isIdle():Bool { return _patrolPath == null; }
 
     override public function update():Void {
+        if (curAnim == ANIM_DEATH) {
+            super.update();
+            return;
+        }
         _lvlUpTimer += FlxG.elapsed;
         if (_lvlUpTimer > Facade.I.lvlUpTime) {
             lvlUp();
@@ -209,15 +215,26 @@ class Enemy extends FlxSprite {
         var scale:Float = Math.min(Facade.I.monsterMaxScale, scale.x * Facade.I.monsterScaleMultiplier);
         this.scale.make(scale, scale);
 
-        offset.make(Math.round(66*scale), Math.round(90*scale));
+//        offset.make(Math.round(66*scale), Math.round(90*scale));
 //        width /= scale;
 //        height /= scale;
     }
 
-    private function onAttack(name:String, frame:Int, idx:Int):Void {
+    private function onAnimation(name:String, frame:Int, idx:Int):Void {
         if (name == ANIM_ATTACK) {
             if (frame == 3) {
                 this._hero.play(Player.ANIM_DEATH);
+            }
+        }
+
+        if (name == ANIM_DEATH) {
+            if (frame == 4) {
+                Timer.delay(function():Void {
+                    _levelBase.layoutObjects.remove(this);
+                    _levelBase.collideObjects.remove(this, true);
+                    _levelBase.enemies.remove(this);
+                    this.destroy();
+                }, 40);
             }
         }
     }

@@ -1,4 +1,5 @@
 package flx.core;
+import flx.state.level.LevelBase;
 import org.flixel.FlxG;
 import haxe.Timer;
 import util.MathHelp;
@@ -10,7 +11,7 @@ class Player extends FlxSprite {
     public static inline var ANIM_SWING:String = 'swing';
     public static inline var ANIM_DEATH:String = 'death';
 
-    public function new() {
+    public function new(level:LevelBase) {
         super();
         loadGraphic('assets/char_tilesheet.png', true, true, 192, 192);
         this.antialiasing = true;
@@ -28,8 +29,10 @@ class Player extends FlxSprite {
         addAnimationCallback(onSwing);
 
         dead = false;
+        this.level = level;
     }
 
+    private var level:LevelBase;
     public var dead:Bool;
 
     public function initialize(spawnX:Float, spawnY:Float):Void {
@@ -39,6 +42,12 @@ class Player extends FlxSprite {
 
     private function onSwing(name:String, frame:Int, idx:Int):Void {
         if (name == ANIM_SWING) {
+            if (frame == 4 || frame == 5 || frame == 6) {
+                if (level.enemies.first() != null) {
+                    level.enemies.first().play(Enemy.ANIM_DEATH);
+                    level.enemies.last().play(Enemy.ANIM_DEATH);
+                }
+            }
             if (frame == 6) {
                 Timer.delay(function():Void {
                     PlayerController.SWING_LOCK = false;

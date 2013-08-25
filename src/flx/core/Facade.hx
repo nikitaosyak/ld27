@@ -69,11 +69,11 @@ class Facade {
         moveSpdMultiplier = 1.05;
         regenMultiplier = 1.05;
 
-        spawnTime = 10;
-        spawnChance = 0.05;
-        maxMonsters = 1;
+        spawnTime = 1;
+        spawnChance = 0.2;
+        maxMonsters = 20;
 
-        lvlUpTime = 1;
+        lvlUpTime = 10;
 
         initialMonsterDmg = 5;
         monsterDmgMultiplier = 1.2;

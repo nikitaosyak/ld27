@@ -140,7 +140,7 @@ class TiledLevel extends TiledMap {
                 state.collideObjects.add(grave);
 
             case "player":
-                var player:Player = new Player();
+                var player:Player = new Player(state);
                 player.initialize(x, y - player.height/2);
                 FlxG.camera.follow(player, 4, null, 12);
                 state.layoutObjects.add(player);
