@@ -26,7 +26,11 @@ class Player extends FlxSprite {
         addAnimation(ANIM_SWING, [8, 9, 10, 11, 12, 13, 14], 25, false);
         addAnimation(ANIM_DEATH, [16, 17, 18, 19, 20, 21, 22, 23, 24], 9, false);
         addAnimationCallback(onSwing);
+
+        dead = false;
     }
+
+    public var dead:Bool;
 
     public function initialize(spawnX:Float, spawnY:Float):Void {
         this.x = MathHelp.roundExp(spawnX, 0);
@@ -42,10 +46,12 @@ class Player extends FlxSprite {
             }
         }
         if (name == ANIM_DEATH) {
+            if (frame == 1) {
+                dead = true;
+            }
             if (frame == 8) {
                 pauseAnimation();
                 Timer.delay(function():Void {
-//                    PlayerController.SWING_LOCK = false;
                     FlxG.resetGame();
                 }, 1000);
             }

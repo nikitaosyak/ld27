@@ -54,6 +54,8 @@ class Enemy extends FlxSprite {
 
         _heroFl = new Point();
         _myPt = new Point();
+
+        addAnimationCallback(onAttack);
     }
 
     private var _myPt:Point;
@@ -87,11 +89,10 @@ class Enemy extends FlxSprite {
         _myPt = new Point(x + width/2, y + width/2);
 
         var chasePath:Float = Math.abs(Point.distance(_heroFl, _myPt));
-        if (chasePath < 200) {
+        if (!_hero.dead && chasePath < 200) {
             _patrolPath = null;
             _currentFl.setTo(-1000, -1000);
-            if (chasePath <= 30) {
-                trace('aquired');
+            if (chasePath <= 40) {
                 play(ANIM_ATTACK);
             } else {
                 play(ANIM_MOVE);
@@ -163,7 +164,15 @@ class Enemy extends FlxSprite {
 
         _patrolPath = _level.findCollidePath(new FlxPoint(this.x + this.width / 2, this.y + this.height / 2), new FlxPoint(_nextStop.x + _nextStop.width / 2, _nextStop.y + _nextStop.height / 2), true);
         if (_patrolPath != null) {
-            _patrolPath.ignoreDrawDebug = false;
+            _patrolPath.ignoreDrawDebug = true;
+        }
+    }
+
+    private function onAttack(name:String, frame:Int, idx:Int):Void {
+        if (name == ANIM_ATTACK) {
+            if (frame == 3) {
+                this._hero.play(Player.ANIM_DEATH);
+            }
         }
     }
 }

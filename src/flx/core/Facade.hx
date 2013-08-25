@@ -52,7 +52,7 @@ class Facade {
 
         spawnTime = 10;
         spawnChance = 0.05;
-        maxMonsters = 1;
+        maxMonsters = 5;
 
         initialMonsterDmg = 2;
         monsterDmgMultiplier = 1.2;
