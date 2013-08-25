@@ -35,7 +35,7 @@ class LevelBase extends FlxState {
     public var level:TiledLevel;
 
     public var player:Player;
-    public var spawnPlaces:FlxTypedGroup<SpawnPlace>;
+    public var spawnPlaces:Array<SpawnPlace>;
     public var enemies:FlxTypedGroup<Enemy>;
     public var collideObjects:FlxTypedGroup<FlxSprite>;
 
@@ -58,9 +58,10 @@ class LevelBase extends FlxState {
 //    private var _jamTimer:Float;
 
     override public function create():Void {
+        SpawnPlace.currentEnemies = 0;
         FlxG.visualDebug = true;
         controller = new PlayerController();
-        spawnPlaces = new FlxTypedGroup<SpawnPlace>();
+        spawnPlaces = new Array<SpawnPlace>();
         enemies = new FlxTypedGroup<Enemy>();
         collideObjects = new FlxTypedGroup<FlxSprite>();
 
@@ -81,9 +82,7 @@ class LevelBase extends FlxState {
         add(layoutObjects);
         level.loadObjects(this);
         layoutObjects.sort();
-//        layoutObjects.add(enemies);
-        add(collideObjects);
-        add(spawnPlaces);
+//        add(collideObjects);
     }
 
     private static var asRadian:Float;
@@ -92,7 +91,7 @@ class LevelBase extends FlxState {
         var tt:Float = Timer.stamp();
         var timeDiff:Float = FlxG.elapsed;
 
-        var moveSpd:Float = Facade.I.getMoveSpd() * timeDiff;
+        var moveSpd:Float = Facade.I.moveSpd * timeDiff;
         var wasMove:Bool = true;
 
         if (player.curAnim == Player.ANIM_DEATH) {
@@ -149,23 +148,6 @@ class LevelBase extends FlxState {
         }
 
         super.update();
-//        trace('time took: ' + (Timer.stamp() - tt));
-
-
-//        FlxG.overlap(coins, player, getCoin);
-
-// Collide with foreground tile layer
-//        level.collideWithLevel(player);
-
-//        FlxG.overlap(exit, player, win);
-
-//        if (FlxG.overlap(player, floor))
-//        {
-//            youDied = true;
-//            FlxG.resetState();
-//        }
-
-//        super.update();
     }
 
     private function onCollide(some:FlxObject, some2:FlxObject):Void {
@@ -174,7 +156,8 @@ class LevelBase extends FlxState {
 
     private function onObjectCollide(some:FlxObject, some2:FlxObject):Void {
 //        trace(some, some2);
-        player.play(Player.ANIM_DEATH);
+//        if (Type.typeof(some))
+//        player.play(Player.ANIM_DEATH);
     }
 
 // this is purely for code completion

@@ -8,48 +8,17 @@ class Facade {
     @:allow
     public static var I(default, null):Facade = new Facade();
 
-    private var xp:Int;
-    private var health:Int;
-    private var armor:Int;
+    public var xp:Int;
+    public var health:Int;
+    public var armor:Int;
 
-    private var moveSpd:Float; // per second!
-    private var attackSpd:Float;// per second!
-    private var regen:Float;    // per second!
+    public var moveSpd:Float; // per second!
+    public var attackSpd:Float;// per second!
+    public var regen:Float;    // per second!
 
-    private var spawnTime:Float;
-    private var spawnChance:Float;
-
-    public function getXp():Int {
-        return xp;
-    }
-
-    public function getHealth():Int {
-        return health;
-    }
-
-    public function getArmor():Int {
-        return armor;
-    }
-
-    public function getMoveSpd():Float {
-        return moveSpd;
-    }
-
-    public function getAttackSpd():Float {
-        return attackSpd;
-    }
-
-    public function getRegen():Float {
-        return regen;
-    }
-
-    public function getSpawnTime():Float {
-        return spawnTime;
-    }
-
-    public function getSpawnChance():Float {
-        return spawnChance;
-    }
+    public var spawnTime:Float;
+    public var spawnChance:Float;
+    public var maxMonsters:Int;
 
     public function init():Void {
         xp = 0;
@@ -62,5 +31,6 @@ class Facade {
 
         spawnTime = 10;
         spawnChance = 0.05;
+        maxMonsters = 10;
     }
 }

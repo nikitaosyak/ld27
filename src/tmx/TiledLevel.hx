@@ -109,41 +109,12 @@ class TiledLevel extends TiledMap {
                 state.player = player;
 
             case 'spawn':
-                state.spawnPlaces.add(new SpawnPlace(x, y, state));
+                var spawnPl:SpawnPlace = new SpawnPlace(x, y, state);
+                state.spawnPlaces.push(spawnPl);
+                state.layoutObjects.add(spawnPl);
+                state.collideObjects.add(spawnPl);
             case 'death':
                 state.collideObjects.add(new DeathTrap(x, y));
-//                for (enemySpawn in g.objects)
-//            case "player":
-//                var ti
-
-
-//            case "player_start":
-//                var player = new FlxSprite(x, y);
-//                player.makeGraphic(32, 32, 0xffaa1111);
-//                player.maxVelocity.x = 160;
-//                player.maxVelocity.y = 400;
-//                player.acceleration.y = 400;
-//                player.drag.x = player.maxVelocity.x * 4;
-//                FlxG.camera.follow(player);
-//                state.player = player;
-//                state.add(player);
-
-//            case "floor":
-//                var floor = new FlxObject(x, y, o.width, o.height);
-//                state.floor = floor;
-
-//            case "coin":
-//                var tileset = g.map.getGidOwner(o.gid);
-//                var coin = new FlxSprite(x, y, c_PATH_LEVEL_TILESHEETS + tileset.imageSource);
-//                state.coins.add(coin);
-
-//            case "exit":
-//Create the level exit
-//                var exit = new FlxSprite(x, y);
-//                exit.makeGraphic(32, 32, 0xff3f3f3f);
-//                exit.exists = false;
-//                state.exit = exit;
-//                state.add(exit);
         }
     }
 
