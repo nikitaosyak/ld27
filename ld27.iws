@@ -6,7 +6,7 @@
     </list>
     <ignored path="ld27.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377351762356" ignored="false" />
+    <file path="/Dummy.txt" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377416320714" ignored="false" />
     <file path="/build.xml" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377339832333" ignored="false" />
     <file path="/Main.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377351639204" ignored="false" />
     <file path="$PROJECT_DIR$/../tanks/tanks.iws" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377341002560" ignored="false" />
@@ -114,7 +114,7 @@
           <file leaf-file-name="LevelBase.hx" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/flx/state/level/LevelBase.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="93" column="58" selection-start="2939" selection-end="2939" vertical-scroll-proportion="0.4282325">
+                <state line="93" column="89" selection-start="2939" selection-end="2939" vertical-scroll-proportion="0.4282325">
                   <folding />
                 </state>
               </provider>
@@ -653,9 +653,9 @@
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2514" height="1456" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3299923" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3299923" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922128" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -719,7 +719,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="прикрутил героя и ходьбу" />
+    <option name="LAST_COMMIT_MESSAGE" value="fw" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -736,6 +736,7 @@
     <MESSAGE value="поменял расположение ассетов для tiled" />
     <MESSAGE value="утряс стандарт по TMX.&#10;прикрутил сортировку к объектам на сцене." />
     <MESSAGE value="прикрутил героя и ходьбу" />
+    <MESSAGE value="fw" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -854,7 +855,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/flx/state/level/LevelBase.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="58" selection-start="2939" selection-end="2939" vertical-scroll-proportion="0.4282325">
+        <state line="93" column="89" selection-start="2939" selection-end="2939" vertical-scroll-proportion="0.4282325">
           <folding />
         </state>
       </provider>
