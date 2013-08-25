@@ -88,12 +88,12 @@ class TiledLevel extends TiledMap {
         var x:Int = o.x;
         var y:Int = o.y;
 
-//objects in tiled are aligned bottom-left (top-left in flixel)
+        //objects in tiled are aligned bottom-left (top-left in flixel)
         if (o.gid != -1)
             y -= g.map.getGidOwner(o.gid).tileHeight;
 
         switch (o.type.toLowerCase()) {
-            case "edgesCollide":
+            case "edgescollide":
                 var coll:InvisibleCollider = new InvisibleCollider(o.x, o.y, o.width, o.height);
                 state.collideObjects.add(coll);
                 state.add(coll);
