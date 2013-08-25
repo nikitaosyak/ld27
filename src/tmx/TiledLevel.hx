@@ -141,10 +141,10 @@ class TiledLevel extends TiledMap {
         return false;
     }
 
-    public function findCollidePath(start:FlxPoint, end:FlxPoint):FlxPath {
+    public function findCollidePath(start:FlxPoint, end:FlxPoint, simple:Bool = false):FlxPath {
         if (collidableTileLayers != null) {
             for (map in collidableTileLayers) {
-                return map.findPath(start, end, false, false, true);
+                return map.findPath(start, end, simple, false, true);
             }
         }
         return null;

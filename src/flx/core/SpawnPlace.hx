@@ -39,6 +39,7 @@ class SpawnPlace extends FlxSprite {
         _spawnRanges.push(new Point(cent.x - 64, cent.y));
         _spawnRanges.push(new Point(cent.x - 64, cent.y - 64));
 
+        if (currentEnemies >= Facade.I.maxMonsters) return;
         spawnEnemy();
     }
 

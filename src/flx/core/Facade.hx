@@ -31,6 +31,6 @@ class Facade {
 
         spawnTime = 10;
         spawnChance = 0.05;
-        maxMonsters = 10;
+        maxMonsters = 1;
     }
 }
