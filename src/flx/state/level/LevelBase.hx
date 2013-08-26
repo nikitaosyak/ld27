@@ -1,4 +1,6 @@
 package flx.state.level;
+import flx.core.Lever;
+import flx.core.InvisibleCollider;
 import org.flixel.util.FlxPoint;
 import flx.ui.Hud;
 import flx.core.CameraOverride;
@@ -43,9 +45,13 @@ class LevelBase extends FlxState {
     public var backGroundObjects:FlxTypedGroup<FlxSprite>;
     public var layoutObjects:SortingGroup;
 
+    public var bossDoors:List<InvisibleCollider>;
+    public var bossReleaseImages:List<FlxSprite>;
+
     public var hud:Hud;
 
     override public function create():Void {
+        Lever.TOTAL_LEVERS = 0;
         SpawnPlace.currentEnemies = 0;
         FlxG.visualDebug = false;
         controller = new PlayerController();
@@ -54,6 +60,8 @@ class LevelBase extends FlxState {
         collideObjects = new FlxTypedGroup<FlxSprite>();
         backGroundObjects = new FlxTypedGroup<FlxSprite>();
         hud = new Hud(this);
+        bossDoors = new List<InvisibleCollider>();
+        bossReleaseImages = new List<FlxSprite>();
 
         asRadian = MathHelp.deg2rad(45);
         level = new TiledLevel("assets/tiled/testmap.tmx");

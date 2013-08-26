@@ -41,7 +41,7 @@ class Player extends FlxSprite {
         dead = false;
         this.level = level;
 
-        hittableEnemies = new List<Enemy>();
+        hittableEnemies = new List<IHitable>();
 
         hp = Facade.I.healths[hpLevel];
         maxHp = hp;
@@ -63,7 +63,7 @@ class Player extends FlxSprite {
     private var level:LevelBase;
 
     public var dead:Bool;
-    public var hittableEnemies:List<Enemy>;
+    public var hittableEnemies:List<IHitable>;
 
     public var maxHp:Float;
     public var hp:Float;
@@ -86,13 +86,9 @@ class Player extends FlxSprite {
         if (Timer.stamp() - lastHit > 0.130) {
             color = 0x00ffffff;
             lastHit = 0;
-        } else {
-            FlxG.log((Timer.stamp() + ';' + lastHit));
         }
 
         super.update();
-
-
     }
 
     public function receiveHit(damage:Float, fromEnemy:Enemy):Void {
@@ -121,7 +117,7 @@ class Player extends FlxSprite {
         dmgLevel = Std.int(Math.min(dmgLevel + 1, 6));
         dmg = Facade.I.damages[dmgLevel];
         attackSpd = Facade.I.attackSpeeds[dmgLevel];
-        addAnimation(ANIM_SWING, [8, 9, 10, 11, 12, 13, 14, 14], attackSpd, false);
+        addAnimation(ANIM_SWING, [8, 9, 10, 11, 12, 13, 14, 14, 14], attackSpd, false);
     }
 
     public function upHealthLevel():Void {
@@ -136,17 +132,17 @@ class Player extends FlxSprite {
     private function onSwing(name:String, frame:Int, idx:Int):Void {
         if (name == ANIM_SWING) {
             if (frame == 5 || frame == 6 || frame == 7) {
-                var iter:Iterator<Enemy> = hittableEnemies.iterator();
+                var iter:Iterator<IHitable> = hittableEnemies.iterator();
                 while (iter.hasNext()) {
-                    var enemy:Enemy = iter.next();
-                    enemy.receiveHit(dmg);
+                    var hitable:IHitable = iter.next();
+                    hitable.receiveHit(dmg);
                 }
             }
             if (frame == 8) {
-                var iter:Iterator<Enemy> = hittableEnemies.iterator();
+                var iter:Iterator<IHitable> = hittableEnemies.iterator();
                 while (iter.hasNext()) {
-                    var enemy:Enemy = iter.next();
-                    enemy.releaseFromHit();
+                    var hitable:IHitable = iter.next();
+                    hitable.releaseFromHit();
                 }
                 Timer.delay(function():Void {
                     PlayerController.SWING_LOCK = false;

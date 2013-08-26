@@ -16,7 +16,7 @@ import org.flixel.FlxPath;
 import flx.state.level.LevelBase;
 import org.flixel.FlxSprite;
 
-class Enemy extends FlxSprite {
+class Enemy extends FlxSprite implements IHitable {
 
     public static inline var ANIM_MOVE:String = 'move';
     public static inline var ANIM_ATTACK:String = 'attack';
@@ -53,15 +53,6 @@ class Enemy extends FlxSprite {
 
         currentHealth = maxHealth = 20;
         lvlUp();
-//        color = Facade.I.monsterColors[_currLevel];
-//        alpha = Facade.I.monsterAlphas[_currLevel];
-//
-//        _attackSpeed = Facade.I.attackSpeeds[_currLevel];
-//        _speed = Facade.I.monsterSpeeds[_currLevel];
-//
-//        _damage = Facade.I.monsterDamages[_currLevel];
-//        maxHealth = Facade.I.monsterHealth[_currLevel];
-//        currentHealth = maxHealth;
 
         _heroFl = new Point();
         myPt = new Point();
@@ -72,12 +63,13 @@ class Enemy extends FlxSprite {
 
         addAnimation(ANIM_MOVE, [0, 1, 2, 3], 4);
 //        addAnimation(ANIM_ATTACK, [0, 0, 4, 5, 6, 7, 0, 0, 0, 0, 0], Math.floor(_attackSpeed));
-        addAnimation(ANIM_DEATH, [8, 9, 10, 11, 12], 7);
+        addAnimation(ANIM_DEATH, [8, 9, 10, 11, 12, 12], 7);
         addAnimation(ANIM_STAGGER, [8, 9, 8], 12);
 
         hitLock = false;
         lifePercent = 100;
 
+        wiped = false;
     }
 
     public var bar:FlxBar;
@@ -118,6 +110,8 @@ class Enemy extends FlxSprite {
 
     public var hitLock:Bool;
 
+    public var wiped:Bool;
+
     public function isIdle():Bool { return _patrolPath == null; }
 
     override public function update():Void {
@@ -127,6 +121,8 @@ class Enemy extends FlxSprite {
             return;
         }
 
+        if (wiped) return;
+
         if (curAnim == ANIM_STAGGER) {
             _hero.releaseHitLock(this);
             super.update();
@@ -135,7 +131,7 @@ class Enemy extends FlxSprite {
 
         _lvlUpTimer += FlxG.elapsed;
         if (_lvlUpTimer > Facade.I.lvlUpTime) {
-            lvlUp();
+            if (Math.random() < Facade.I.spawnChance) {lvlUp();}
             _lvlUpTimer = 0;
             super.update();
             return;
@@ -148,7 +144,7 @@ class Enemy extends FlxSprite {
         if (!_hero.dead && chasePath < 200) {
             _patrolPath = null;
             _currentFl.setTo(-1000, -1000);
-            if (chasePath <= 64) {
+            if (chasePath <= 66) {
                 var tt:Point = new Point(myPt.x - _heroFl.x, myPt.y - _heroFl.y);
 
                 var angle:Float = MathHelp.rad2deg(Math.atan2(tt.y, tt.x));
@@ -161,11 +157,11 @@ class Enemy extends FlxSprite {
                 }else
                 if (angle > 138 && _hero.facing == FlxObject.RIGHT) {
                     _hero.hittableEnemies.add(this);
+                } else {
+                    _hero.hittableEnemies.remove(this);
                 }
             } else {
-                if (_hero.hittableEnemies.remove(this)) {
-
-                }
+                _hero.hittableEnemies.remove(this);
             }
             if (chasePath <= 40) {
                 play(ANIM_ATTACK);
@@ -237,6 +233,7 @@ class Enemy extends FlxSprite {
 
     public function receiveHit(damage:Float):Void {
         if (hitLock) return;
+        if (wiped) return;
         hitLock = true;
 
         // incorporeal chance :
@@ -314,13 +311,11 @@ class Enemy extends FlxSprite {
 
         if (name == ANIM_DEATH) {
             if (frame == 4) {
-                Timer.delay(function():Void {
-                    _levelBase.layoutObjects.remove(this);
-                    _levelBase.collideObjects.remove(this, true);
-                    _levelBase.enemies.remove(this);
-                    _levelBase.layoutObjects.remove(bar);
-                    SpawnPlace.currentEnemies--;
-                }, 40);
+                _levelBase.layoutObjects.remove(this, true);
+                _levelBase.layoutObjects.remove(bar, true);
+                _levelBase.enemies.remove(this);
+                wiped = true;
+                SpawnPlace.currentEnemies--;
             }
         }
     }

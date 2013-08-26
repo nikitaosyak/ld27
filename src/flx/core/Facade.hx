@@ -50,7 +50,7 @@ class Facade {
         moveSpd = 205;
 
         spawnTime = 10;
-        spawnChance = 0.2;
+        spawnChance = 0.3;
         maxMonsters = 8;
 
         lvlUpTime = 10;

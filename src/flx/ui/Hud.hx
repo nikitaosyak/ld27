@@ -1,4 +1,5 @@
 package flx.ui;
+import haxe.Timer;
 import org.flixel.plugin.photonstorm.FlxBar;
 import flx.state.level.LevelBase;
 import motion.Actuate;
@@ -21,11 +22,27 @@ class Hud extends FlxGroup {
 
         model = Facade.I;
         this.level = level;
+
+        notifyText = new FlxText(216, 300, 400, '', 15);
+        notifyText.setFormat(null, 15, 0xFFCCFF, 'center', 0x000000, true);
+        add(notifyText);
+
+        lastNotify = 0;
     }
 
     private var level:LevelBase;
     private var player:Player;
     private var model:Facade;
+
+    private var notifyText:FlxText;
+
+    private var lastNotify:Float;
+
+    public function notify(text:String):Void {
+        lastNotify = Timer.stamp();
+        notifyText.text = text;
+        notifyText.visible = true;
+    }
 
     public function injectPlayer(player:Player):Void {
         this.player = player;
@@ -66,14 +83,19 @@ class Hud extends FlxGroup {
 
         add(text);
         Actuate.tween(text, 1.8, {y: text.y - 120, alpha: 0}).onComplete(function(hud:Hud, text:FlxText):Void {
-            hud.remove(text);
-            text.destroy();
+            hud.remove(text, true);
         }, [this, text]);
     }
 
     override public function update():Void {
         super.update();
 
+        if (Timer.stamp() - lastNotify > 2) {
+             lastNotify = 0;
+            notifyText.visible = false;
+        } else {
+
+        }
 //        if (player.hp < 50) {
 //
 //        }

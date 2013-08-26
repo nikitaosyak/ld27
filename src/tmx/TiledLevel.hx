@@ -1,4 +1,6 @@
 package tmx;
+import flx.core.Lever;
+import flx.core.PowerUp;
 import flx.core.SpriteFromAtlas;
 import flx.core.InvisibleCollider;
 import flx.core.DeathTrap;
@@ -97,6 +99,9 @@ class TiledLevel extends TiledMap {
                 var coll:InvisibleCollider = new InvisibleCollider(o.x, o.y, o.width, o.height);
                 state.collideObjects.add(coll);
                 state.add(coll);
+                if (o.name == 'boss_door') {
+                    state.bossDoors.add(coll);
+                }
 
             case "trees":
                 var tileset:TiledTileSet = g.map.getGidOwner(o.gid);
@@ -132,7 +137,7 @@ class TiledLevel extends TiledMap {
             case "player":
                 var player:Player = new Player(state);
                 player.initialize(x, y - player.height/2);
-                FlxG.camera.follow(player, 4, null, 12);
+                FlxG.camera.follow(player, 4, null, 0);
                 state.layoutObjects.add(player);
                 state.player = player;
                 state.hud.injectPlayer(player);
@@ -141,9 +146,21 @@ class TiledLevel extends TiledMap {
                 var spawnPl:SpawnPlace = new SpawnPlace(x, y, state);
                 state.spawnPlaces.push(spawnPl);
                 state.layoutObjects.add(spawnPl);
-//                state.collideObjects.add(spawnPl);
-            case 'death':
-//                state.collideObjects.add(new DeathTrap(x, y));
+
+            case 'powerups':
+                var powerUp:PowerUp = new PowerUp(x, y, o.name, state);
+                state.layoutObjects.add(powerUp);
+//                state.collideObjects.add(powerUp);
+            case 'levers':
+                Lever.TOTAL_LEVERS++;
+                var lever:Lever = new Lever(x, y, state);
+                state.backGroundObjects.add(lever);
+
+            case 'boss_opened':
+                var tileset:TiledTileSet = g.map.getGidOwner(o.gid);
+                var releaseSprite:FlxSprite = new FlxSprite(x, y, c_PATH_LEVEL_TILESHEETS + tileset.imageSource);
+                releaseSprite.immovable = true;
+                state.bossReleaseImages.add(releaseSprite);
         }
     }
 
