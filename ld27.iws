@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5badb44c-c72e-4bca-9867-0a1db1336274" name="Default" comment="piled together a map - got the first playable draft">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/core/Enemy.hx" afterPath="$PROJECT_DIR$/src/flx/core/Enemy.hx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/core/Facade.hx" afterPath="$PROJECT_DIR$/src/flx/core/Facade.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.hx" afterPath="$PROJECT_DIR$/src/Main.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ld27.iws" afterPath="$PROJECT_DIR$/ld27.iws" />
     </list>
     <ignored path="ld27.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -205,7 +202,7 @@
           <file leaf-file-name="Facade.hx" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/flx/core/Facade.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="30" column="22" selection-start="800" selection-end="800" vertical-scroll-proportion="0.33867276">
+                <state line="43" column="47" selection-start="1361" selection-end="1361" vertical-scroll-proportion="0.5915332">
                   <folding />
                 </state>
               </provider>
@@ -223,7 +220,7 @@
           <file leaf-file-name="Boss.hx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/flx/core/Boss.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="52" column="20" selection-start="1691" selection-end="1691" vertical-scroll-proportion="0.0">
+                <state line="52" column="18" selection-start="1689" selection-end="1689" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -318,8 +315,8 @@
         <option value="$PROJECT_DIR$/src/tmx/TiledLevel.hx" />
         <option value="$PROJECT_DIR$/src/flx/core/Enemy.hx" />
         <option value="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" />
-        <option value="$PROJECT_DIR$/src/flx/core/Facade.hx" />
         <option value="$PROJECT_DIR$/src/Main.hx" />
+        <option value="$PROJECT_DIR$/src/flx/core/Facade.hx" />
       </list>
     </option>
   </component>
@@ -1065,13 +1062,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/flx/core/Boss.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="20" selection-start="1691" selection-end="1691" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/flx/core/Lever.hx">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="60" selection-start="528" selection-end="528" vertical-scroll-proportion="0.0">
@@ -1147,9 +1137,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/flx/core/Boss.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="18" selection-start="1689" selection-end="1689" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/flx/core/Facade.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="22" selection-start="800" selection-end="800" vertical-scroll-proportion="0.33867276">
+        <state line="43" column="47" selection-start="1361" selection-end="1361" vertical-scroll-proportion="0.5915332">
           <folding />
         </state>
       </provider>
