@@ -33,7 +33,7 @@ class EnterScreenState extends FlxState {
         startButton.setFormat(null, 12, 0xFFFFFF, 'center', 0xFF000000, true);
         add(startButton);
 
-        var startButton:FlxText = new FlxText(366 - 150, 525, 400,  'ghosts become fore fierce every 10 seconds', 13);
+        var startButton:FlxText = new FlxText(366 - 150, 525, 400,  'ghosts become more fierce every 10 seconds', 13);
         startButton.setFormat(null, 12, 0xFFFFFF, 'center', 0xFF000000, true);
         add(startButton);
 
