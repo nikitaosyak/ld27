@@ -30,10 +30,10 @@ class Main extends Sprite {
             removeEventListener(Event.ADDED_TO_STAGE, init);
         }
 
-//        Lib.current.stage.align = StageAlign.TOP_LEFT;
-//        Lib.current.stage.scaleMode = StageScaleMode.NO_SCALE;
+        Lib.current.stage.align = StageAlign.TOP_LEFT;
+        Lib.current.stage.scaleMode = StageScaleMode.NO_SCALE;
 
         addChild(new Game());
-        addChild(new FPS(10, 10, 0xFFFFFF));
+//        addChild(new FPS(10, 10, 0xFFFFFF));
     }
 }

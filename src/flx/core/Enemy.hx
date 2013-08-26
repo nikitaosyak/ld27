@@ -141,7 +141,7 @@ class Enemy extends FlxSprite implements IHitable {
         myPt = new Point(x + width/2, y + width/2);
 
         var chasePath:Float = Math.abs(Point.distance(_heroFl, myPt));
-        if (!_hero.dead && chasePath < 200) {
+        if (!_hero.dead && chasePath < 210) {
             _patrolPath = null;
             _currentFl.setTo(-1000, -1000);
             if (chasePath <= 66) {
@@ -194,7 +194,7 @@ class Enemy extends FlxSprite implements IHitable {
                 findPatrolPath();
             } else {
                 if (_patrolPath.head() != null) {
-                    if ((_currentFl.x == -1000 && _currentFl.y == -1000) || Math.abs(Point.distance(myPt, _currentFl)) < 1) {
+                    if ((_currentFl.x == -1000 && _currentFl.y == -1000) || Math.abs(Point.distance(myPt, _currentFl)) < 10) {
                         _currentFl.setTo(_patrolPath.head().x, _patrolPath.head().y);
                         _patrolPath.removeAt(0);
                     }
@@ -263,7 +263,7 @@ class Enemy extends FlxSprite implements IHitable {
 
         _patrolPath = _level.findCollidePath(new FlxPoint(this.x + this.width / 2, this.y + this.height / 2), new FlxPoint(_nextStop.x + _nextStop.width / 2, _nextStop.y + _nextStop.height / 2), true);
         if (_patrolPath != null) {
-            _patrolPath.ignoreDrawDebug = true;
+            _patrolPath.ignoreDrawDebug = false;
         }
     }
 

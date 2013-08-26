@@ -32,13 +32,13 @@ class Facade {
     public var attackSpeeds:Array<Int>;
 
     public function init():Void {
-        monsterDamages = [20, 25, 30, 40, 50];
-        monsterAttackSpeed = [7, 8, 9, 11, 14];
+        monsterDamages = [20, 25, 30, 35, 40];
+        monsterAttackSpeed = [7, 8, 9, 10, 11];
         monsterHealth = [20, 60, 100, 150, 200];
-        monsterSpeeds = [120, 130, 140, 150, 160];
+        monsterSpeeds = [120, 125, 130, 135, 140];
         monsterColors = [0xFFFFFF, 0xff9a4c, 0xf26900, 0xf23a3a, 0xf20000];
         monsterAlphas = [1, 1, 1, 1, 0.85];
-        incorporeal = [0, 0.1, 0.25, 0.35, 0.5];
+        incorporeal = [0, 0.05, 0.1, 0.15, 0.25];
 
         healths =      [50, 75, 100, 125, 150, 175, 200];
         damages =      [10, 15,  20,  25,  30,  35,  40];
@@ -51,7 +51,7 @@ class Facade {
 
         spawnTime = 10;
         spawnChance = 0.3;
-        maxMonsters = 10;
+        maxMonsters = 12;
 
         lvlUpTime = 10;
     }
