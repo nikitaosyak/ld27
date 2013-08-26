@@ -51,24 +51,25 @@ class Facade {
     public var initialMonsterExp:Float;
     public var monsterExpMultiplier:Float;
 
-    public var monsterScaleMultiplier:Float;
-    public var monsterMaxScale:Float;
-
     public var monsterInitialAttackSpeed:Int;
     public var monsterAttackSpeedMultiplier:Float;
     public var monsterMaxAttackSpeed:Int;
 
     public var colors:Array<Int>;
     public var alphas:Array<Float>;
+    public var incorporeal:Array<Float>;
+    public var sizes:Array<Float>;
 
     public function init():Void {
-        colors = [0x00FFFFFF, 0x00FFFFFF, 0x00FFFFFF, 0x00DDCCCC, 0x00CCBBBB, 0x00CCAAAA, 0x00DD9999, 0x00DD8888, 0x00DD7777, 0x00CC6666, 0x00DD5555, 0x00DD4444, 0x00DD3333, 0x00DD2222, 0x00DD1111, 0x00CC1111];
-        alphas = [1, 1, 1, 0.95, 0.93, 0.9, 0.87, 0.85, 0.82, 0.8, 0.75];
+        colors = [0xFFFFFF, 0x0e0f11, 0xf26900, 0xf23a3a, 0xf20000];
+        alphas = [1, 1, 1, 1, 0.8];
+        incorporeal = [0, 0.1, 0.25, 0.35, 0.5];
+        sizes = [1, 1.1, 1.2, 1.3, 1.4];
 
         xp = 40;
         xpMultiplier = 1.8;
 
-        health = 40;
+        health = 50;
         healthMultiplier = 1.2;
         maxHealth = 200;
 
@@ -106,9 +107,6 @@ class Facade {
 
         initialMonsterExp = 10;
         monsterExpMultiplier = 1.5;
-
-        monsterScaleMultiplier = 1.02;
-        monsterMaxScale = 1.4;
 
         monsterInitialAttackSpeed = 8;
         monsterAttackSpeedMultiplier = 1.05;

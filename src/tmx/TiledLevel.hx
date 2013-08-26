@@ -135,6 +135,7 @@ class TiledLevel extends TiledMap {
                 FlxG.camera.follow(player, 4, null, 12);
                 state.layoutObjects.add(player);
                 state.player = player;
+                state.hud.injectPlayer(player);
 
             case 'spawn':
                 var spawnPl:SpawnPlace = new SpawnPlace(x, y, state);

@@ -53,7 +53,7 @@ class LevelBase extends FlxState {
         enemies = new List<Enemy>();
         collideObjects = new FlxTypedGroup<FlxSprite>();
         backGroundObjects = new FlxTypedGroup<FlxSprite>();
-        hud = new Hud();
+        hud = new Hud(this);
 
         asRadian = MathHelp.deg2rad(45);
         level = new TiledLevel("assets/tiled/testmap.tmx");

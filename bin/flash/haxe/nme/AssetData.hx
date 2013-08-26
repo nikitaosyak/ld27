@@ -20,6 +20,8 @@ class AssetData {
 			
 			className.set ("Beep", nme.NME_assets_data_beep_mp3);
 			type.set ("Beep", Reflect.field (AssetType, "sound".toUpperCase ()));
+			className.set ("assets/an_hero_lifeBar.png", nme.NME_assets_an_hero_lifebar_png);
+			type.set ("assets/an_hero_lifeBar.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/an_lifeBar.png", nme.NME_assets_an_lifebar_png);
 			type.set ("assets/an_lifeBar.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/button1_tilesheet.png", nme.NME_assets_button1_tilesheet_png);
@@ -135,6 +137,7 @@ class AssetData {
 
 
 class NME_assets_data_beep_mp3 extends flash.media.Sound { }
+class NME_assets_an_hero_lifebar_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_an_lifebar_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_button1_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_char_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0); } }

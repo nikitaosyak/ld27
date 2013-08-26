@@ -96,6 +96,7 @@ class Enemy extends FlxSprite {
     private var _chaseTween:MultiVarTween;
 
     private var _currLevel:Int;
+    private var _incorporeal:Float;
     private var _speed:Float;
     private var _attackSpeed:Float;
     private var _exp:Float;
@@ -228,8 +229,7 @@ class Enemy extends FlxSprite {
         hitLock = true;
 
         // incorporeal chance :
-        if (Math.random() > alpha) {
-//            no hit
+        if (Math.random() < _incorporeal) {
             _levelBase.hud.emitIncorporeal(this);
             return;
         }
@@ -261,6 +261,7 @@ class Enemy extends FlxSprite {
         _currLevel++;
         color = Facade.I.colors[Std.int(Math.min(_currLevel, Facade.I.colors.length-1))];
         alpha = Facade.I.alphas[Std.int(Math.min(_currLevel, Facade.I.alphas.length-1))];
+        _incorporeal = Facade.I.incorporeal[Std.int(Math.min(_currLevel, Facade.I.incorporeal.length-1))];
 
         _speed = Math.min(_speed * Facade.I.monsterSpeedMultiplier, Facade.I.monsterMaxSpeed);
         _damage = Math.min(_damage * Facade.I.monsterDmgMultiplier, Facade.I.monsterMaxDmg);
@@ -275,7 +276,7 @@ class Enemy extends FlxSprite {
         _attackSpeed *= Facade.I.monsterAttackSpeedMultiplier;
         addAnimation(ANIM_ATTACK, [0, 0, 4, 5, 6, 7], Math.floor(Math.min(_attackSpeed, Facade.I.monsterMaxAttackSpeed)));
 
-        var scale:Float = Math.min(Facade.I.monsterMaxScale, scale.x * Facade.I.monsterScaleMultiplier);
+        var scale:Float = Facade.I.sizes[Std.int(Math.min(_currLevel, Facade.I.sizes.length-1))];
         this.scale.make(scale, scale);
     }
 

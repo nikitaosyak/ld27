@@ -10,8 +10,6 @@
 -D nme_ver=4.0.2
 -D nme
 -D nme_install_tool=1
--D debug
--D fdb
 -D web
 -swf-version 11.1
 -swf bin/flash/bin/ld27game.swf
