@@ -24,6 +24,8 @@ class AssetData {
 			type.set ("assets/an_hero_lifeBar.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/an_lifeBar.png", nme.NME_assets_an_lifebar_png);
 			type.set ("assets/an_lifeBar.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			className.set ("assets/Background Noise.mp3", nme.NME_assets_background_noise_mp3);
+			type.set ("assets/Background Noise.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
 			className.set ("assets/boss_tilesheet.png", nme.NME_assets_boss_tilesheet_png);
 			type.set ("assets/boss_tilesheet.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/button1_tilesheet.png", nme.NME_assets_button1_tilesheet_png);
@@ -112,8 +114,18 @@ class AssetData {
 			type.set ("assets/monster1_tilesheet.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/powerUps.png", nme.NME_assets_powerups_png);
 			type.set ("assets/powerUps.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			className.set ("assets/Punch.mp3", nme.NME_assets_punch_mp3);
+			type.set ("assets/Punch.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
+			className.set ("assets/rumble.png", nme.NME_assets_rumble_png);
+			type.set ("assets/rumble.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			className.set ("assets/Slime Splash.mp3", nme.NME_assets_slime_splash_mp3);
+			type.set ("assets/Slime Splash.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
+			className.set ("assets/Smack.mp3", nme.NME_assets_smack_mp3);
+			type.set ("assets/Smack.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
 			className.set ("assets/splash.png", nme.NME_assets_splash_png);
 			type.set ("assets/splash.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			className.set ("assets/Swoosh.mp3", nme.NME_assets_swoosh_mp3);
+			type.set ("assets/Swoosh.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
 			className.set ("assets/tiled/bush.png", nme.NME_assets_tiled_bush_png);
 			type.set ("assets/tiled/bush.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/tiled/edge.png", nme.NME_assets_tiled_edge_png);
@@ -147,6 +159,7 @@ class AssetData {
 class NME_assets_data_beep_mp3 extends flash.media.Sound { }
 class NME_assets_an_hero_lifebar_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_an_lifebar_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class NME_assets_background_noise_mp3 extends flash.media.Sound { }
 class NME_assets_boss_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_button1_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_char_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
@@ -191,7 +204,12 @@ class NME_assets_haxeflixel_svg extends flash.utils.ByteArray { }
 class NME_assets_hud_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_monster1_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_powerups_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class NME_assets_punch_mp3 extends flash.media.Sound { }
+class NME_assets_rumble_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class NME_assets_slime_splash_mp3 extends flash.media.Sound { }
+class NME_assets_smack_mp3 extends flash.media.Sound { }
 class NME_assets_splash_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class NME_assets_swoosh_mp3 extends flash.media.Sound { }
 class NME_assets_tiled_bush_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_tiled_edge_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_tiled_grave1_png extends flash.display.BitmapData { public function new () { super (0, 0); } }

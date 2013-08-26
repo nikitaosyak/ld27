@@ -37,7 +37,7 @@ class Boss extends FlxSprite implements IHitable {
         addAnimation(ANIM_MOVE, [0, 1, 2, 3], 5);
         addAnimation(ANIM_ATTACK, [0, 0, 4, 5, 6, 7, 8, 8, 8, 8], 7);
         addAnimation(ANIM_ATTACK2, [4, 5, 6, 7, 7, 6, 5, 4, 4], 13);
-        addAnimation(ANIM_DEATH, [12, 13, 14, 15, 15, 15, 15, 15, 15, 16, 17, 18, 19, 20], 5);
+        addAnimation(ANIM_DEATH, [12, 13, 14, 15, 15, 15, 15, 15, 15, 16, 17, 18, 19, 20, 20, 20], 5);
         addAnimation(ANIM_STAGGER, [12, 14, 14, 14], 6);
         addAnimation(ANIM_APPEAR, [20, 19, 18, 17, 16, 15, 14, 13, 12, 12, 0, 0, 0], 5);
 
@@ -132,7 +132,7 @@ lastHit = 0;
             return;
             }
 
-            if (Math.random() < 0.4) {
+            if (Math.random() < 0.6) {
                 play(ANIM_ATTACK);
             } else {
                 play(ANIM_ATTACK2);
@@ -234,9 +234,10 @@ color = 0xf20000;
         }
 
         if (name == ANIM_DEATH) {
-            if (frame == 13) {
+            if (frame == 15) {
                 pauseAnimation();
                 frame = 20;
+                visible = false;
                 level.collideObjects.remove(this, true);
             }
         }
