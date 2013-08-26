@@ -6,14 +6,10 @@
       <change type="DELETED" beforePath="D:\projects\haxe\ld27\assets\Punch.mp3" afterPath="" />
       <change type="DELETED" beforePath="D:\projects\haxe\ld27\assets\Slime Splash.mp3" afterPath="" />
       <change type="DELETED" beforePath="D:\projects\haxe\ld27\assets\Smack.mp3" afterPath="" />
+      <change type="DELETED" beforePath="D:\projects\haxe\ld27\assets\Spooky wind.mp3" afterPath="" />
       <change type="DELETED" beforePath="D:\projects\haxe\ld27\assets\Swoosh.mp3" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/core/Boss.hx" afterPath="$PROJECT_DIR$/src/flx/core/Boss.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" afterPath="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/core/Lever.hx" afterPath="$PROJECT_DIR$/src/flx/core/Lever.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/core/Log.hx" afterPath="$PROJECT_DIR$/src/flx/core/Log.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/core/Player.hx" afterPath="$PROJECT_DIR$/src/flx/core/Player.hx" />
+      <change type="DELETED" beforePath="D:\projects\haxe\ld27\assets\Wind.mp3" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ld27.iws" afterPath="$PROJECT_DIR$/ld27.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/tiled/testmap.tmx" afterPath="$PROJECT_DIR$/assets/tiled/testmap.tmx" />
     </list>
     <ignored path="ld27.iws" />
     <ignored path=".idea/workspace.xml" />
