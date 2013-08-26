@@ -166,16 +166,16 @@ class PlayerController {
             }
         }
 
-        if (keyCode == Keyboard.SPACE) {
+        if (keyCode == Keyboard.SPACE || keyCode == Keyboard.X) {
             if (status == KeyStatus.START) {
-                if (!pressed.exists(Keyboard.SPACE)) {
+                if (!pressed.exists(Keyboard.SPACE) || !pressed.exists(Keyboard.X)) {
                     if (!SWING_LOCK) {
                         pressed.set(keyCode, keyCode);
                         SWING_LOCK = true;
                     }
                 }
             } else if (status == KeyStatus.FINISH) {
-                if (pressed.exists(Keyboard.SPACE)) {
+                if (pressed.exists(Keyboard.SPACE) || pressed.exists(Keyboard.X)) {
                     pressed.remove(keyCode);
                 }
             }

@@ -42,7 +42,9 @@ class SpawnPlace extends FlxSprite implements IHitable {
         _spawnRanges.push(new Point(cent.x - 64, cent.y));
         _spawnRanges.push(new Point(cent.x - 64, cent.y - 64));
 
-        spawnEnemy();
+        if (Math.random() > 0.5) {
+            spawnEnemy();
+        }
 
         myPt = new Point(this.x + 64, this.y + 96);
 

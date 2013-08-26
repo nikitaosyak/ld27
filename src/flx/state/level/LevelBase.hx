@@ -1,4 +1,6 @@
 package flx.state.level;
+import org.flixel.FlxSound;
+import motion.Actuate;
 import flx.core.Boss;
 import flash.geom.Rectangle;
 import flash.geom.Point;
@@ -83,16 +85,45 @@ class LevelBase extends FlxState {
 
         add(hud);
 
+        var left:FlxSprite = new FlxSprite(0, 0);
+        left.makeGraphic(416, 640, 0xFF000000, false);
+        left.scrollFactor = new FlxPoint(0, 0);
+        add(left);
+
+        var right:FlxSprite = new FlxSprite(417, 0);
+        right.makeGraphic(416, 640, 0xFF000000, false);
+        right.scrollFactor = new FlxPoint(0, 0);
+        add(right);
+
+        Actuate.tween(left, 2, {x: -420}, true).onComplete(function(state:FlxState):Void {
+            state.remove(left, true);
+        }, [this]);
+
+        Actuate.tween(right, 2, {x: 840}, true).onComplete(function(state:FlxState):Void {
+            state.remove(right, true);
+        }, [this]);
+
         bossStage = false;
         bossOpened = false;
+
+        fading = false;
     }
 
     private var bossStage:Bool;
     private var bossOpened:Bool;
 
     private static var asRadian:Float;
+    private var fading:Bool;
 
     override public function update():Void {
+
+        if (hud.restartAllow) {
+            if (FlxG.keys.justPressed('X')) {
+                if (fading) return;
+                fading = true;
+                FlxG.fade(0xFF000000, 0.7, false, function():Void {FlxG.resetState();});
+            }
+        }
         var tt:Float = Timer.stamp();
         var timeDiff:Float = FlxG.elapsed;
 
@@ -158,7 +189,6 @@ class LevelBase extends FlxState {
             var myPt:Point = new Point(player.x + player.width/2, player.y + player.height/2);
             var bossPt:Point = new Point(boss.x + boss.width/2, boss.y + boss.height/2);
 
-//            trace(Point.distance(myPt, bossPt));
             if (Math.abs(Point.distance(myPt, bossPt)) < 280) {
                 lockBossWalls();
                 boss.activate();

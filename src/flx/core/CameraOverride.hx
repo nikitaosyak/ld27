@@ -1,4 +1,5 @@
 package flx.core;
+import flash.geom.Point;
 import org.flixel.util.FlxRandom;
 import org.flixel.FlxCamera;
 import org.flixel.FlxSprite;
@@ -8,7 +9,10 @@ import org.flixel.FlxCamera;
 class CameraOverride extends FlxCamera {
     public function new() {
         super(0, 0, FlxG.width, FlxG.height);
+        cSpeed = new Point(10, 10);
     }
+
+    private var cSpeed:Point;
 
     override public function update():Void {
         if (FlxG.paused) return;
@@ -70,11 +74,48 @@ class CameraOverride extends FlxCamera {
                     _lastTargetPosition.x = target.x;
                     _lastTargetPosition.y = target.y;
                 }
-                                     //1792, 1408
 
                 if (followLerp == 0) {
-                    scroll.x = _scrollTarget.x; // Prevents Camera Jittering with no lerp.
-                    scroll.y = _scrollTarget.y; // Prevents Camera Jittering with no lerp.
+                    if (scroll.x != _scrollTarget.x || scroll.y != _scrollTarget.y) {
+                        FlxG.timeScale = 0.3;
+                        var diffX:Float = _scrollTarget.x - scroll.x;
+                        var diffY:Float = _scrollTarget.y - scroll.y;
+
+                        if (diffX > 0) {
+                            if (scroll.x + cSpeed.x > _scrollTarget.x) {
+                                scroll.x = _scrollTarget.x;
+                            } else {
+                                scroll.x += cSpeed.x;
+                            }
+                        }
+
+                        if (diffX < 0) {
+                            if (scroll.x - cSpeed.x < _scrollTarget.x) {
+                                scroll.x = _scrollTarget.x;
+                            } else {
+                                scroll.x -= cSpeed.x;
+                            }
+                        }
+
+                        if (diffY > 0) {
+                            if (scroll.y + cSpeed.y > _scrollTarget.y) {
+                                scroll.y = _scrollTarget.y;
+                            } else {
+                                scroll.y += cSpeed.y;
+                            }
+                        }
+
+                        if (diffY < 0) {
+                            if (scroll.y - cSpeed.y < _scrollTarget.y) {
+                                scroll.y = _scrollTarget.y;
+                            } else {
+                                scroll.y -= cSpeed.y;
+                            }
+                        }
+                    } else {
+                        FlxG.timeScale = 1;
+                    }
+
                 } else {
                     scroll.x += (_scrollTarget.x - scroll.x) * FlxG.elapsed / (FlxG.elapsed + followLerp * FlxG.elapsed);
                     scroll.y += (_scrollTarget.y - scroll.y) * FlxG.elapsed / (FlxG.elapsed + followLerp * FlxG.elapsed);

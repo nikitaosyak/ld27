@@ -1,4 +1,6 @@
 package flx.ui;
+import motion.easing.Linear;
+import org.flixel.FlxState;
 import haxe.Timer;
 import org.flixel.plugin.photonstorm.FlxBar;
 import flx.state.level.LevelBase;
@@ -28,11 +30,15 @@ class Hud extends FlxGroup {
         add(notifyText);
 
         lastNotify = 0;
+
+        restartAllow = false;
     }
 
     private var level:LevelBase;
     private var player:Player;
     private var model:Facade;
+
+    public var restartAllow:Bool;
 
     private var notifyText:FlxText;
 
@@ -87,6 +93,26 @@ class Hud extends FlxGroup {
         }, [this, text]);
     }
 
+    public function showEndScreen():Void {
+        var bg:FlxSprite = new FlxSprite(0, 0, 'assets/splash.png');
+        bg.scrollFactor = new FlxPoint(0, 0);
+        level.add(bg);
+
+        var text:FlxSprite = new FlxSprite(276, 170);
+        text.loadGraphic('assets/youAreDead_tilesheet.png', true, false, 280, 150);
+        text.scrollFactor = new FlxPoint(0, 0);
+        text.addAnimation('reg', [0, 1, 2, 3], 4);
+        text.play('reg');
+        level.add(text);
+
+        var startOverText:FlxText = new FlxText(366 - 50, 400, 200,  'press x to retry', 13);
+        startOverText.setFormat(null, 13, 0xFF000000, 'center', 0xFFFFFF, true);
+        startOverText.scrollFactor = new FlxPoint(0, 0);
+        level.add(startOverText);
+
+        restartAllow = true;
+    }
+
     override public function update():Void {
         super.update();
 
@@ -96,8 +122,5 @@ class Hud extends FlxGroup {
         } else {
 
         }
-//        if (player.hp < 50) {
-//
-//        }
     }
 }

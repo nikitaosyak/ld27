@@ -1,4 +1,5 @@
 package flx;
+import flx.state.EnterScreenState;
 import org.flixel.FlxG;
 import flx.core.Facade;
 import flx.state.level.LevelBase;
@@ -12,7 +13,7 @@ class Game extends FlxGame {
         super (
             Lib.current.stage.stageWidth,
             Lib.current.stage.stageHeight,
-            LevelBase, 1, 60, 60
+            EnterScreenState, 1, 60, 60
         );
     }
 }
