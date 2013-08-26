@@ -53,7 +53,7 @@ class LevelBase extends FlxState {
     override public function create():Void {
         Lever.TOTAL_LEVERS = 0;
         SpawnPlace.currentEnemies = 0;
-        FlxG.visualDebug = false;
+        FlxG.visualDebug = true;
         controller = new PlayerController();
         spawnPlaces = new Array<SpawnPlace>();
         enemies = new List<Enemy>();
@@ -99,6 +99,10 @@ class LevelBase extends FlxState {
         var moveSpd:Float = Facade.I.moveSpd * timeDiff;
         var wasMove:Bool = true;
 
+        if (player.frame == 24) {
+            super.update();
+            return;
+        }
         if (player.curAnim == Player.ANIM_DEATH) {
 
         } else
@@ -152,9 +156,10 @@ class LevelBase extends FlxState {
 
         if (wasMove && !bossStage && bossOpened) {
             var myPt:Point = new Point(player.x + player.width/2, player.y + player.height/2);
-            var bossPt:Point = new Point(boss.x + boss.width/2, boss.height + boss.height/2);
+            var bossPt:Point = new Point(boss.x + boss.width/2, boss.y + boss.height/2);
 
-            if (Point.distance(myPt, bossPt) < 350) {
+//            trace(Point.distance(myPt, bossPt));
+            if (Math.abs(Point.distance(myPt, bossPt)) < 280) {
                 lockBossWalls();
                 boss.activate();
                 bossStage = true;

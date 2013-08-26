@@ -40,9 +40,9 @@ class Facade {
         monsterAlphas = [1, 1, 1, 1, 0.85];
         incorporeal = [0, 0.1, 0.25, 0.35, 0.5];
 
-        healths =      [50, 75, 100, 125, 150, 175, 200];
-        damages =      [10, 15,  20,  25,  30,  35,  40];
-        attackSpeeds = [17, 19,  20,  21,  22,  23,  25];
+        healths =      [200, 75, 100, 125, 150, 175, 200];
+        damages =      [40, 15,  20,  25,  30,  35,  40];
+        attackSpeeds = [25, 19,  20,  21,  22,  23,  25];
 
         sizes = [1, 1.1, 1.2, 1.3, 1.4];
         monsterOffsets = [new FlxPoint(77, 105), new FlxPoint(84, 115), new FlxPoint(92, 125), new FlxPoint(100, 136), new FlxPoint(107, 147)];

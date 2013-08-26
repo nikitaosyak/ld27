@@ -54,7 +54,7 @@ class Player extends FlxSprite {
         lastHit = 0;
 
         hitLock = false;
-        enemiesLocked = new ObjectMap<Enemy, Enemy>();
+        enemiesLocked = new ObjectMap<IHitable, IHitable>();
     }
 
     private var hpLevel:Int;
@@ -75,7 +75,7 @@ class Player extends FlxSprite {
     public var lastHit:Float;
 
     private var hitLock:Bool;
-    private var enemiesLocked:ObjectMap<Enemy, Enemy>;
+    private var enemiesLocked:ObjectMap<IHitable, IHitable>;
 
     public function initialize(spawnX:Float, spawnY:Float):Void {
         this.x = MathHelp.roundExp(spawnX, 0);
@@ -91,7 +91,8 @@ class Player extends FlxSprite {
         super.update();
     }
 
-    public function receiveHit(damage:Float, fromEnemy:Enemy):Void {
+    public function receiveHit(damage:Float, fromEnemy:IHitable):Void {
+        if (frame == 24) return;
         if (enemiesLocked.exists(fromEnemy)) {
             return;
         } else {
@@ -107,7 +108,7 @@ class Player extends FlxSprite {
         }
     }
 
-    public function releaseHitLock(enemy:Enemy):Void {
+    public function releaseHitLock(enemy:IHitable):Void {
         if (enemiesLocked.exists(enemy)) {
             enemiesLocked.remove(enemy);
         }
@@ -155,7 +156,7 @@ class Player extends FlxSprite {
                 dead = true;
             }
             if (frame == 8) {
-                pauseAnimation();
+                frame = 24;
                 Timer.delay(function():Void {
                     FlxG.resetGame();
                 }, 1000);

@@ -112,6 +112,8 @@ class AssetData {
 			type.set ("assets/monster1_tilesheet.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/powerUps.png", nme.NME_assets_powerups_png);
 			type.set ("assets/powerUps.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			className.set ("assets/splash.png", nme.NME_assets_splash_png);
+			type.set ("assets/splash.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/tiled/bush.png", nme.NME_assets_tiled_bush_png);
 			type.set ("assets/tiled/bush.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/tiled/edge.png", nme.NME_assets_tiled_edge_png);
@@ -128,6 +130,8 @@ class AssetData {
 			type.set ("assets/tiled/tiles.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/tiled/tree.png", nme.NME_assets_tiled_tree_png);
 			type.set ("assets/tiled/tree.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			className.set ("assets/youAreDead_tilesheet.png", nme.NME_assets_youaredead_tilesheet_png);
+			type.set ("assets/youAreDead_tilesheet.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			
 			
 			initialized = true;
@@ -187,6 +191,7 @@ class NME_assets_haxeflixel_svg extends flash.utils.ByteArray { }
 class NME_assets_hud_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_monster1_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_powerups_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class NME_assets_splash_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_tiled_bush_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_tiled_edge_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_tiled_grave1_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
@@ -195,3 +200,4 @@ class NME_assets_tiled_screensize_png extends flash.display.BitmapData { public 
 class NME_assets_tiled_testmap_tmx extends flash.utils.ByteArray { }
 class NME_assets_tiled_tiles_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_tiled_tree_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class NME_assets_youaredead_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
