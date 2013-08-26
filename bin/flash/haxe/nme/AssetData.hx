@@ -20,12 +20,8 @@ class AssetData {
 			
 			className.set ("Beep", nme.NME_assets_data_beep_mp3);
 			type.set ("Beep", Reflect.field (AssetType, "sound".toUpperCase ()));
-			className.set ("assets/an_enemy.png", nme.NME_assets_an_enemy_png);
-			type.set ("assets/an_enemy.png", Reflect.field (AssetType, "image".toUpperCase ()));
-			className.set ("assets/an_hero.png", nme.NME_assets_an_hero_png);
-			type.set ("assets/an_hero.png", Reflect.field (AssetType, "image".toUpperCase ()));
-			className.set ("assets/an_spawn.png", nme.NME_assets_an_spawn_png);
-			type.set ("assets/an_spawn.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			className.set ("assets/button1_tilesheet.png", nme.NME_assets_button1_tilesheet_png);
+			type.set ("assets/button1_tilesheet.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/char_tilesheet.png", nme.NME_assets_char_tilesheet_png);
 			type.set ("assets/char_tilesheet.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/data/autotiles.png", nme.NME_assets_data_autotiles_png);
@@ -98,8 +94,12 @@ class AssetData {
 			type.set ("assets/data/vcr/stop.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/data/vis/bounds.png", nme.NME_assets_data_vis_bounds_png);
 			type.set ("assets/data/vis/bounds.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			className.set ("assets/gate_tilesheet.png", nme.NME_assets_gate_tilesheet_png);
+			type.set ("assets/gate_tilesheet.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/HaxeFlixel.svg", nme.NME_assets_haxeflixel_svg);
 			type.set ("assets/HaxeFlixel.svg", Reflect.field (AssetType, "text".toUpperCase ()));
+			className.set ("assets/HUD_tilesheet.png", nme.NME_assets_hud_tilesheet_png);
+			type.set ("assets/HUD_tilesheet.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/monster1_tilesheet.png", nme.NME_assets_monster1_tilesheet_png);
 			type.set ("assets/monster1_tilesheet.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/powerUps.png", nme.NME_assets_powerups_png);
@@ -133,9 +133,7 @@ class AssetData {
 
 
 class NME_assets_data_beep_mp3 extends flash.media.Sound { }
-class NME_assets_an_enemy_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
-class NME_assets_an_hero_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
-class NME_assets_an_spawn_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class NME_assets_button1_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_char_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_data_autotiles_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_data_autotiles_alt_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
@@ -172,7 +170,9 @@ class NME_assets_data_vcr_restart_png extends flash.display.BitmapData { public 
 class NME_assets_data_vcr_step_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_data_vcr_stop_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_data_vis_bounds_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class NME_assets_gate_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_haxeflixel_svg extends flash.utils.ByteArray { }
+class NME_assets_hud_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_monster1_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_powerups_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_tiled_bush_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
