@@ -101,7 +101,7 @@ class Hud extends FlxGroup {
         var text:FlxSprite = new FlxSprite(276, 170);
         text.loadGraphic('assets/youAreDead_tilesheet.png', true, false, 280, 150);
         text.scrollFactor = new FlxPoint(0, 0);
-        text.addAnimation('reg', [0, 1, 2, 3], 4);
+        text.addAnimation('reg', [0, 1, 2, 3], 8);
         text.play('reg');
         level.add(text);
 

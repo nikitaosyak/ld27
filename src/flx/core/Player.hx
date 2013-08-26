@@ -154,7 +154,6 @@ class Player extends FlxSprite {
 
         if (name == ANIM_DEATH) {
             if (frame == 0) {
-                level.sDeath.play();
                 dead = true;
             }
             if (frame == 10) {

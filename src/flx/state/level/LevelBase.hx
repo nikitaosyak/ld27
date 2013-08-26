@@ -1,4 +1,5 @@
 package flx.state.level;
+import motion.easing.Linear;
 import org.flixel.FlxSound;
 import motion.Actuate;
 import flx.core.Boss;
@@ -95,13 +96,13 @@ class LevelBase extends FlxState {
         right.scrollFactor = new FlxPoint(0, 0);
         add(right);
 
-        Actuate.tween(left, 2, {x: -420}, true).onComplete(function(state:FlxState):Void {
+        Actuate.tween(left, 2.5, {x: -420}, true).onComplete(function(state:FlxState):Void {
             state.remove(left, true);
-        }, [this]);
+        }, [this]).ease(Linear.easeNone);
 
-        Actuate.tween(right, 2, {x: 840}, true).onComplete(function(state:FlxState):Void {
+        Actuate.tween(right, 2.5, {x: 840}, true).onComplete(function(state:FlxState):Void {
             state.remove(right, true);
-        }, [this]);
+        }, [this]).ease(Linear.easeNone);
 
         bossStage = false;
         bossOpened = false;
@@ -121,7 +122,7 @@ class LevelBase extends FlxState {
             if (FlxG.keys.justPressed('X')) {
                 if (fading) return;
                 fading = true;
-                FlxG.fade(0xFF000000, 0.7, false, function():Void {FlxG.resetState();});
+                FlxG.fade(0xFF000000, 0.5, false, function():Void {FlxG.resetState();});
             }
         }
         var tt:Float = Timer.stamp();

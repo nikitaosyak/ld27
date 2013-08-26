@@ -20,12 +20,12 @@ class AssetData {
 			
 			className.set ("Beep", nme.NME_assets_data_beep_mp3);
 			type.set ("Beep", Reflect.field (AssetType, "sound".toUpperCase ()));
+			className.set ("assets/Ambient Cave.mp3", nme.NME_assets_ambient_cave_mp3);
+			type.set ("assets/Ambient Cave.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
 			className.set ("assets/an_hero_lifeBar.png", nme.NME_assets_an_hero_lifebar_png);
 			type.set ("assets/an_hero_lifeBar.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/an_lifeBar.png", nme.NME_assets_an_lifebar_png);
 			type.set ("assets/an_lifeBar.png", Reflect.field (AssetType, "image".toUpperCase ()));
-			className.set ("assets/Background Noise.mp3", nme.NME_assets_background_noise_mp3);
-			type.set ("assets/Background Noise.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
 			className.set ("assets/boss_tilesheet.png", nme.NME_assets_boss_tilesheet_png);
 			type.set ("assets/boss_tilesheet.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/button1_tilesheet.png", nme.NME_assets_button1_tilesheet_png);
@@ -102,8 +102,6 @@ class AssetData {
 			type.set ("assets/data/vcr/stop.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/data/vis/bounds.png", nme.NME_assets_data_vis_bounds_png);
 			type.set ("assets/data/vis/bounds.png", Reflect.field (AssetType, "image".toUpperCase ()));
-			className.set ("assets/death.mp3", nme.NME_assets_death_mp3);
-			type.set ("assets/death.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
 			className.set ("assets/gate_tilesheet.png", nme.NME_assets_gate_tilesheet_png);
 			type.set ("assets/gate_tilesheet.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/grave2_tilesheet.png", nme.NME_assets_grave2_tilesheet_png);
@@ -116,16 +114,12 @@ class AssetData {
 			type.set ("assets/monster1_tilesheet.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/powerUps.png", nme.NME_assets_powerups_png);
 			type.set ("assets/powerUps.png", Reflect.field (AssetType, "image".toUpperCase ()));
-			className.set ("assets/Punch.mp3", nme.NME_assets_punch_mp3);
-			type.set ("assets/Punch.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
 			className.set ("assets/rumble.png", nme.NME_assets_rumble_png);
 			type.set ("assets/rumble.png", Reflect.field (AssetType, "image".toUpperCase ()));
-			className.set ("assets/Smack.mp3", nme.NME_assets_smack_mp3);
-			type.set ("assets/Smack.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
 			className.set ("assets/splash.png", nme.NME_assets_splash_png);
 			type.set ("assets/splash.png", Reflect.field (AssetType, "image".toUpperCase ()));
-			className.set ("assets/Swoosh.mp3", nme.NME_assets_swoosh_mp3);
-			type.set ("assets/Swoosh.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
+			className.set ("assets/Spooky wind.mp3", nme.NME_assets_spooky_wind_mp3);
+			type.set ("assets/Spooky wind.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
 			className.set ("assets/tiled/bush.png", nme.NME_assets_tiled_bush_png);
 			type.set ("assets/tiled/bush.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/tiled/edge.png", nme.NME_assets_tiled_edge_png);
@@ -142,6 +136,8 @@ class AssetData {
 			type.set ("assets/tiled/tiles.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/tiled/tree.png", nme.NME_assets_tiled_tree_png);
 			type.set ("assets/tiled/tree.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			className.set ("assets/Wind.mp3", nme.NME_assets_wind_mp3);
+			type.set ("assets/Wind.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
 			className.set ("assets/youAreDead_tilesheet.png", nme.NME_assets_youaredead_tilesheet_png);
 			type.set ("assets/youAreDead_tilesheet.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			
@@ -157,9 +153,9 @@ class AssetData {
 
 
 class NME_assets_data_beep_mp3 extends flash.media.Sound { }
+class NME_assets_ambient_cave_mp3 extends flash.media.Sound { }
 class NME_assets_an_hero_lifebar_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_an_lifebar_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
-class NME_assets_background_noise_mp3 extends flash.media.Sound { }
 class NME_assets_boss_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_button1_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_char_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
@@ -198,18 +194,15 @@ class NME_assets_data_vcr_restart_png extends flash.display.BitmapData { public 
 class NME_assets_data_vcr_step_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_data_vcr_stop_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_data_vis_bounds_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
-class NME_assets_death_mp3 extends flash.media.Sound { }
 class NME_assets_gate_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_grave2_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_haxeflixel_svg extends flash.utils.ByteArray { }
 class NME_assets_hud_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_monster1_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_powerups_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
-class NME_assets_punch_mp3 extends flash.media.Sound { }
 class NME_assets_rumble_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
-class NME_assets_smack_mp3 extends flash.media.Sound { }
 class NME_assets_splash_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
-class NME_assets_swoosh_mp3 extends flash.media.Sound { }
+class NME_assets_spooky_wind_mp3 extends flash.media.Sound { }
 class NME_assets_tiled_bush_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_tiled_edge_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_tiled_grave1_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
@@ -218,4 +211,5 @@ class NME_assets_tiled_screensize_png extends flash.display.BitmapData { public 
 class NME_assets_tiled_testmap_tmx extends flash.utils.ByteArray { }
 class NME_assets_tiled_tiles_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_tiled_tree_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class NME_assets_wind_mp3 extends flash.media.Sound { }
 class NME_assets_youaredead_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
