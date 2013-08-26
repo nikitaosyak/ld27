@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5badb44c-c72e-4bca-9867-0a1db1336274" name="Default" comment="piled together a map - got the first playable draft">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" afterPath="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ld27.iws" afterPath="$PROJECT_DIR$/ld27.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/core/Boss.hx" afterPath="$PROJECT_DIR$/src/flx/core/Boss.hx" />
     </list>
     <ignored path="ld27.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,7 +43,7 @@
     <file path="/PowerUp.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377531886199" ignored="false" />
     <file path="/IHitable.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377532817275" ignored="false" />
     <file path="/Lever.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377541674873" ignored="false" />
-    <file path="/Boss.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377549995540" ignored="false" />
+    <file path="/Boss.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377551423775" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,10 +207,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Boss.hx" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="Boss.hx" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/flx/core/Boss.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="180" column="35" selection-start="5203" selection-end="5203" vertical-scroll-proportion="0.0">
+                <state line="239" column="32" selection-start="6921" selection-end="6921" vertical-scroll-proportion="0.67019403">
                   <folding />
                 </state>
               </provider>
@@ -224,10 +223,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="LevelBase.hx" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="LevelBase.hx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/flx/state/level/LevelBase.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="55" column="32" selection-start="1509" selection-end="1509" vertical-scroll-proportion="0.64827585">
+                <state line="46" column="21" selection-start="1230" selection-end="1230" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -277,8 +276,8 @@
         <option value="$PROJECT_DIR$/src/flx/core/CameraOverride.hx" />
         <option value="$PROJECT_DIR$/src/flx/core/Player.hx" />
         <option value="$PROJECT_DIR$/src/flx/core/Facade.hx" />
-        <option value="$PROJECT_DIR$/src/flx/core/Boss.hx" />
         <option value="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" />
+        <option value="$PROJECT_DIR$/src/flx/core/Boss.hx" />
       </list>
     </option>
   </component>
@@ -1109,13 +1108,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/flx/core/Boss.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="180" column="35" selection-start="5203" selection-end="5203" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/rumble.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1151,7 +1143,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/flx/state/level/LevelBase.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="32" selection-start="1509" selection-end="1509" vertical-scroll-proportion="0.64827585">
+        <state line="46" column="21" selection-start="1230" selection-end="1230" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/flx/core/Boss.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="239" column="32" selection-start="6921" selection-end="6921" vertical-scroll-proportion="0.67019403">
           <folding />
         </state>
       </provider>
