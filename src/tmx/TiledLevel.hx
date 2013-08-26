@@ -1,4 +1,5 @@
 package tmx;
+import flx.core.Boss;
 import flx.core.Lever;
 import flx.core.PowerUp;
 import flx.core.SpriteFromAtlas;
@@ -163,6 +164,12 @@ class TiledLevel extends TiledMap {
                 releaseSprite.frame = o.gid - tileset.firstGID;
                 releaseSprite.immovable = true;
                 state.bossReleaseImages.add(releaseSprite);
+
+            case 'boss':
+                var boss:Boss = new Boss(x, y, state);
+                state.boss = boss;
+                state.layoutObjects.add(boss);
+                state.collideObjects.add(boss);
         }
     }
 

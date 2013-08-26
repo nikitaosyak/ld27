@@ -1,4 +1,5 @@
 package flx.state.level;
+import flx.core.Boss;
 import flash.geom.Rectangle;
 import flash.geom.Point;
 import flx.core.Lever;
@@ -33,10 +34,6 @@ class LevelBase extends FlxState {
         super();
     }
 
-// Major game object storage
-//    private var _decorations:FlxGroup;
-//    private var _bullets:FlxTypedGroup<Bullet>;
-
     private var controller:PlayerController;
     public var level:TiledLevel;
 
@@ -51,6 +48,7 @@ class LevelBase extends FlxState {
     public var bossReleaseImages:List<FlxSprite>;
 
     public var hud:Hud;
+    public var boss:Boss;
 
     override public function create():Void {
         Lever.TOTAL_LEVERS = 0;
@@ -86,9 +84,11 @@ class LevelBase extends FlxState {
         add(hud);
 
         bossStage = false;
+        bossOpened = false;
     }
 
     private var bossStage:Bool;
+    private var bossOpened:Bool;
 
     private static var asRadian:Float;
 
@@ -150,17 +150,15 @@ class LevelBase extends FlxState {
             layoutObjects.sort();
         }
 
-        if (wasMove && !bossStage) {
-            if (FlxG.camera.x == 1792 && FlxG.camera.y == 1408) {
-                var pl:Point = new Point(player.x + player.width/2, player.y + player.height/2);
-                var cam:Rectangle = new Rectangle(1664, 1280, 576, 384);
+        if (wasMove && !bossStage && bossOpened) {
+            var myPt:Point = new Point(player.x + player.width/2, player.y + player.height/2);
+            var bossPt:Point = new Point(boss.x + boss.width/2, boss.height + boss.height/2);
 
-                if (cam.contains(pl.x, pl.y)) {
-                    lockBossWalls();
-                    bossStage = true;
-                }
+            if (Point.distance(myPt, bossPt) < 350) {
+                lockBossWalls();
+                boss.activate();
+                bossStage = true;
             }
-
         }
 
         super.update();
@@ -176,6 +174,8 @@ class LevelBase extends FlxState {
         while (pathObjI.hasNext()) {
             backGroundObjects.add(pathObjI.next());
         }
+
+        bossOpened = true;
     }
 
     public function lockBossWalls():Void {
