@@ -313,8 +313,8 @@
  <objectgroup name="player" width="69" height="54" visible="0">
   <object name="player_spawn" x="320" y="192" width="64" height="64"/>
  </objectgroup>
- <objectgroup name="spawn" width="69" height="54" visible="0">
-  <object name="enemy_spawn" x="320" y="192" width="64" height="64"/>
+ <objectgroup name="spawn" width="69" height="54">
+  <object name="enemy_spawn" x="640" y="448" width="64" height="64"/>
   <object name="enemy_spawn" x="1024" y="320" width="64" height="64"/>
   <object name="enemy_spawn" x="1280" y="960" width="64" height="64"/>
   <object name="enemy_spawn" x="1984" y="960" width="64" height="64"/>
