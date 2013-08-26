@@ -1,4 +1,6 @@
 package flx.state.level;
+import flash.geom.Rectangle;
+import flash.geom.Point;
 import flx.core.Lever;
 import flx.core.InvisibleCollider;
 import org.flixel.util.FlxPoint;
@@ -82,7 +84,11 @@ class LevelBase extends FlxState {
         layoutObjects.sort();
 
         add(hud);
+
+        bossStage = false;
     }
+
+    private var bossStage:Bool;
 
     private static var asRadian:Float;
 
@@ -144,7 +150,44 @@ class LevelBase extends FlxState {
             layoutObjects.sort();
         }
 
+        if (wasMove && !bossStage) {
+            if (FlxG.camera.x == 1792 && FlxG.camera.y == 1408) {
+                var pl:Point = new Point(player.x + player.width/2, player.y + player.height/2);
+                var cam:Rectangle = new Rectangle(1664, 1280, 576, 384);
+
+                if (cam.contains(pl.x, pl.y)) {
+                    lockBossWalls();
+                    bossStage = true;
+                }
+            }
+
+        }
+
         super.update();
+    }
+
+    public function openBoss():Void {
+        var doorsI:Iterator<InvisibleCollider> = bossDoors.iterator();
+        while (doorsI.hasNext()) {
+            collideObjects.remove(doorsI.next(), true);
+        }
+
+        var pathObjI:Iterator<FlxSprite> = bossReleaseImages.iterator();
+        while (pathObjI.hasNext()) {
+            backGroundObjects.add(pathObjI.next());
+        }
+    }
+
+    public function lockBossWalls():Void {
+        var doorsI:Iterator<InvisibleCollider> = bossDoors.iterator();
+        while (doorsI.hasNext()) {
+            collideObjects.add(doorsI.next());
+        }
+
+        var pathObjI:Iterator<FlxSprite> = bossReleaseImages.iterator();
+        while (pathObjI.hasNext()) {
+            backGroundObjects.remove(pathObjI.next(), true);
+        }
     }
 
     private function onTileMapCollide(some:FlxObject, some2:FlxObject):Void {

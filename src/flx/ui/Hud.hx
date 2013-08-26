@@ -23,8 +23,8 @@ class Hud extends FlxGroup {
         model = Facade.I;
         this.level = level;
 
-        notifyText = new FlxText(216, 300, 400, '', 15);
-        notifyText.setFormat(null, 15, 0xFFCCFF, 'center', 0x000000, true);
+        notifyText = new FlxText(216, 150, 400, '', 15);
+        notifyText.setFormat(null, 15, 0xFFFFFF, 'center', 0x000000, true);
         add(notifyText);
 
         lastNotify = 0;
