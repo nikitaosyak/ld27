@@ -135,6 +135,10 @@ class LevelBase extends FlxState {
             super.update();
             return;
         }
+        if (player.curAnim == Player.ANIM_VICTORY) {
+            super.update();
+            return;
+        }
         if (player.curAnim == Player.ANIM_DEATH) {
 
         } else

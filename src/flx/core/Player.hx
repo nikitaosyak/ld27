@@ -15,6 +15,7 @@ class Player extends FlxSprite {
     public static inline var ANIM_MOVE:String = 'move';
     public static inline var ANIM_SWING:String = 'swing';
     public static inline var ANIM_DEATH:String = 'death';
+    public static inline var ANIM_VICTORY:String = 'victory';
 
     public function new(level:LevelBase) {
         super();
@@ -36,6 +37,7 @@ class Player extends FlxSprite {
         addAnimation(ANIM_MOVE, [4, 5, 6, 7], 10);
         addAnimation(ANIM_SWING, [8, 9, 10, 11, 12, 13, 14, 14, 14], attackSpd, false);
         addAnimation(ANIM_DEATH, [16, 17, 18, 19, 20, 21, 22, 23, 24, 24, 24], 9, false);
+        addAnimation(ANIM_VICTORY, [28, 29, 30, 31, 28, 29, 30, 31, 28, 29, 30, 31, 28, 29, 30, 31], 8, true);
         addAnimationCallback(onSwing);
 
         dead = false;
@@ -157,8 +159,14 @@ class Player extends FlxSprite {
                 dead = true;
             }
             if (frame == 10) {
-                frame = 24;
+                this.frame = 24;
                 level.hud.showLooseScreen();
+            }
+        }
+
+        if (name == ANIM_VICTORY) {
+            if (frame == 15) {
+                level.hud.showWinScreen();
             }
         }
 

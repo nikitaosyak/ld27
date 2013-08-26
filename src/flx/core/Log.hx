@@ -12,7 +12,7 @@ class Log extends FlxSprite {
 
         lvl = level;
 
-        scale.make(2, 2);
+        scale.make(1.2, 1.2);
     }
 
     private var lvl:LevelBase;
@@ -27,7 +27,8 @@ class Log extends FlxSprite {
         var distance:Float = Point.distance(_heroFl, myPt);
 
         if (distance < 32) {
-            lvl.hud.showWinScreen();
+            lvl.player.play(Player.ANIM_VICTORY, true);
+            lvl.layoutObjects.remove(this, true);
         }
     }
 }

@@ -36,7 +36,7 @@ class Lever extends FlxSprite {
                 frame = 1;
                 FlxG.camera.shake(0.005, 0.7);
                 LEVERS_PULLED++;
-                if (1 == LEVERS_PULLED) {
+                if (TOTAL_LEVERS == LEVERS_PULLED) {
                     lvl.hud.notify('Path to boss was opened..');
                     lvl.openBoss();
                 } else {
