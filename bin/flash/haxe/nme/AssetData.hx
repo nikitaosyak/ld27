@@ -24,6 +24,8 @@ class AssetData {
 			type.set ("assets/an_hero_lifeBar.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/an_lifeBar.png", nme.NME_assets_an_lifebar_png);
 			type.set ("assets/an_lifeBar.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			className.set ("assets/boss_tilesheet.png", nme.NME_assets_boss_tilesheet_png);
+			type.set ("assets/boss_tilesheet.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/button1_tilesheet.png", nme.NME_assets_button1_tilesheet_png);
 			type.set ("assets/button1_tilesheet.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/char_tilesheet.png", nme.NME_assets_char_tilesheet_png);
@@ -141,6 +143,7 @@ class AssetData {
 class NME_assets_data_beep_mp3 extends flash.media.Sound { }
 class NME_assets_an_hero_lifebar_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_an_lifebar_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class NME_assets_boss_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_button1_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_char_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_data_autotiles_png extends flash.display.BitmapData { public function new () { super (0, 0); } }

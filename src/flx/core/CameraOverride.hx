@@ -70,11 +70,12 @@ class CameraOverride extends FlxCamera {
                     _lastTargetPosition.x = target.x;
                     _lastTargetPosition.y = target.y;
                 }
-
+                                     //1792, 1408
 
                 if (followLerp == 0) {
                     scroll.x = _scrollTarget.x; // Prevents Camera Jittering with no lerp.
                     scroll.y = _scrollTarget.y; // Prevents Camera Jittering with no lerp.
+                trace(x, y);
                 } else {
                     scroll.x += (_scrollTarget.x - scroll.x) * FlxG.elapsed / (FlxG.elapsed + followLerp * FlxG.elapsed);
                     scroll.y += (_scrollTarget.y - scroll.y) * FlxG.elapsed / (FlxG.elapsed + followLerp * FlxG.elapsed);

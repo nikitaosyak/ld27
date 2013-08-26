@@ -158,7 +158,9 @@ class TiledLevel extends TiledMap {
 
             case 'boss_opened':
                 var tileset:TiledTileSet = g.map.getGidOwner(o.gid);
-                var releaseSprite:FlxSprite = new FlxSprite(x, y, c_PATH_LEVEL_TILESHEETS + tileset.imageSource);
+                var releaseSprite:FlxSprite = new FlxSprite(x, y);
+                releaseSprite.loadGraphic(c_PATH_LEVEL_TILESHEETS + tileset.imageSource, false, false, 64, 64);
+                releaseSprite.frame = o.gid - tileset.firstGID;
                 releaseSprite.immovable = true;
                 state.bossReleaseImages.add(releaseSprite);
         }

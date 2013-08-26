@@ -31,12 +31,17 @@ class Lever extends FlxSprite {
         var _heroFl:Point = new Point(lvl.player.x + lvl.player.width / 2, lvl.player.y + lvl.player.height / 2);
         var distance:Float = Point.distance(_heroFl, myPt);
 
-        if (distance < 60) {
+        if (distance < 32) {
             if (frame == 0) {
                 frame = 1;
-                FlxG.camera.shake(0.02 + LEVERS_PULLED*0.01, 0.3 + LEVERS_PULLED*0.05);
+                FlxG.camera.shake(0.01, 0.7);
                 LEVERS_PULLED++;
-                lvl.hud.notify('Only ' + (TOTAL_LEVERS - LEVERS_PULLED) + ' more to go...');
+                if (1 == LEVERS_PULLED) {
+                    lvl.hud.notify('Path to boss was opened..');
+                    lvl.openBoss();
+                } else {
+                    lvl.hud.notify('Only ' + (TOTAL_LEVERS - LEVERS_PULLED) + ' more to go...');
+                }
             }
         }
     }
