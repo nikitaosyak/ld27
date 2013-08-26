@@ -32,7 +32,7 @@ class Facade {
     public var attackSpeeds:Array<Int>;
 
     public function init():Void {
-        monsterDamages = [25, 35, 45, 60, 85];
+        monsterDamages = [20, 25, 30, 40, 50];
         monsterAttackSpeed = [7, 8, 9, 11, 14];
         monsterHealth = [20, 60, 100, 150, 200];
         monsterSpeeds = [120, 130, 140, 150, 160];
@@ -42,18 +42,16 @@ class Facade {
 
         healths =      [50, 75, 100, 125, 150, 175, 200];
         damages =      [10, 15,  20,  25,  30,  35,  40];
-        attackSpeeds = [15, 17,  19,  21,  23,  25,  27];
+        attackSpeeds = [17, 19,  20,  21,  22,  23,  25];
 
         sizes = [1, 1.1, 1.2, 1.3, 1.4];
         monsterOffsets = [new FlxPoint(77, 105), new FlxPoint(84, 115), new FlxPoint(92, 125), new FlxPoint(100, 136), new FlxPoint(107, 147)];
-
-
 
         moveSpd = 205;
 
         spawnTime = 10;
         spawnChance = 0.2;
-        maxMonsters = 10;
+        maxMonsters = 8;
 
         lvlUpTime = 10;
     }

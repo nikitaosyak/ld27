@@ -67,10 +67,15 @@ class Hud extends FlxGroup {
         add(text);
         Actuate.tween(text, 1.8, {y: text.y - 120, alpha: 0}).onComplete(function(hud:Hud, text:FlxText):Void {
             hud.remove(text);
+            text.destroy();
         }, [this, text]);
     }
 
     override public function update():Void {
         super.update();
+
+//        if (player.hp < 50) {
+//
+//        }
     }
 }

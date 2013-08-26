@@ -30,12 +30,12 @@ class Enemy extends FlxSprite {
         this.antialiasing = true;
         immovable = false;
 
-        _currLevel = 0;
+        _currLevel = -1;
+        offset.make(Facade.I.monsterOffsets[0].x, Facade.I.monsterOffsets[0].y);
 
         width = 40;
         height = 20;
 
-        offset.make(Facade.I.monsterOffsets[_currLevel].x, Facade.I.monsterOffsets[_currLevel].y);
         setOriginToCenter();
 
         this.x = x - this.width / 2;
@@ -51,16 +51,17 @@ class Enemy extends FlxSprite {
         _lastHeroFl = new Point(0, 0);
         _currentFl = new Point(-1000, -1000);
 
-
-        color = Facade.I.monsterColors[_currLevel];
-        alpha = Facade.I.monsterAlphas[_currLevel];
-
-        _attackSpeed = Facade.I.attackSpeeds[_currLevel];
-        _speed = Facade.I.monsterSpeeds[_currLevel];
-
-        _damage = Facade.I.monsterDamages[_currLevel];
-        maxHealth = Facade.I.monsterHealth[_currLevel];
-        currentHealth = maxHealth;
+        currentHealth = maxHealth = 20;
+        lvlUp();
+//        color = Facade.I.monsterColors[_currLevel];
+//        alpha = Facade.I.monsterAlphas[_currLevel];
+//
+//        _attackSpeed = Facade.I.attackSpeeds[_currLevel];
+//        _speed = Facade.I.monsterSpeeds[_currLevel];
+//
+//        _damage = Facade.I.monsterDamages[_currLevel];
+//        maxHealth = Facade.I.monsterHealth[_currLevel];
+//        currentHealth = maxHealth;
 
         _heroFl = new Point();
         myPt = new Point();
@@ -70,12 +71,13 @@ class Enemy extends FlxSprite {
         _lvlUpTimer = 0;
 
         addAnimation(ANIM_MOVE, [0, 1, 2, 3], 4);
-        addAnimation(ANIM_ATTACK, [0, 0, 4, 5, 6, 7], Math.floor(_attackSpeed));
+//        addAnimation(ANIM_ATTACK, [0, 0, 4, 5, 6, 7, 0, 0, 0, 0, 0], Math.floor(_attackSpeed));
         addAnimation(ANIM_DEATH, [8, 9, 10, 11, 12], 7);
         addAnimation(ANIM_STAGGER, [8, 9, 8], 12);
 
         hitLock = false;
         lifePercent = 100;
+
     }
 
     public var bar:FlxBar;
@@ -126,6 +128,7 @@ class Enemy extends FlxSprite {
         }
 
         if (curAnim == ANIM_STAGGER) {
+            _hero.releaseHitLock(this);
             super.update();
             return;
         }
@@ -145,18 +148,18 @@ class Enemy extends FlxSprite {
         if (!_hero.dead && chasePath < 200) {
             _patrolPath = null;
             _currentFl.setTo(-1000, -1000);
-            if (chasePath <= 50) {
+            if (chasePath <= 64) {
                 var tt:Point = new Point(myPt.x - _heroFl.x, myPt.y - _heroFl.y);
 
                 var angle:Float = MathHelp.rad2deg(Math.atan2(tt.y, tt.x));
 
-                if (MathHelp.isInRange(angle, -40, 40) && _hero.facing == FlxObject.LEFT) {
+                if (MathHelp.isInRange(angle, -42, 42) && _hero.facing == FlxObject.LEFT) {
                     _hero.hittableEnemies.add(this);
                 }else
-                if (angle < -140 && _hero.facing == FlxObject.RIGHT) {
+                if (angle < -138 && _hero.facing == FlxObject.RIGHT) {
                     _hero.hittableEnemies.add(this);
                 }else
-                if (angle > 140 && _hero.facing == FlxObject.RIGHT) {
+                if (angle > 138 && _hero.facing == FlxObject.RIGHT) {
                     _hero.hittableEnemies.add(this);
                 }
             } else {
@@ -168,6 +171,7 @@ class Enemy extends FlxSprite {
                 play(ANIM_ATTACK);
             } else {
                 play(ANIM_MOVE);
+                _hero.releaseHitLock(this);
                 var accX:Int = 0;
                 var accY:Int = 0;
                 if (myPt.x < _heroFl.x) {
@@ -189,6 +193,7 @@ class Enemy extends FlxSprite {
             }
         } else {
             play(ANIM_MOVE);
+            _hero.releaseHitLock(this);
             if (_patrolPath == null) {
                 findPatrolPath();
             } else {
@@ -244,8 +249,10 @@ class Enemy extends FlxSprite {
         lifePercent = currentHealth/ maxHealth * 100;
         if (currentHealth <= 0) {
             play(ANIM_DEATH, false);
+            _hero.releaseHitLock(this);
         } else {
             play(ANIM_STAGGER, true);
+            _hero.releaseHitLock(this);
         }
     }
 
@@ -266,12 +273,13 @@ class Enemy extends FlxSprite {
     private function lvlUp():Void {
         _currLevel = Std.int(Math.min(_currLevel+1, 4));
 
+
         color = Facade.I.monsterColors[_currLevel];
         alpha = Facade.I.monsterAlphas[_currLevel];
         _incorporeal = Facade.I.incorporeal[_currLevel];
 
         _speed = Facade.I.monsterSpeeds[_currLevel];
-        _damage = Facade.I.damages[_currLevel];
+        _damage = Facade.I.monsterDamages[_currLevel];
 
         var healthM:Float = currentHealth / maxHealth;
         maxHealth = Facade.I.monsterHealth[_currLevel];
@@ -279,18 +287,22 @@ class Enemy extends FlxSprite {
         lifePercent = currentHealth/ maxHealth * 100;
 
         _attackSpeed = Facade.I.monsterAttackSpeed[_currLevel];
-        addAnimation(ANIM_ATTACK, [0, 0, 4, 5, 6, 7], _attackSpeed);
+        addAnimation(ANIM_ATTACK, [0, 0, 4, 5, 6, 7, 0, 0, 0, 0, 0], _attackSpeed);
 
         var scale:Float = Facade.I.sizes[Std.int(Math.min(_currLevel, Facade.I.sizes.length-1))];
         this.scale.make(scale, scale);
+
 //        offset.make(Facade.I.monsterOffsets[_currLevel].x, Facade.I.monsterOffsets[_currLevel].y);
     }
 
     private function onAnimation(name:String, frame:Int, idx:Int):Void {
 
         if (name == ANIM_ATTACK) {
-            if (frame == 3) {
-                this._hero.play(Player.ANIM_DEATH);
+            if (frame == 5) {
+                _hero.receiveHit(_damage, this);
+            }
+            if (frame == 7) {
+                _hero.releaseHitLock(this);
             }
         }
 

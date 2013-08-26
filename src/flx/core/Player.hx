@@ -1,4 +1,5 @@
 package flx.core;
+import haxe.ds.ObjectMap;
 import haxe.ds.IntMap;
 import flash.geom.Point;
 import flash.geom.Point;
@@ -33,7 +34,7 @@ class Player extends FlxSprite {
 
         addAnimation(ANIM_IDLE, [0, 1, 2, 3], 5);
         addAnimation(ANIM_MOVE, [4, 5, 6, 7], 10);
-        addAnimation(ANIM_SWING, [8, 9, 10, 11, 12, 13, 14], attackSpd, false);
+        addAnimation(ANIM_SWING, [8, 9, 10, 11, 12, 13, 14, 14, 14], attackSpd, false);
         addAnimation(ANIM_DEATH, [16, 17, 18, 19, 20, 21, 22, 23, 24], 9, false);
         addAnimationCallback(onSwing);
 
@@ -50,6 +51,10 @@ class Player extends FlxSprite {
 
         lastFrame = 0;
         lastAni = '';
+        lastHit = 0;
+
+        hitLock = false;
+        enemiesLocked = new ObjectMap<Enemy, Enemy>();
     }
 
     private var hpLevel:Int;
@@ -67,20 +72,56 @@ class Player extends FlxSprite {
     public var moveSpd:Float;
     public var attackSpd:Int;
 
+    public var lastHit:Float;
+
+    private var hitLock:Bool;
+    private var enemiesLocked:ObjectMap<Enemy, Enemy>;
+
     public function initialize(spawnX:Float, spawnY:Float):Void {
         this.x = MathHelp.roundExp(spawnX, 0);
         this.y = MathHelp.roundExp(spawnY, 0);
     }
 
     override public function update():Void {
+        if (Timer.stamp() - lastHit > 0.130) {
+            color = 0x00ffffff;
+            lastHit = 0;
+        } else {
+            FlxG.log((Timer.stamp() + ';' + lastHit));
+        }
+
         super.update();
+
+
+    }
+
+    public function receiveHit(damage:Float, fromEnemy:Enemy):Void {
+        if (enemiesLocked.exists(fromEnemy)) {
+            return;
+        } else {
+            enemiesLocked.set(fromEnemy, fromEnemy);
+        }
+        hp -= damage;
+
+        if (hp <= 0) {
+            play(ANIM_DEATH, false);
+        } else {
+            lastHit = Timer.stamp();
+            color = 0xf20000;
+        }
+    }
+
+    public function releaseHitLock(enemy:Enemy):Void {
+        if (enemiesLocked.exists(enemy)) {
+            enemiesLocked.remove(enemy);
+        }
     }
 
     public function upDmgLevel():Void {
         dmgLevel = Std.int(Math.min(dmgLevel + 1, 6));
         dmg = Facade.I.damages[dmgLevel];
         attackSpd = Facade.I.attackSpeeds[dmgLevel];
-        addAnimation(ANIM_SWING, [8, 9, 10, 11, 12, 13, 14], attackSpd, false);
+        addAnimation(ANIM_SWING, [8, 9, 10, 11, 12, 13, 14, 14], attackSpd, false);
     }
 
     public function upHealthLevel():Void {
@@ -94,15 +135,14 @@ class Player extends FlxSprite {
 
     private function onSwing(name:String, frame:Int, idx:Int):Void {
         if (name == ANIM_SWING) {
-            if (frame == 4 || frame == 5) {
+            if (frame == 5 || frame == 6 || frame == 7) {
                 var iter:Iterator<Enemy> = hittableEnemies.iterator();
                 while (iter.hasNext()) {
                     var enemy:Enemy = iter.next();
                     enemy.receiveHit(dmg);
                 }
             }
-            if (frame == 6) {
-                trace('frame 6', lastFrame);
+            if (frame == 8) {
                 var iter:Iterator<Enemy> = hittableEnemies.iterator();
                 while (iter.hasNext()) {
                     var enemy:Enemy = iter.next();
@@ -113,6 +153,7 @@ class Player extends FlxSprite {
                 }, 25);
             }
         }
+
         if (name == ANIM_DEATH) {
             if (frame == 1) {
                 dead = true;
