@@ -53,7 +53,7 @@ class LevelBase extends FlxState {
     override public function create():Void {
         Lever.TOTAL_LEVERS = 0;
         SpawnPlace.currentEnemies = 0;
-        FlxG.visualDebug = true;
+        FlxG.visualDebug = false;
         controller = new PlayerController();
         spawnPlaces = new Array<SpawnPlace>();
         enemies = new List<Enemy>();

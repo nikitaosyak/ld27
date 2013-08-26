@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5badb44c-c72e-4bca-9867-0a1db1336274" name="Default" comment="piled together a map - got the first playable draft">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/core/Boss.hx" afterPath="$PROJECT_DIR$/src/flx/core/Boss.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/core/Facade.hx" afterPath="$PROJECT_DIR$/src/flx/core/Facade.hx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" afterPath="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/core/Player.hx" afterPath="$PROJECT_DIR$/src/flx/core/Player.hx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ld27.iws" afterPath="$PROJECT_DIR$/ld27.iws" />
     </list>
     <ignored path="ld27.iws" />
@@ -23,7 +20,7 @@
     <file path="/EnemyBase.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377332784040" ignored="false" />
     <file path="/SpawnPlace.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377535056837" ignored="false" />
     <file path="/Facade.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377521923797" ignored="false" />
-    <file path="/LevelBase.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377549420934" ignored="false" />
+    <file path="/LevelBase.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377550851241" ignored="false" />
     <file path="/Parser.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377334177068" ignored="false" />
     <file path="/TmxMap.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377334892025" ignored="false" />
     <file path="/TmxPropertySet.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377334928406" ignored="false" />
@@ -165,7 +162,7 @@
           <file leaf-file-name="Player.hx" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/flx/core/Player.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="138" column="26" selection-start="3915" selection-end="3915" vertical-scroll-proportion="0.23237886">
+                <state line="138" column="26" selection-start="3915" selection-end="3915" vertical-scroll-proportion="0.35108152">
                   <folding />
                 </state>
               </provider>
@@ -211,19 +208,26 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Boss.hx" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="Boss.hx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/flx/core/Boss.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="180" column="35" selection-start="5203" selection-end="5203" vertical-scroll-proportion="0.5319383">
+                <state line="180" column="35" selection-start="5203" selection-end="5203" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="LevelBase.hx" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="rumble.png" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assets/rumble.png">
+              <provider selected="true" editor-type-id="images">
+                <state />
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="LevelBase.hx" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/flx/state/level/LevelBase.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="98" column="17" selection-start="2824" selection-end="2824" vertical-scroll-proportion="0.0">
+                <state line="55" column="32" selection-start="1509" selection-end="1509" vertical-scroll-proportion="0.64827585">
                   <folding />
                 </state>
               </provider>
@@ -271,10 +275,10 @@
         <option value="$PROJECT_DIR$/src/tmx/TiledLevel.hx" />
         <option value="$PROJECT_DIR$/src/flx/core/Enemy.hx" />
         <option value="$PROJECT_DIR$/src/flx/core/CameraOverride.hx" />
-        <option value="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" />
         <option value="$PROJECT_DIR$/src/flx/core/Player.hx" />
         <option value="$PROJECT_DIR$/src/flx/core/Facade.hx" />
         <option value="$PROJECT_DIR$/src/flx/core/Boss.hx" />
+        <option value="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" />
       </list>
     </option>
   </component>
@@ -734,8 +738,12 @@
             <option name="mySupportsDeletion" value="false" />
             <option name="myCanBeAbsent" value="false" />
             <option name="myId" value="CREATED" />
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/assets/splash.png</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/assets/youAreDead_tilesheet.png</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/assets/Background Noise.mp3</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/assets/Punch.mp3</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/assets/Slime Splash.mp3</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/assets/Smack.mp3</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/assets/Swoosh.mp3</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/assets/rumble.png</PATH>
           </FILE-GROUP>
           <FILE-GROUP>
             <option name="myUpdateName" value="Deleted" />
@@ -962,7 +970,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869378" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32762313" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869378" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32869378" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32762313" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1048,13 +1056,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/flx/core/CameraOverride.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="0" selection-start="3101" selection-end="3101" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/splash.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1101,18 +1102,23 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/flx/ui/Hud.hx">
+    <entry file="file://$PROJECT_DIR$/src/flx/core/Player.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="41" selection-start="614" selection-end="614" vertical-scroll-proportion="0.0">
+        <state line="138" column="26" selection-start="3915" selection-end="3915" vertical-scroll-proportion="0.35108152">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/flx/core/Player.hx">
+    <entry file="file://$PROJECT_DIR$/src/flx/core/Boss.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="26" selection-start="3915" selection-end="3915" vertical-scroll-proportion="0.23237886">
+        <state line="180" column="35" selection-start="5203" selection-end="5203" vertical-scroll-proportion="0.0">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/rumble.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/flx/core/Facade.hx">
@@ -1129,9 +1135,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/flx/state/level/LevelBase.hx">
+    <entry file="file://$PROJECT_DIR$/src/flx/ui/Hud.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="17" selection-start="2824" selection-end="2824" vertical-scroll-proportion="0.0">
+        <state line="25" column="41" selection-start="614" selection-end="614" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1143,9 +1149,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/flx/core/Boss.hx">
+    <entry file="file://$PROJECT_DIR$/src/flx/state/level/LevelBase.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="180" column="35" selection-start="5203" selection-end="5203" vertical-scroll-proportion="0.5319383">
+        <state line="55" column="32" selection-start="1509" selection-end="1509" vertical-scroll-proportion="0.64827585">
           <folding />
         </state>
       </provider>
