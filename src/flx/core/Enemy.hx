@@ -30,9 +30,12 @@ class Enemy extends FlxSprite {
         this.antialiasing = true;
         immovable = false;
 
-        width = 50;
-        height = 40;
-        offset.make(66, 90);
+        _currLevel = 0;
+
+        width = 40;
+        height = 20;
+
+        offset.make(Facade.I.monsterOffsets[_currLevel].x, Facade.I.monsterOffsets[_currLevel].y);
         setOriginToCenter();
 
         this.x = x - this.width / 2;
@@ -48,20 +51,22 @@ class Enemy extends FlxSprite {
         _lastHeroFl = new Point(0, 0);
         _currentFl = new Point(-1000, -1000);
 
-        _attackSpeed = Facade.I.monsterInitialAttackSpeed;
-        _speed = Facade.I.initialMonsterSpeed;
-        _damage = Facade.I.initialMonsterDmg;
-        _exp = Facade.I.initialMonsterExp;
-        maxHealth = Facade.I.initialMonsterHealth;
-        currentHealth = maxHealth;
 
+        color = Facade.I.monsterColors[_currLevel];
+        alpha = Facade.I.monsterAlphas[_currLevel];
+
+        _attackSpeed = Facade.I.attackSpeeds[_currLevel];
+        _speed = Facade.I.monsterSpeeds[_currLevel];
+
+        _damage = Facade.I.monsterDamages[_currLevel];
+        maxHealth = Facade.I.monsterHealth[_currLevel];
+        currentHealth = maxHealth;
 
         _heroFl = new Point();
         myPt = new Point();
 
         addAnimationCallback(onAnimation);
 
-        _currLevel = 0;
         _lvlUpTimer = 0;
 
         addAnimation(ANIM_MOVE, [0, 1, 2, 3], 4);
@@ -98,9 +103,10 @@ class Enemy extends FlxSprite {
     private var _currLevel:Int;
     private var _incorporeal:Float;
     private var _speed:Float;
-    private var _attackSpeed:Float;
-    private var _exp:Float;
+    private var _attackSpeed:Int;
+
     private var _damage:Float;
+
     public var maxHealth:Float;
     public var currentHealth:Float;
 
@@ -258,26 +264,26 @@ class Enemy extends FlxSprite {
     }
 
     private function lvlUp():Void {
-        _currLevel++;
-        color = Facade.I.colors[Std.int(Math.min(_currLevel, Facade.I.colors.length-1))];
-        alpha = Facade.I.alphas[Std.int(Math.min(_currLevel, Facade.I.alphas.length-1))];
-        _incorporeal = Facade.I.incorporeal[Std.int(Math.min(_currLevel, Facade.I.incorporeal.length-1))];
+        _currLevel = Std.int(Math.min(_currLevel+1, 4));
 
-        _speed = Math.min(_speed * Facade.I.monsterSpeedMultiplier, Facade.I.monsterMaxSpeed);
-        _damage = Math.min(_damage * Facade.I.monsterDmgMultiplier, Facade.I.monsterMaxDmg);
+        color = Facade.I.monsterColors[_currLevel];
+        alpha = Facade.I.monsterAlphas[_currLevel];
+        _incorporeal = Facade.I.incorporeal[_currLevel];
 
-        _exp = _exp * Facade.I.monsterExpMultiplier;
+        _speed = Facade.I.monsterSpeeds[_currLevel];
+        _damage = Facade.I.damages[_currLevel];
 
         var healthM:Float = currentHealth / maxHealth;
-        maxHealth = maxHealth * Facade.I.monsterHealthMultiplier;
+        maxHealth = Facade.I.monsterHealth[_currLevel];
         currentHealth = maxHealth * healthM;
         lifePercent = currentHealth/ maxHealth * 100;
 
-        _attackSpeed *= Facade.I.monsterAttackSpeedMultiplier;
-        addAnimation(ANIM_ATTACK, [0, 0, 4, 5, 6, 7], Math.floor(Math.min(_attackSpeed, Facade.I.monsterMaxAttackSpeed)));
+        _attackSpeed = Facade.I.monsterAttackSpeed[_currLevel];
+        addAnimation(ANIM_ATTACK, [0, 0, 4, 5, 6, 7], _attackSpeed);
 
         var scale:Float = Facade.I.sizes[Std.int(Math.min(_currLevel, Facade.I.sizes.length-1))];
         this.scale.make(scale, scale);
+//        offset.make(Facade.I.monsterOffsets[_currLevel].x, Facade.I.monsterOffsets[_currLevel].y);
     }
 
     private function onAnimation(name:String, frame:Int, idx:Int):Void {

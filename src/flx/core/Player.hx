@@ -26,9 +26,14 @@ class Player extends FlxSprite {
         offset.make(74, 96);
         setOriginToCenter();
 
+        hpLevel = 0;
+        dmgLevel = 0;
+
+        attackSpd = Facade.I.attackSpeeds[dmgLevel];
+
         addAnimation(ANIM_IDLE, [0, 1, 2, 3], 5);
         addAnimation(ANIM_MOVE, [4, 5, 6, 7], 10);
-        addAnimation(ANIM_SWING, [8, 9, 10, 11, 12, 13, 14], 25, false);
+        addAnimation(ANIM_SWING, [8, 9, 10, 11, 12, 13, 14], attackSpd, false);
         addAnimation(ANIM_DEATH, [16, 17, 18, 19, 20, 21, 22, 23, 24], 9, false);
         addAnimationCallback(onSwing);
 
@@ -37,37 +42,30 @@ class Player extends FlxSprite {
 
         hittableEnemies = new List<Enemy>();
 
-        regenCountDown = 0;
-
-        hp = Facade.I.health;
+        hp = Facade.I.healths[hpLevel];
         maxHp = hp;
-        xp = 0;
-        lvlUpXp = Facade.I.xp;
-        dmg = Facade.I.damage;
-        regen = Facade.I.regen;
+        dmg = Facade.I.damages[dmgLevel];
+
         moveSpd = Facade.I.moveSpd;
-        attackSpd = Facade.I.attackSpd;
 
         lastFrame = 0;
         lastAni = '';
     }
 
+    private var hpLevel:Int;
+    private var dmgLevel:Int;
+
     private var level:LevelBase;
+
     public var dead:Bool;
     public var hittableEnemies:List<Enemy>;
 
     public var maxHp:Float;
     public var hp:Float;
 
-    public var xp:Float;
-    public var lvlUpXp:Float;
-
     public var dmg:Float;
-    public var regen:Float;
     public var moveSpd:Float;
-    public var attackSpd:Float;
-
-    private var regenCountDown:Float;
+    public var attackSpd:Int;
 
     public function initialize(spawnX:Float, spawnY:Float):Void {
         this.x = MathHelp.roundExp(spawnX, 0);
@@ -76,12 +74,19 @@ class Player extends FlxSprite {
 
     override public function update():Void {
         super.update();
+    }
 
-        regenCountDown += FlxG.elapsed;
-        if (regenCountDown >= 1) {
-//            Facade.I.health;
-            regenCountDown = 0;
-        }
+    public function upDmgLevel():Void {
+        dmgLevel = Std.int(Math.min(dmgLevel + 1, 6));
+        dmg = Facade.I.damages[dmgLevel];
+        attackSpd = Facade.I.attackSpeeds[dmgLevel];
+        addAnimation(ANIM_SWING, [8, 9, 10, 11, 12, 13, 14], attackSpd, false);
+    }
+
+    public function upHealthLevel():Void {
+        hpLevel++;
+        maxHp = Facade.I.healths[Std.int(Math.min(hpLevel, Facade.I.healths.length-1))];
+        hp = maxHp;
     }
 
     private var lastFrame:Int;
@@ -97,7 +102,7 @@ class Player extends FlxSprite {
                 }
             }
             if (frame == 6) {
-
+                trace('frame 6', lastFrame);
                 var iter:Iterator<Enemy> = hittableEnemies.iterator();
                 while (iter.hasNext()) {
                     var enemy:Enemy = iter.next();

@@ -30,12 +30,18 @@ class Hud extends FlxGroup {
     public function injectPlayer(player:Player):Void {
         this.player = player;
 
-        var playerHp:FlxBar = new FlxBar(46, 26, FlxBar.FILL_LEFT_TO_RIGHT, 256, 16, player, 'hp', 0, 200, false);
+        var playerHp:FlxBar = new FlxBar(70, 26, FlxBar.FILL_LEFT_TO_RIGHT, 256, 32, player, 'hp', 0, 200, false);
         playerHp.createImageBar(null, 'assets/an_hero_lifeBar.png', 0x000000);
         playerHp.currentValue = player.hp;
-        playerHp.color = 0xCC0000;
+        playerHp.color = 0xf20000;
         playerHp.scrollFactor = new FlxPoint(0, 0);
         add(playerHp);
+
+        var playerS:FlxBar = new FlxBar(70, 90, FlxBar.FILL_LEFT_TO_RIGHT, 256, 32, player, 'dmg', 0, 40, false);
+        playerS.createImageBar(null, 'assets/an_hero_lifeBar.png', 0x000000);
+        playerS.currentValue = player.dmg;
+        playerS.scrollFactor = new FlxPoint(0, 0);
+        add(playerS);
 
         var heart:FlxSprite = new FlxSprite(10, 10);
         heart.loadGraphic('assets/HUD_tilesheet.png', true, false, 64, 64, false);
@@ -58,10 +64,10 @@ class Hud extends FlxGroup {
         var text:FlxText = new FlxText(launchPoint.x - 60, launchPoint.y - 20, 120, 'Incorporeal', 12);
         text.setFormat(null, 12, 0xCCCCCCCC, 'center', 0xCC000000, true);
 
-        level.layoutObjects.add(text);
-        Actuate.tween(text, 1.8, {y: text.y - 120, alpha: 0}).onComplete(function(text:FlxText):Void {
-            level.layoutObjects.remove(text);
-        }, [text]);
+        add(text);
+        Actuate.tween(text, 1.8, {y: text.y - 120, alpha: 0}).onComplete(function(hud:Hud, text:FlxText):Void {
+            hud.remove(text);
+        }, [this, text]);
     }
 
     override public function update():Void {
