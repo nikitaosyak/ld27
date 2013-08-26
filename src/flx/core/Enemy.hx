@@ -253,6 +253,7 @@ class Enemy extends FlxSprite {
                     _levelBase.layoutObjects.remove(this);
                     _levelBase.collideObjects.remove(this, true);
                     _levelBase.enemies.remove(this);
+                    SpawnPlace.currentEnemies--;
                     this.destroy();
                 }, 40);
             }

@@ -98,16 +98,6 @@ class TiledLevel extends TiledMap {
                 state.collideObjects.add(coll);
                 state.add(coll);
 
-            case "rocks":
-                var tileset:TiledTileSet = g.map.getGidOwner(o.gid);
-                var rock = new FlxSprite(x, y, c_PATH_LEVEL_TILESHEETS + tileset.imageSource);
-                state.layoutObjects.add(rock);
-
-            case "edges":
-                var tileset:TiledTileSet = g.map.getGidOwner(o.gid);
-                var edge = new SpriteFromAtlas(x, y, c_PATH_LEVEL_TILESHEETS + tileset.imageSource, o.gid, tileset.firstGID);
-                state.backGroundObjects.add(edge);
-
             case "trees":
                 var tileset:TiledTileSet = g.map.getGidOwner(o.gid);
                 var tree = new FlxSprite(x, y, c_PATH_LEVEL_TILESHEETS + tileset.imageSource);
@@ -150,7 +140,7 @@ class TiledLevel extends TiledMap {
                 var spawnPl:SpawnPlace = new SpawnPlace(x, y, state);
                 state.spawnPlaces.push(spawnPl);
                 state.layoutObjects.add(spawnPl);
-                state.collideObjects.add(spawnPl);
+//                state.collideObjects.add(spawnPl);
             case 'death':
 //                state.collideObjects.add(new DeathTrap(x, y));
         }

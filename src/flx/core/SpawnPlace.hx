@@ -16,7 +16,7 @@ class SpawnPlace extends FlxSprite {
     public function new(x:Int, y:Int, parentState:LevelBase) {
         super();
 
-        this.loadGraphic('assets/an_spawn.png', false, false, 64, 64);
+        this.loadGraphic('assets/tiled/grave1.png', false, false, 64, 64);
         this.visible = FlxG.visualDebug;
         this.immovable = true;
 

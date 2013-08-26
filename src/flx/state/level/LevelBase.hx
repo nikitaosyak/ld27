@@ -79,7 +79,7 @@ class LevelBase extends FlxState {
 // Add tilemaps
         add(level.backgroundTiles);
         add(backGroundObjects);
-        add(level.foregroundTiles);
+//        add(level.foregroundTiles);
 
         layoutObjects = new SortingGroup();
         add(layoutObjects);
