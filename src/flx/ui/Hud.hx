@@ -93,7 +93,7 @@ class Hud extends FlxGroup {
         }, [this, text]);
     }
 
-    public function showEndScreen():Void {
+    public function showLooseScreen():Void {
         var bg:FlxSprite = new FlxSprite(0, 0, 'assets/splash.png');
         bg.scrollFactor = new FlxPoint(0, 0);
         level.add(bg);
@@ -106,6 +106,26 @@ class Hud extends FlxGroup {
         level.add(text);
 
         var startOverText:FlxText = new FlxText(366 - 50, 400, 200,  'press x to retry', 13);
+        startOverText.setFormat(null, 13, 0xFF000000, 'center', 0xFFFFFF, true);
+        startOverText.scrollFactor = new FlxPoint(0, 0);
+        level.add(startOverText);
+
+        restartAllow = true;
+    }
+
+    public function showWinScreen():Void {
+        var bg:FlxSprite = new FlxSprite(0, 0, 'assets/splash.png');
+        bg.scrollFactor = new FlxPoint(0, 0);
+        level.add(bg);
+
+        var text:FlxSprite = new FlxSprite(336, 190);
+        text.loadGraphic('assets/win_tilesheet.png', true, false, 160, 130);
+        text.scrollFactor = new FlxPoint(0, 0);
+        text.addAnimation('reg', [0, 1, 2, 3], 8);
+        text.play('reg');
+        level.add(text);
+
+        var startOverText:FlxText = new FlxText(366 - 50, 400, 200,  'press x to play again', 13);
         startOverText.setFormat(null, 13, 0xFF000000, 'center', 0xFFFFFF, true);
         startOverText.scrollFactor = new FlxPoint(0, 0);
         level.add(startOverText);

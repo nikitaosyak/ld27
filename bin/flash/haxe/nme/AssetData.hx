@@ -138,6 +138,10 @@ class AssetData {
 			type.set ("assets/tiled/tree.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/Wind.mp3", nme.NME_assets_wind_mp3);
 			type.set ("assets/Wind.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
+			className.set ("assets/win_tilesheet.png", nme.NME_assets_win_tilesheet_png);
+			type.set ("assets/win_tilesheet.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			className.set ("assets/wood.png", nme.NME_assets_wood_png);
+			type.set ("assets/wood.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/youAreDead_tilesheet.png", nme.NME_assets_youaredead_tilesheet_png);
 			type.set ("assets/youAreDead_tilesheet.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			
@@ -212,4 +216,6 @@ class NME_assets_tiled_testmap_tmx extends flash.utils.ByteArray { }
 class NME_assets_tiled_tiles_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_tiled_tree_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_wind_mp3 extends flash.media.Sound { }
+class NME_assets_win_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class NME_assets_wood_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_youaredead_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0); } }

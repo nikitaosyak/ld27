@@ -50,7 +50,7 @@ class Boss extends FlxSprite implements IHitable {
         myPt = new Point();
         heroPt = new Point();
 
-        _health = 450;
+        _health = 20;
         _speed = 180;
         _damage = 80;
     }
@@ -239,6 +239,8 @@ color = 0xf20000;
                 frame = 20;
                 visible = false;
                 level.collideObjects.remove(this, true);
+
+                level.layoutObjects.add(new Log(x, y, level));
             }
         }
     }

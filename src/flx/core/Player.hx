@@ -158,7 +158,7 @@ class Player extends FlxSprite {
             }
             if (frame == 10) {
                 frame = 24;
-                level.hud.showEndScreen();
+                level.hud.showLooseScreen();
             }
         }
 
