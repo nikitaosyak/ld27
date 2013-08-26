@@ -9,18 +9,28 @@ class Facade {
     public static var I(default, null):Facade = new Facade();
 
     public var xp:Int;
-    public var health:Float;
-    public var damage:Float;
-
-    public var moveSpd:Float; // per second!
-    public var attackSpd:Float;// per second!
-    public var regen:Float;    // per second!
-
     public var xpMultiplier:Float;
+
+    public var health:Float;
     public var healthMultiplier:Float;
+    public var maxHealth:Float;
+
+    public var damage:Float;
     public var damageMultiplier:Float;
+    public var maxDamage:Float;
+
+    public var moveSpd:Float; // pixels per second
     public var moveSpdMultiplier:Float;
+    public var maxMoveSpd:Float; // pixels per second
+
+    public var attackSpd:Float;// frames per second
+    public var attackSpdMultiplier:Float;
+    public var maxAttackSpd:Float;// frames per second
+
+    public var regen:Float;    // per second!
     public var regenMultiplier:Float;
+    public var maxRegen:Float;    // per second!
+
 
     public var spawnTime:Float;
     public var spawnChance:Float;
@@ -56,22 +66,30 @@ class Facade {
         alphas = [1, 1, 1, 0.95, 0.93, 0.9, 0.87, 0.85, 0.82, 0.8, 0.75];
 
         xp = 40;
+        xpMultiplier = 1.8;
+
         health = 40;
+        healthMultiplier = 1.2;
+        maxHealth = 200;
+
         damage = 10;
+        damageMultiplier = 1.2;
+        maxDamage = 200;
 
         moveSpd = 205;
-        attackSpd = 1.0;
-        regen = 0.8;
-
-        xpMultiplier = 1.8;
-        damageMultiplier = 1.2;
-        healthMultiplier = 1.2;
         moveSpdMultiplier = 1.05;
-        regenMultiplier = 1.05;
 
-        spawnTime = 1;
+        attackSpd = 20;
+        attackSpdMultiplier = 1.05;
+        maxAttackSpd = 30;
+
+        regen = 0.8;
+        regenMultiplier = 1.05;
+        maxRegen = 5;
+
+        spawnTime = 10;
         spawnChance = 0.2;
-        maxMonsters = 20;
+        maxMonsters = 10;
 
         lvlUpTime = 10;
 

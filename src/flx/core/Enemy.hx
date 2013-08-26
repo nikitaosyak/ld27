@@ -1,4 +1,5 @@
 package flx.core;
+import org.flixel.plugin.photonstorm.FlxBar;
 import haxe.Timer;
 import util.MathHelp;
 import motion.easing.Linear;
@@ -20,6 +21,7 @@ class Enemy extends FlxSprite {
     public static inline var ANIM_MOVE:String = 'move';
     public static inline var ANIM_ATTACK:String = 'attack';
     public static inline var ANIM_DEATH:String = 'death';
+    public static inline var ANIM_STAGGER:String = 'stagger';
 
     public function new(x:Float, y:Float, level:LevelBase) {
         super();
@@ -50,12 +52,12 @@ class Enemy extends FlxSprite {
         _speed = Facade.I.initialMonsterSpeed;
         _damage = Facade.I.initialMonsterDmg;
         _exp = Facade.I.initialMonsterExp;
-        _maxHealth = Facade.I.initialMonsterHealth;
-        _currentHealth = _maxHealth;
+        maxHealth = Facade.I.initialMonsterHealth;
+        currentHealth = maxHealth;
 
 
         _heroFl = new Point();
-        _myPt = new Point();
+        myPt = new Point();
 
         addAnimationCallback(onAnimation);
 
@@ -63,11 +65,17 @@ class Enemy extends FlxSprite {
         _lvlUpTimer = 0;
 
         addAnimation(ANIM_MOVE, [0, 1, 2, 3], 4);
-        addAnimation(ANIM_ATTACK, [4, 5, 6, 7], Math.floor(_attackSpeed));
+        addAnimation(ANIM_ATTACK, [0, 0, 4, 5, 6, 7], Math.floor(_attackSpeed));
         addAnimation(ANIM_DEATH, [8, 9, 10, 11, 12], 7);
+        addAnimation(ANIM_STAGGER, [8, 9, 8], 12);
+
+        hitLock = false;
+        lifePercent = 100;
     }
 
-    private var _myPt:Point;
+    public var bar:FlxBar;
+
+    public var myPt:Point;
 
     private var _level:TiledLevel;
     private var _spawnPts:Array<SpawnPlace>;
@@ -92,10 +100,14 @@ class Enemy extends FlxSprite {
     private var _attackSpeed:Float;
     private var _exp:Float;
     private var _damage:Float;
-    private var _maxHealth:Float;
-    private var _currentHealth:Float;
+    public var maxHealth:Float;
+    public var currentHealth:Float;
+
+    public var lifePercent:Float;
 
     private var _lvlUpTimer:Float;
+
+    public var hitLock:Bool;
 
     public function isIdle():Bool { return _patrolPath == null; }
 
@@ -105,6 +117,12 @@ class Enemy extends FlxSprite {
             super.update();
             return;
         }
+
+        if (curAnim == ANIM_STAGGER) {
+            super.update();
+            return;
+        }
+
         _lvlUpTimer += FlxG.elapsed;
         if (_lvlUpTimer > Facade.I.lvlUpTime) {
             lvlUp();
@@ -114,14 +132,14 @@ class Enemy extends FlxSprite {
         }
 
         _heroFl.setTo(_hero.x + _hero.width / 2, _hero.y + _hero.height / 2);
-        _myPt = new Point(x + width/2, y + width/2);
+        myPt = new Point(x + width/2, y + width/2);
 
-        var chasePath:Float = Math.abs(Point.distance(_heroFl, _myPt));
+        var chasePath:Float = Math.abs(Point.distance(_heroFl, myPt));
         if (!_hero.dead && chasePath < 200) {
             _patrolPath = null;
             _currentFl.setTo(-1000, -1000);
             if (chasePath <= 50) {
-                var tt:Point = new Point(_myPt.x - _heroFl.x, _myPt.y - _heroFl.y);
+                var tt:Point = new Point(myPt.x - _heroFl.x, myPt.y - _heroFl.y);
 
                 var angle:Float = MathHelp.rad2deg(Math.atan2(tt.y, tt.x));
 
@@ -145,17 +163,17 @@ class Enemy extends FlxSprite {
                 play(ANIM_MOVE);
                 var accX:Int = 0;
                 var accY:Int = 0;
-                if (_myPt.x < _heroFl.x) {
+                if (myPt.x < _heroFl.x) {
                     accX = 1;
                     this.facing = FlxObject.LEFT;
-                } else if (_myPt.x > _heroFl.x) {
+                } else if (myPt.x > _heroFl.x) {
                     accX = -1;
                     this.facing = FlxObject.RIGHT;
                 } else {
                     accX = 0;
                 }
 
-                var tt:Point = new Point(_heroFl.x - _myPt.x, _heroFl.y - _myPt.y);
+                var tt:Point = new Point(_heroFl.x - myPt.x, _heroFl.y - myPt.y);
 
                 this.x += FlxG.elapsed * _speed * Math.cos(Math.atan2(tt.y, tt.x));
                 this.y += FlxG.elapsed * _speed * Math.sin(Math.atan2(tt.y, tt.x));
@@ -168,27 +186,27 @@ class Enemy extends FlxSprite {
                 findPatrolPath();
             } else {
                 if (_patrolPath.head() != null) {
-                    if ((_currentFl.x == -1000 && _currentFl.y == -1000) || Math.abs(Point.distance(_myPt, _currentFl)) < 1) {
+                    if ((_currentFl.x == -1000 && _currentFl.y == -1000) || Math.abs(Point.distance(myPt, _currentFl)) < 1) {
                         _currentFl.setTo(_patrolPath.head().x, _patrolPath.head().y);
                         _patrolPath.removeAt(0);
                     }
 
-                    if (Math.abs(Point.distance(_myPt, _stopFl)) < 50) {
+                    if (Math.abs(Point.distance(myPt, _stopFl)) < 50) {
                         findPatrolPath();
                     } else {
 
                         var accX:Int = 0;
                         var accY:Int = 0;
-                        if (_myPt.x < _currentFl.x) {
+                        if (myPt.x < _currentFl.x) {
                             accX = 1;
                             this.facing = FlxObject.LEFT;
-                        } else if (_myPt.x > _currentFl.x) {
+                        } else if (myPt.x > _currentFl.x) {
                             accX = -1;
                             this.facing = FlxObject.RIGHT;
                         } else {
                             accX = 0;
                         }
-                        var tt:Point = new Point(_currentFl.x - _myPt.x, _currentFl.y - _myPt.y);
+                        var tt:Point = new Point(_currentFl.x - myPt.x, _currentFl.y - myPt.y);
 
                         this.x += FlxG.elapsed * _speed * Math.cos(Math.atan2(tt.y, tt.x));
                         this.y += FlxG.elapsed * _speed * Math.sin(Math.atan2(tt.y, tt.x));
@@ -203,6 +221,30 @@ class Enemy extends FlxSprite {
         }
 
         super.update();
+    }
+
+    public function receiveHit(damage:Float):Void {
+        if (hitLock) return;
+        hitLock = true;
+
+        // incorporeal chance :
+        if (Math.random() > alpha) {
+//            no hit
+            _levelBase.hud.emitIncorporeal(this);
+            return;
+        }
+
+        currentHealth -= damage;
+        lifePercent = currentHealth/ maxHealth * 100;
+        if (currentHealth <= 0) {
+            play(ANIM_DEATH, false);
+        } else {
+            play(ANIM_STAGGER, true);
+        }
+    }
+
+    public function releaseFromHit():Void {
+        hitLock = false;
     }
 
     private function findPatrolPath():Void {
@@ -225,25 +267,29 @@ class Enemy extends FlxSprite {
 
         _exp = _exp * Facade.I.monsterExpMultiplier;
 
-        var healthM:Float = _currentHealth / _maxHealth;
-        _maxHealth = _maxHealth * Facade.I.monsterHealthMultiplier;
-        _currentHealth = _maxHealth * healthM;
+        var healthM:Float = currentHealth / maxHealth;
+        maxHealth = maxHealth * Facade.I.monsterHealthMultiplier;
+        currentHealth = maxHealth * healthM;
+        lifePercent = currentHealth/ maxHealth * 100;
 
         _attackSpeed *= Facade.I.monsterAttackSpeedMultiplier;
-        addAnimation(ANIM_ATTACK, [4, 5, 6, 7], Math.floor(Math.min(_attackSpeed, Facade.I.monsterMaxAttackSpeed)));
+        addAnimation(ANIM_ATTACK, [0, 0, 4, 5, 6, 7], Math.floor(Math.min(_attackSpeed, Facade.I.monsterMaxAttackSpeed)));
 
         var scale:Float = Math.min(Facade.I.monsterMaxScale, scale.x * Facade.I.monsterScaleMultiplier);
         this.scale.make(scale, scale);
-
-//        offset.make(Math.round(66*scale), Math.round(90*scale));
-//        width /= scale;
-//        height /= scale;
     }
 
     private function onAnimation(name:String, frame:Int, idx:Int):Void {
+
         if (name == ANIM_ATTACK) {
             if (frame == 3) {
                 this._hero.play(Player.ANIM_DEATH);
+            }
+        }
+
+        if (name == ANIM_STAGGER) {
+            if (frame == 3) {
+                play(ANIM_MOVE);
             }
         }
 
@@ -253,8 +299,8 @@ class Enemy extends FlxSprite {
                     _levelBase.layoutObjects.remove(this);
                     _levelBase.collideObjects.remove(this, true);
                     _levelBase.enemies.remove(this);
+                    _levelBase.layoutObjects.remove(bar);
                     SpawnPlace.currentEnemies--;
-                    this.destroy();
                 }, 40);
             }
         }

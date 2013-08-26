@@ -1,4 +1,5 @@
 package flx.core;
+import flx.ui.EnemyLifeBar;
 import flash.geom.Point;
 import org.flixel.FlxPath;
 import org.flixel.util.FlxPoint;
@@ -38,9 +39,6 @@ class SpawnPlace extends FlxSprite {
         _spawnRanges.push(new Point(cent.x - 64, cent.y + 64));
         _spawnRanges.push(new Point(cent.x - 64, cent.y));
         _spawnRanges.push(new Point(cent.x - 64, cent.y - 64));
-
-        if (currentEnemies >= Facade.I.maxMonsters) return;
-        spawnEnemy();
     }
 
     public function makePathAround(fromPt:FlxPoint):FlxPath {
@@ -79,11 +77,15 @@ class SpawnPlace extends FlxSprite {
     }
 
     private function spawnEnemy():Void {
+        if (currentEnemies >= Facade.I.maxMonsters) return;
         var targ:Point = _spawnRanges[MathHelp.randomIntRange(0, _spawnRanges.length-1)];
         var enemyGen:Enemy = new Enemy(targ.x, targ.y, _level);
-//        _level.collideObjects.add(enemyGen);
         _level.enemies.push(enemyGen);
         _level.layoutObjects.add(enemyGen);
+
+        var enemyBar:EnemyLifeBar = new EnemyLifeBar(enemyGen);
+        _level.layoutObjects.add(enemyBar);
+        enemyGen.bar = enemyBar;
         currentEnemies++;
     }
 

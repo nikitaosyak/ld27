@@ -36,28 +36,73 @@ class Player extends FlxSprite {
         this.level = level;
 
         hittableEnemies = new List<Enemy>();
+
+        regenCountDown = 0;
+
+        hp = Facade.I.health;
+        maxHp = hp;
+        xp = 0;
+        lvlUpXp = Facade.I.xp;
+        dmg = Facade.I.damage;
+        regen = Facade.I.regen;
+        moveSpd = Facade.I.moveSpd;
+        attackSpd = Facade.I.attackSpd;
+
+        lastFrame = 0;
+        lastAni = '';
     }
 
     private var level:LevelBase;
     public var dead:Bool;
     public var hittableEnemies:List<Enemy>;
 
+    public var maxHp:Float;
+    public var hp:Float;
+
+    public var xp:Float;
+    public var lvlUpXp:Float;
+
+    public var dmg:Float;
+    public var regen:Float;
+    public var moveSpd:Float;
+    public var attackSpd:Float;
+
+    private var regenCountDown:Float;
+
     public function initialize(spawnX:Float, spawnY:Float):Void {
         this.x = MathHelp.roundExp(spawnX, 0);
         this.y = MathHelp.roundExp(spawnY, 0);
     }
 
+    override public function update():Void {
+        super.update();
+
+        regenCountDown += FlxG.elapsed;
+        if (regenCountDown >= 1) {
+//            Facade.I.health;
+            regenCountDown = 0;
+        }
+    }
+
+    private var lastFrame:Int;
+    private var lastAni:String;
+
     private function onSwing(name:String, frame:Int, idx:Int):Void {
         if (name == ANIM_SWING) {
-            if (frame == 4 || frame == 5 || frame == 6) {
+            if (frame == 4 || frame == 5) {
                 var iter:Iterator<Enemy> = hittableEnemies.iterator();
                 while (iter.hasNext()) {
                     var enemy:Enemy = iter.next();
-                    enemy.play(Enemy.ANIM_DEATH);
+                    enemy.receiveHit(dmg);
                 }
-
             }
             if (frame == 6) {
+
+                var iter:Iterator<Enemy> = hittableEnemies.iterator();
+                while (iter.hasNext()) {
+                    var enemy:Enemy = iter.next();
+                    enemy.releaseFromHit();
+                }
                 Timer.delay(function():Void {
                     PlayerController.SWING_LOCK = false;
                 }, 25);
@@ -74,5 +119,12 @@ class Player extends FlxSprite {
                 }, 1000);
             }
         }
+
+        lastAni = name;
+        lastFrame = frame;
+    }
+
+    private function lvlUp():Void {
+
     }
 }

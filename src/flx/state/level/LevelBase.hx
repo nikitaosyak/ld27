@@ -1,4 +1,6 @@
 package flx.state.level;
+import org.flixel.util.FlxPoint;
+import flx.ui.Hud;
 import flx.core.CameraOverride;
 import haxe.Timer;
 import util.MathHelp;
@@ -38,25 +40,10 @@ class LevelBase extends FlxState {
     public var spawnPlaces:Array<SpawnPlace>;
     public var enemies:List<Enemy>;
     public var collideObjects:FlxTypedGroup<FlxSprite>;
-
-//    private var layout:FlxTypedGroup<FlxBasic>;
-//    private var _enemyBullets:FlxTypedGroup<EnemyBullet>;
-//    private var _littleGibs:FlxEmitter;
-//    private var _bigGibs:FlxEmitter;
-    private var hud:FlxGroup;
-//    private var _gunjam:FlxGroup;
-
-// Meta groups, to help speed up collisions-+
-    private var objects:FlxGroup;
-    private var hazards:FlxGroup;
-
-// HUD/User Interface stuff
-    private var helpText:FlxText;
     public var backGroundObjects:FlxTypedGroup<FlxSprite>;
     public var layoutObjects:SortingGroup;
-//    private var _score2:FlxText;
-//    private var _scoreTimer:Float;
-//    private var _jamTimer:Float;
+
+    public var hud:Hud;
 
     override public function create():Void {
         SpawnPlace.currentEnemies = 0;
@@ -66,17 +53,17 @@ class LevelBase extends FlxState {
         enemies = new List<Enemy>();
         collideObjects = new FlxTypedGroup<FlxSprite>();
         backGroundObjects = new FlxTypedGroup<FlxSprite>();
+        hud = new Hud();
 
         asRadian = MathHelp.deg2rad(45);
-//        this.persistantUpdate = true;
-//        this.persistantDraw = true;
-// Load the level's tilemaps
         level = new TiledLevel("assets/tiled/testmap.tmx");
 
         var cam:CameraOverride = new CameraOverride();
         cam.setBounds(0, 0, level.fullWidth, level.fullHeight, true);
         FlxG.resetCameras(cam);
-// Add tilemaps
+        hud.setAll("scrollFactor", new FlxPoint(0, 0));
+        hud.setAll("cameras", [FlxG.camera]);
+
         add(level.backgroundTiles);
         add(backGroundObjects);
 //        add(level.foregroundTiles);
@@ -85,6 +72,8 @@ class LevelBase extends FlxState {
         add(layoutObjects);
         level.loadObjects(this);
         layoutObjects.sort();
+
+        add(hud);
     }
 
     private static var asRadian:Float;
@@ -120,7 +109,6 @@ class LevelBase extends FlxState {
             }
             player.play(Player.ANIM_MOVE);
         } else if (controller.accX != 0) {
-//            trace(PlayerController.SWING_LOCK);
             player.x = MathHelp.roundExp(player.x + controller.accX * moveSpd, 5);
             if (controller.accX > 0) {
                 player.facing = FlxObject.LEFT;
@@ -137,7 +125,7 @@ class LevelBase extends FlxState {
         }
 
         if (wasMove) {
-            level.collideWithLevel(player, onCollide, null);
+            level.collideWithLevel(player, onTileMapCollide, null);
         }
 
         if (wasMove) {
@@ -151,7 +139,7 @@ class LevelBase extends FlxState {
         super.update();
     }
 
-    private function onCollide(some:FlxObject, some2:FlxObject):Void {
+    private function onTileMapCollide(some:FlxObject, some2:FlxObject):Void {
 //        trace(some);
     }
 

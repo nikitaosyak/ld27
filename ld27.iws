@@ -2,6 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5badb44c-c72e-4bca-9867-0a1db1336274" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/flx/ui/EnemyLifeBar.hx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/flx/ui/Hud.hx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/core/Enemy.hx" afterPath="$PROJECT_DIR$/src/flx/core/Enemy.hx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/core/Facade.hx" afterPath="$PROJECT_DIR$/src/flx/core/Facade.hx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" afterPath="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/core/Player.hx" afterPath="$PROJECT_DIR$/src/flx/core/Player.hx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/core/SpawnPlace.hx" afterPath="$PROJECT_DIR$/src/flx/core/SpawnPlace.hx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ld27.iws" afterPath="$PROJECT_DIR$/ld27.iws" />
     </list>
     <ignored path="ld27.iws" />
@@ -11,15 +18,15 @@
     <file path="/Main.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377351639204" ignored="false" />
     <file path="$PROJECT_DIR$/../tanks/tanks.iws" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377341002560" ignored="false" />
     <file path="/.gitignore" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377312130704" ignored="false" />
-    <file path="/a.dummy" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377494652834" ignored="false" />
+    <file path="/a.dummy" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377504387508" ignored="false" />
     <file path="/LabyrinthGame.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377332754426" ignored="false" />
     <file path="/EnterScreenState.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377331685392" ignored="false" />
     <file path="/Level0.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377334850872" ignored="false" />
-    <file path="/Player.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377459678202" ignored="false" />
+    <file path="/Player.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377510319925" ignored="false" />
     <file path="/EnemyBase.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377332784040" ignored="false" />
-    <file path="/SpawnPlace.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377494687090" ignored="false" />
-    <file path="/Facade.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377455511552" ignored="false" />
-    <file path="/LevelBase.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377457161540" ignored="false" />
+    <file path="/SpawnPlace.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377511058397" ignored="false" />
+    <file path="/Facade.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377504246373" ignored="false" />
+    <file path="/LevelBase.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377503584850" ignored="false" />
     <file path="/Parser.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377334177068" ignored="false" />
     <file path="/TmxMap.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377334892025" ignored="false" />
     <file path="/TmxPropertySet.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377334928406" ignored="false" />
@@ -33,11 +40,13 @@
     <file path="/FlxG.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377357995887" ignored="false" />
     <file path="/FlxCamera.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377368866826" ignored="false" />
     <file path="/CameraOverride.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377375151166" ignored="false" />
-    <file path="/Enemy.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377494618846" ignored="false" />
+    <file path="/Enemy.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377513731721" ignored="false" />
     <file path="/DeathTrap.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377381952561" ignored="false" />
     <file path="/MathHelp.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377420641044" ignored="false" />
     <file path="/InvisibleCollider.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377432226219" ignored="false" />
     <file path="/SpriteFromAtlas.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377426176973" ignored="false" />
+    <file path="/Hud.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377514090685" ignored="false" />
+    <file path="/EnemyLifeBar.hx" changelist="5badb44c-c72e-4bca-9867-0a1db1336274" time="1377511430856" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,58 +106,65 @@
     <favorites_list name="ld27" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.49886104">
+    <splitter split-orientation="horizontal" split-proportion="0.50928074">
       <split-first>
         <leaf>
-          <file leaf-file-name="Enemy.hx" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/flx/core/Enemy.hx">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="219" column="76" selection-start="7550" selection-end="7550" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="SortingGroup.hx" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/flx/core/SortingGroup.hx">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="16" column="72" selection-start="478" selection-end="478" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="SpawnPlace.hx" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/flx/core/SpawnPlace.hx">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="18" column="49" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="FlxTilemap.hx" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/FlxTilemap.hx">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="796" column="0" selection-start="22749" selection-end="22749" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="TiledLevel.hx" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="TiledLevel.hx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/tmx/TiledLevel.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="63" column="8" selection-start="2412" selection-end="2412" vertical-scroll-proportion="0.13227513">
+                <state line="69" column="52" selection-start="2711" selection-end="2711" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="testmap.tmx" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/assets/tiled/testmap.tmx">
+          <file leaf-file-name="SpawnPlace.hx" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/flx/core/SpawnPlace.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="61" column="26" selection-start="22306" selection-end="22306" vertical-scroll-proportion="0.0">
+                <state line="72" column="55" selection-start="2293" selection-end="2293" vertical-scroll-proportion="0.80762565">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Player.hx" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/flx/core/Player.hx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="98" column="92" selection-start="2761" selection-end="2761" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="monster1_tilesheet.png" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assets/monster1_tilesheet.png">
+              <provider selected="true" editor-type-id="images">
+                <state />
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="FlxBar.hx" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/plugin/photonstorm/FlxBar.hx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="727" column="45" selection-start="23751" selection-end="23751" vertical-scroll-proportion="-3.76">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="FlxPreloader.hx" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/system/FlxPreloader.hx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="67" column="16" selection-start="65848" selection-end="65848" vertical-scroll-proportion="-11.32">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="FlxText.hx" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/FlxText.hx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="18" column="28" selection-start="579" selection-end="579" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -158,19 +174,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="Player.hx" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/flx/core/Player.hx">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="31" column="29" selection-start="1013" selection-end="1013" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="Facade.hx" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/flx/core/Facade.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="57" column="50" selection-start="1740" selection-end="1740" vertical-scroll-proportion="0.49911818">
+                <state line="89" column="22" selection-start="2452" selection-end="2452" vertical-scroll-proportion="0.6524823">
                   <folding />
                 </state>
               </provider>
@@ -179,34 +186,43 @@
           <file leaf-file-name="LevelBase.hx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/flx/state/level/LevelBase.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="80" column="18" selection-start="2488" selection-end="2488" vertical-scroll-proportion="0.0">
+                <state line="75" column="14" selection-start="2230" selection-end="2230" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="CameraOverride.hx" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/flx/core/CameraOverride.hx">
+          <file leaf-file-name="Hud.hx" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/flx/ui/Hud.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="42" column="17" selection-start="1497" selection-end="1497" vertical-scroll-proportion="0.0">
+                <state line="37" column="95" selection-start="1054" selection-end="1054" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="FlxG.hx" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/FlxG.hx">
+          <file leaf-file-name="Enemy.hx" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/flx/core/Enemy.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="1933" column="110" selection-start="54092" selection-end="54092" vertical-scroll-proportion="0.0">
+                <state line="234" column="75" selection-start="7547" selection-end="7547" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Expo.hx" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$HAXE_LIB$/actuate/1,6,4/motion/easing/Expo.hx">
+          <file leaf-file-name="FlxSprite.hx" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/FlxSprite.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="10" column="6" selection-start="148" selection-end="148" vertical-scroll-proportion="0.0">
+                <state line="1319" column="30" selection-start="36495" selection-end="36495" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="EnemyLifeBar.hx" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/flx/ui/EnemyLifeBar.hx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="9" column="52" selection-start="301" selection-end="324" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -215,7 +231,7 @@
           <file leaf-file-name="Actuate.hx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$HAXE_LIB$/actuate/1,6,4/motion/Actuate.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="538" column="14" selection-start="14606" selection-end="14606" vertical-scroll-proportion="0.0">
+                <state line="296" column="70" selection-start="8535" selection-end="8535" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -241,28 +257,28 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/flx/core/PlayerController.hx" />
-        <option value="$PROJECT_DIR$/src/flx/core/DeathTrap.hx" />
         <option value="$PROJECT_DIR$/assets/data/nokiafc22.ttf.hash" />
         <option value="$PROJECT_DIR$/src/util/MathHelp.hx" />
         <option value="$PROJECT_DIR$/src/flx/core/SpriteFromAtlas.hx" />
         <option value="$PROJECT_DIR$/src/flx/core/CameraOverride.hx" />
         <option value="$PROJECT_DIR$/src/flx/core/InvisibleCollider.hx" />
         <option value="$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/FlxSprite.hx" />
-        <option value="$PROJECT_DIR$/src/flx/core/Facade.hx" />
-        <option value="$PROJECT_DIR$/src/flx/core/Player.hx" />
         <option value="$PROJECT_DIR$/src/flx/core/SortingGroup.hx" />
-        <option value="$PROJECT_DIR$/src/flx/core/Enemy.hx" />
-        <option value="$PROJECT_DIR$/src/flx/core/SpawnPlace.hx" />
-        <option value="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" />
         <option value="$PROJECT_DIR$/src/tmx/TiledLevel.hx" />
         <option value="$PROJECT_DIR$/assets/tiled/testmap.tmx" />
+        <option value="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" />
+        <option value="$PROJECT_DIR$/src/flx/core/Player.hx" />
+        <option value="$PROJECT_DIR$/src/flx/ui/EnemyLifeBar.hx" />
+        <option value="$PROJECT_DIR$/src/flx/core/SpawnPlace.hx" />
+        <option value="$PROJECT_DIR$/src/flx/core/Enemy.hx" />
+        <option value="$PROJECT_DIR$/src/flx/ui/Hud.hx" />
+        <option value="$PROJECT_DIR$/src/flx/core/Facade.hx" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="2" />
-    <option name="width" value="1646" />
+    <option name="width" value="1778" />
     <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -315,11 +331,85 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="flixel" />
+              <option name="myItemId" value="flixel-addons" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="2,0,0-alpha,3" />
+              <option name="myItemId" value="git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ld27" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flixel-addons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="addons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ld27" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flixel-addons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="addons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ld27" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flixel-addons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="addons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="display" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -340,6 +430,24 @@
               <option name="myItemId" value="2,0,0-alpha,3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ld27" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flixel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2,0,0-alpha,3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="flixel" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -367,137 +475,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="plugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ld27" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flixel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2,0,0-alpha,3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flixel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="photonstorm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ld27" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flixel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2,0,0-alpha,3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flixel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="photonstorm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fx" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ld27" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="actuate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="1,6,4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ld27" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="actuate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="1,6,4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="motion" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ld27" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="actuate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="1,6,4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="motion" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easing" />
+              <option name="myItemId" value="system" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -597,55 +575,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="state" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ld27" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ld27" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flx" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="state" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="level" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ld27" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ld27" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flx" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
+              <option name="myItemId" value="ui" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -944,22 +874,22 @@
     <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
   </component>
   <component name="ToolWindowManager">
-    <frame x="2" y="0" width="1646" height="1080" extended-state="0" />
-    <editor active="false" />
+    <frame x="2" y="0" width="1778" height="1080" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32869378" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869378" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32762313" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35438973" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32869378" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35438973" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869378" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869378" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32655245" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18216081" sideWeight="0.6713062" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1612529" sideWeight="0.6456103" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32762313" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1037,7 +967,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="68" />
+      <option name="time" value="70" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1045,19 +975,32 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/char_tilesheet.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/system/FlxPreloader.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="16" selection-start="65848" selection-end="65848" vertical-scroll-proportion="-11.32">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/gate_tilesheet.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://C:/haxe/haxe/std/flash/display/BitmapData.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="13" selection-start="37" selection-end="37" vertical-scroll-proportion="0.0389016">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/HUD_tilesheet.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$HAXE_LIB$/flixel-addons/git/flixel/addons/display/FlxBackdrop.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="0" selection-start="443" selection-end="443" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/FlxG.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1070" column="40" selection-start="30152" selection-end="30152" vertical-scroll-proportion="0.5141844">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/monster1_tilesheet.png">
@@ -1065,78 +1008,79 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/tiled/grave1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/plugin/photonstorm/FlxBar.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="727" column="45" selection-start="23751" selection-end="23751" vertical-scroll-proportion="-3.76">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/tiled/edge.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/src/flx/core/Player.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="92" selection-start="2761" selection-end="2761" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/tiled/bush.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/FlxText.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="28" selection-start="579" selection-end="579" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$HAXE_LIB$/actuate/1,6,4/motion/Actuate.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="296" column="70" selection-start="8535" selection-end="8535" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/flx/ui/EnemyLifeBar.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="52" selection-start="301" selection-end="324" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/flx/core/SpawnPlace.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="49" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0">
+        <state line="72" column="55" selection-start="2293" selection-end="2293" vertical-scroll-proportion="0.80762565">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/FlxTilemap.hx">
+    <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/FlxSprite.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="796" column="0" selection-start="22749" selection-end="22749" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/tiled/tiles.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/flx/core/CameraOverride.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="17" selection-start="1497" selection-end="1497" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/flx/core/SortingGroup.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="72" selection-start="478" selection-end="478" vertical-scroll-proportion="0.0">
+        <state line="1319" column="30" selection-start="36495" selection-end="36495" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/flx/state/level/LevelBase.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="18" selection-start="2488" selection-end="2488" vertical-scroll-proportion="0.0">
+        <state line="75" column="14" selection-start="2230" selection-end="2230" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/tiled/testmap.tmx">
+    <entry file="file://$PROJECT_DIR$/src/flx/core/Enemy.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="26" selection-start="22306" selection-end="22306" vertical-scroll-proportion="0.0">
+        <state line="234" column="75" selection-start="7547" selection-end="7547" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tmx/TiledLevel.hx">
+    <entry file="file://$PROJECT_DIR$/src/flx/ui/Hud.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="8" selection-start="2412" selection-end="2412" vertical-scroll-proportion="0.13227513">
+        <state line="37" column="95" selection-start="1054" selection-end="1054" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/flx/core/Facade.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="50" selection-start="1740" selection-end="1740" vertical-scroll-proportion="0.49911818">
+        <state line="89" column="22" selection-start="2452" selection-end="2452" vertical-scroll-proportion="0.6524823">
           <folding />
         </state>
       </provider>
