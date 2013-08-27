@@ -48,7 +48,7 @@ class SpawnPlace extends FlxSprite implements IHitable {
 
         myPt = new Point(this.x + 64, this.y + 96);
 
-        _health = 5;
+        _health = 3;
         hitLock = false;
     }
 

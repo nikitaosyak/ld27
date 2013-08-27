@@ -35,10 +35,10 @@ class Facade {
         monsterDamages = [20, 25, 30, 35, 40];
         monsterAttackSpeed = [7, 8, 9, 10, 12];
         monsterHealth = [20, 60, 100, 150, 200];
-        monsterSpeeds = [120, 125, 130, 135, 140];
+        monsterSpeeds = [120, 125, 130, 135, 135];
         monsterColors = [0xFFFFFF, 0xff9a4c, 0xf26900, 0xf23a3a, 0xf20000];
         monsterAlphas = [1, 1, 1, 1, 0.85];
-        incorporeal = [0, 0.05, 0.1, 0.15, 0.27];
+        incorporeal = [0, 0.1, 0.1, 0.15, 0.2];
 
         healths =      [50, 75, 100, 125, 150, 175, 200];
         damages =      [10, 15,  20,  25,  30,  35,  40];
@@ -50,8 +50,8 @@ class Facade {
         moveSpd = 205;
 
         spawnTime = 10;
-        spawnChance = 0.3;
-        maxMonsters = 12;
+        spawnChance = 0.4;
+        maxMonsters = 10;
 
         lvlUpTime = 10;
     }

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5badb44c-c72e-4bca-9867-0a1db1336274" name="Default" comment="piled together a map - got the first playable draft">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/core/Facade.hx" afterPath="$PROJECT_DIR$/src/flx/core/Facade.hx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/flx/core/SpawnPlace.hx" afterPath="$PROJECT_DIR$/src/flx/core/SpawnPlace.hx" />
     </list>
     <ignored path="ld27.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -141,10 +142,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Lever.hx" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="Lever.hx" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/flx/core/Lever.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="19" column="60" selection-start="528" selection-end="528" vertical-scroll-proportion="0.0">
+                <state line="17" column="60" selection-start="455" selection-end="455" vertical-scroll-proportion="0.29977116">
                   <folding />
                 </state>
               </provider>
@@ -186,10 +187,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="FlxG.hx" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="FlxG.hx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/FlxG.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="414" column="41" selection-start="12112" selection-end="12112" vertical-scroll-proportion="0.27326265">
+                <state line="414" column="72" selection-start="12127" selection-end="12127" vertical-scroll-proportion="-9.28">
                   <folding />
                 </state>
               </provider>
@@ -199,10 +200,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="Facade.hx" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="Facade.hx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/flx/core/Facade.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="43" column="47" selection-start="1361" selection-end="1361" vertical-scroll-proportion="0.5915332">
+                <state line="40" column="45" selection-start="1250" selection-end="1250" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -220,7 +221,7 @@
           <file leaf-file-name="Boss.hx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/flx/core/Boss.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="52" column="18" selection-start="1689" selection-end="1689" vertical-scroll-proportion="0.0">
+                <state line="44" column="37" selection-start="1514" selection-end="1514" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -253,10 +254,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SpawnPlace.hx" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="SpawnPlace.hx" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/flx/core/SpawnPlace.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="61" column="17" selection-start="1851" selection-end="1851" vertical-scroll-proportion="0.0">
+                <state line="50" column="19" selection-start="1612" selection-end="1612" vertical-scroll-proportion="0.3764302">
                   <folding />
                 </state>
               </provider>
@@ -304,19 +305,19 @@
         <option value="$PROJECT_DIR$/src/flx/core/IHitable.hx" />
         <option value="$PROJECT_DIR$/src/flx/core/PlayerController.hx" />
         <option value="$PROJECT_DIR$/src/flx/Game.hx" />
-        <option value="$PROJECT_DIR$/src/flx/core/SpawnPlace.hx" />
         <option value="$PROJECT_DIR$/src/flx/core/CameraOverride.hx" />
         <option value="$PROJECT_DIR$/src/flx/ui/Hud.hx" />
         <option value="$PROJECT_DIR$/src/flx/core/Log.hx" />
         <option value="$PROJECT_DIR$/src/flx/core/Player.hx" />
-        <option value="$PROJECT_DIR$/src/flx/core/Boss.hx" />
-        <option value="$PROJECT_DIR$/src/flx/core/Lever.hx" />
         <option value="$PROJECT_DIR$/src/flx/state/EnterScreenState.hx" />
         <option value="$PROJECT_DIR$/src/tmx/TiledLevel.hx" />
         <option value="$PROJECT_DIR$/src/flx/core/Enemy.hx" />
         <option value="$PROJECT_DIR$/src/flx/state/level/LevelBase.hx" />
         <option value="$PROJECT_DIR$/src/Main.hx" />
+        <option value="$PROJECT_DIR$/src/flx/core/Lever.hx" />
+        <option value="$PROJECT_DIR$/src/flx/core/Boss.hx" />
         <option value="$PROJECT_DIR$/src/flx/core/Facade.hx" />
+        <option value="$PROJECT_DIR$/src/flx/core/SpawnPlace.hx" />
       </list>
     </option>
   </component>
@@ -1062,13 +1063,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/flx/core/Lever.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="60" selection-start="528" selection-end="528" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/tmx/TiledLevel.hx">
       <provider selected="true" editor-type-id="text-editor">
         <state line="143" column="52" selection-start="5537" selection-end="5537" vertical-scroll-proportion="0.0">
@@ -1079,13 +1073,6 @@
     <entry file="file://$PROJECT_DIR$/src/flx/state/EnterScreenState.hx">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="50" selection-start="1349" selection-end="1349" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/flx/core/SpawnPlace.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="17" selection-start="1851" selection-end="1851" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1132,21 +1119,35 @@
     </entry>
     <entry file="file://$HAXE_LIB$/flixel/2,0,0-alpha,3/org/flixel/FlxG.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="414" column="41" selection-start="12112" selection-end="12112" vertical-scroll-proportion="0.27326265">
+        <state line="414" column="72" selection-start="12127" selection-end="12127" vertical-scroll-proportion="-9.28">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/flx/core/Boss.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="18" selection-start="1689" selection-end="1689" vertical-scroll-proportion="0.0">
+        <state line="44" column="37" selection-start="1514" selection-end="1514" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/flx/core/Lever.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="60" selection-start="455" selection-end="455" vertical-scroll-proportion="0.29977116">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/flx/core/Facade.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="47" selection-start="1361" selection-end="1361" vertical-scroll-proportion="0.5915332">
+        <state line="40" column="45" selection-start="1250" selection-end="1250" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/flx/core/SpawnPlace.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="19" selection-start="1612" selection-end="1612" vertical-scroll-proportion="0.3764302">
           <folding />
         </state>
       </provider>
