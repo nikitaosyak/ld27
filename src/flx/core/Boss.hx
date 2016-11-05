@@ -1,11 +1,15 @@
 package flx.core;
+
+import flixel.FlxObject;
+import flixel.FlxG;
+import flixel.FlxSprite;
+
 import util.MathHelp;
-import org.flixel.FlxObject;
-import org.flixel.FlxG;
 import flash.geom.Point;
-import flx.state.level.LevelBase;
-import org.flixel.FlxSprite;
 import haxe.Timer;
+
+import flx.state.level.LevelBase;
+
 class Boss extends FlxSprite implements IHitable {
 
     public static inline var ANIM_MOVE:String = 'move';
@@ -21,7 +25,7 @@ class Boss extends FlxSprite implements IHitable {
         level = state;
         _hero = state.player;
 
-        loadGraphic('assets/boss_tilesheet.png', true, true, 192, 192);
+        this.loadGraphic('assets/boss_tilesheet.png', true, 192, 192, true);
         this.antialiasing = true;
         immovable = true;
 

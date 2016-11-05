@@ -1,7 +1,9 @@
 package flx.ui;
-import org.flixel.util.FlxPoint;
+
+import flixel.math.FlxPoint;
+import flixel.ui.FlxBar;
+
 import flx.core.Enemy;
-import org.flixel.plugin.photonstorm.FlxBar;
 
 class EnemyLifeBar extends FlxBar {
 

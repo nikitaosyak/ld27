@@ -1,13 +1,15 @@
 package flx.state.level;
+
+import flixel.*;
+import flixel.group.FlxGroup;
+
 import motion.easing.Linear;
-import org.flixel.FlxSound;
 import motion.Actuate;
 import flx.core.Boss;
 import flash.geom.Rectangle;
 import flash.geom.Point;
 import flx.core.Lever;
 import flx.core.InvisibleCollider;
-import org.flixel.util.FlxPoint;
 import flx.ui.Hud;
 import flx.core.CameraOverride;
 import haxe.Timer;
@@ -16,20 +18,11 @@ import util.MathHelp;
 import flx.core.Facade;
 import flx.core.PlayerController;
 import flx.core.SortingGroup;
-import org.flixel.FlxObject;
-import org.flixel.FlxSprite;
 import tmx.TiledLevel;
-import org.flixel.FlxG;
 import openfl.Assets;
-import org.flixel.FlxTilemap;
 import flx.core.SpawnPlace;
-import org.flixel.FlxText;
-import org.flixel.FlxGroup;
-import org.flixel.FlxTypedGroup;
 import flx.core.Enemy;
 import flx.core.Player;
-import org.flixel.FlxBasic;
-import org.flixel.FlxState;
 
 class LevelBase extends FlxState {
 

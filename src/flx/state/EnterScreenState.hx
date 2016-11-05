@@ -1,10 +1,6 @@
 package flx.state;
-import org.flixel.FlxText;
 import flx.state.level.LevelBase;
-import org.flixel.FlxG;
-import org.flixel.FlxButton;
-import org.flixel.FlxSprite;
-import org.flixel.FlxState;
+import flixel.*;
 class EnterScreenState extends FlxState {
     public function new() {
         super();

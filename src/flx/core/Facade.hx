@@ -1,5 +1,5 @@
 package flx.core;
-import org.flixel.util.FlxPoint;
+import flixel.math.FlxPoint;
 class Facade {
 
     private function new() {

@@ -1,26 +1,22 @@
 package tmx;
+
+import flixel.*;
+import flixel.tile.*;
+import flixel.group.*;
+import flixel.math.*;
+import flixel.util.*;
+import flixel.addons.editors.tiled.*;
+
 import flx.core.Boss;
 import flx.core.Lever;
 import flx.core.PowerUp;
 import flx.core.SpriteFromAtlas;
 import flx.core.InvisibleCollider;
 import flx.core.DeathTrap;
-import org.flixel.util.FlxPoint;
-import org.flixel.FlxPath;
 import flx.core.SpawnPlace;
 import flx.core.Player;
 import flx.state.level.LevelBase;
-import org.flixel.FlxG;
-import org.flixel.FlxState;
-import flixel.addons.editors.tiled.TiledMap;
-import org.flixel.FlxObject;
-import org.flixel.FlxSprite;
-import flixel.addons.editors.tiled.TiledObjectGroup;
-import flixel.addons.editors.tiled.TiledObject;
 import haxe.io.Path;
-import flixel.addons.editors.tiled.TiledTileSet;
-import org.flixel.FlxTilemap;
-import org.flixel.FlxGroup;
 
 class TiledLevel extends TiledMap {
 // For each "Tile Layer" in the map, you must define a "tileset" property which contains the name of a tile sheet image
@@ -37,8 +33,6 @@ class TiledLevel extends TiledMap {
 
         foregroundTiles = new FlxGroup();
         backgroundTiles = new FlxGroup();
-
-//        FlxG.camera.setBounds(0, 0, fullWidth, fullHeight, true);
 
 // Load Tile Maps
         for (tileLayer in layers) {
@@ -80,20 +74,20 @@ class TiledLevel extends TiledMap {
     }
 
     public function loadObjects(state:LevelBase) {
-        for (group in objectGroups) {
-            for (o in group.objects) {
-                loadObject(o, group, state);
-            }
-        }
+        // for (group in objectGroups) {
+        //     for (o in group.objects) {
+        //         loadObject(o, group, state);
+        //     }
+        // }
     }
 
-    private function loadObject(o:TiledObject, g:TiledObjectGroup, state:LevelBase) {
+    private function loadObject(o:TiledObject, state:LevelBase) {
         var x:Int = o.x;
         var y:Int = o.y;
 
         //objects in tiled are aligned bottom-left (top-left in flixel)
         if (o.gid != -1)
-            y -= g.map.getGidOwner(o.gid).tileHeight;
+            y -= getGidOwner(o.gid).tileHeight;
 
         switch (o.type.toLowerCase()) {
             case "edgescollide":
@@ -105,7 +99,7 @@ class TiledLevel extends TiledMap {
                 }
 
             case "trees":
-                var tileset:TiledTileSet = g.map.getGidOwner(o.gid);
+                var tileset:TiledTileSet = getGidOwner(o.gid);
                 var tree = new FlxSprite(x, y, c_PATH_LEVEL_TILESHEETS + tileset.imageSource);
                 tree.setOriginToCenter();
                 tree.offset.make(40, 155);
@@ -118,12 +112,12 @@ class TiledLevel extends TiledMap {
                 state.collideObjects.add(tree);
 
             case "bushes":
-                var tileset:TiledTileSet = g.map.getGidOwner(o.gid);
+                var tileset:TiledTileSet = getGidOwner(o.gid);
                 var rock = new FlxSprite(x, y, c_PATH_LEVEL_TILESHEETS + tileset.imageSource);
                 state.layoutObjects.add(rock);
 
             case "graves1":
-                var tileset:TiledTileSet = g.map.getGidOwner(o.gid);
+                var tileset:TiledTileSet = getGidOwner(o.gid);
                 var grave = new FlxSprite(x, y, c_PATH_LEVEL_TILESHEETS + tileset.imageSource);
                 grave.setOriginToCenter();
                 grave.offset.make(35, 90);
@@ -158,7 +152,7 @@ class TiledLevel extends TiledMap {
                 state.backGroundObjects.add(lever);
 
             case 'boss_opened':
-                var tileset:TiledTileSet = g.map.getGidOwner(o.gid);
+                var tileset:TiledTileSet = getGidOwner(o.gid);
                 var releaseSprite:FlxSprite = new FlxSprite(x, y);
                 releaseSprite.loadGraphic(c_PATH_LEVEL_TILESHEETS + tileset.imageSource, false, false, 64, 64);
                 releaseSprite.frame = o.gid - tileset.firstGID;

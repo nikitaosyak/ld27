@@ -1,8 +1,12 @@
 package flx.core;
-import org.flixel.FlxG;
+
+import flixel.FlxG;
+import flixel.FlxSprite;
+
 import flash.geom.Point;
+
 import flx.state.level.LevelBase;
-import org.flixel.FlxSprite;
+
 class Lever extends FlxSprite {
 
     public static var TOTAL_LEVERS:Int;

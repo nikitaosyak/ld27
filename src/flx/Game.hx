@@ -1,10 +1,11 @@
 package flx;
+
+import flixel.*;
+
 import flx.state.EnterScreenState;
-import org.flixel.FlxG;
 import flx.core.Facade;
 import flx.state.level.LevelBase;
 import flash.Lib;
-import org.flixel.FlxGame;
 
 class Game extends FlxGame {
 

@@ -1,11 +1,6 @@
 package flx.core;
 import flash.geom.Point;
-import org.flixel.util.FlxRandom;
-import org.flixel.FlxCamera;
-import org.flixel.FlxSprite;
-import org.flixel.FlxG;
-import org.flixel.util.FlxPoint;
-import org.flixel.FlxCamera;
+import flixel.*;
 class CameraOverride extends FlxCamera {
     public function new() {
         super(0, 0, FlxG.width, FlxG.height);

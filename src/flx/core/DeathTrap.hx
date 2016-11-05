@@ -1,6 +1,6 @@
 package flx.core;
-import org.flixel.FlxSprite;
-import org.flixel.FlxG;
+import flixel.FlxSprite;
+import flixel.FlxG;
 class DeathTrap extends FlxSprite {
     public function new(x:Int, y:Int) {
         super();

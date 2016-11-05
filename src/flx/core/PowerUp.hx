@@ -1,7 +1,7 @@
 package flx.core;
 import flash.geom.Point;
 import flx.state.level.LevelBase;
-import org.flixel.FlxSprite;
+import flixel.FlxSprite;
 
 class PowerUp extends FlxSprite {
 

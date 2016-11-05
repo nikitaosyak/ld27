@@ -4,8 +4,7 @@ import haxe.Timer;
 import flash.ui.Keyboard;
 import haxe.ds.IntMap;
 import flash.events.KeyboardEvent;
-import org.flixel.FlxBasic;
-import org.flixel.FlxG;
+import flixel.*;
 
 enum KeyStatus {
     START;

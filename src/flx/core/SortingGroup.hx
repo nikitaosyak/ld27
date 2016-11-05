@@ -1,6 +1,6 @@
 package flx.core;
-import org.flixel.FlxSprite;
-import org.flixel.FlxTypedGroup;
+import flixel.group.FlxGroup;
+import flixel.FlxSprite;
 class SortingGroup extends FlxTypedGroup<FlxSprite>{
     public function new() {
         super();

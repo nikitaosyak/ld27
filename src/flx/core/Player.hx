@@ -1,14 +1,16 @@
 package flx.core;
+
+import flixel.FlxG;
+import flixel.FlxSprite;
+
 import haxe.ds.ObjectMap;
 import haxe.ds.IntMap;
 import flash.geom.Point;
 import flash.geom.Point;
 import motion.Actuate.ObjectHash;
 import flx.state.level.LevelBase;
-import org.flixel.FlxG;
 import haxe.Timer;
 import util.MathHelp;
-import org.flixel.FlxSprite;
 class Player extends FlxSprite {
 
     public static inline var ANIM_IDLE:String = 'idle';

@@ -1,6 +1,7 @@
 package flx.core;
-import org.flixel.FlxG;
-import org.flixel.FlxSprite;
+
+import flixel.FlxG;
+import flixel.FlxSprite;
 
 class InvisibleCollider extends FlxSprite {
     public function new(x:Float, y:Float, width:Float, height:Float) {

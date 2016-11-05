@@ -1,15 +1,15 @@
 package flx.core;
+
+import flixel.*;
+import flixel.util.*;
+import flixel.math.*;
+
 import haxe.Timer;
-import org.flixel.FlxObject;
 import flx.ui.EnemyLifeBar;
 import flash.geom.Point;
-import org.flixel.FlxPath;
-import org.flixel.util.FlxPoint;
 import util.MathHelp;
 import flx.state.level.LevelBase;
 import flash.events.TimerEvent;
-import org.flixel.FlxG;
-import org.flixel.FlxSprite;
 
 class SpawnPlace extends FlxSprite implements IHitable {
 

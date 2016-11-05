@@ -1,20 +1,16 @@
 package flx.core;
-import org.flixel.plugin.photonstorm.FlxBar;
+
+import flixel.*;
+import flixel.ui.*;
+import flixel.util.*;
+
 import haxe.Timer;
 import util.MathHelp;
 import motion.easing.Linear;
 import motion.Actuate;
-import org.flixel.tweens.misc.MultiVarTween;
 import tmx.TiledLevel;
-import org.flixel.FlxPath;
-import org.flixel.FlxObject;
 import flash.geom.Point;
-import org.flixel.tweens.util.Ease.EaseFunction;
-import org.flixel.FlxG;
-import org.flixel.util.FlxPoint;
-import org.flixel.FlxPath;
 import flx.state.level.LevelBase;
-import org.flixel.FlxSprite;
 
 class Enemy extends FlxSprite implements IHitable {
 
@@ -92,7 +88,6 @@ class Enemy extends FlxSprite implements IHitable {
     private var _chasing:Bool;
     private var _lastHeroFl:Point;
     private var _heroFl:Point;
-    private var _chaseTween:MultiVarTween;
 
     private var _currLevel:Int;
     private var _incorporeal:Float;

@@ -1,21 +1,19 @@
 package flx.ui;
+
+import flixel.*;
+import flixel.group.FlxGroup;
+import flixel.text.FlxText;
+
 import motion.easing.Linear;
-import org.flixel.FlxState;
 import haxe.Timer;
-import org.flixel.plugin.photonstorm.FlxBar;
 import flx.state.level.LevelBase;
 import motion.Actuate;
-import org.flixel.FlxText;
 import flx.ui.EnemyLifeBar;
 import haxe.ds.ObjectMap;
 import flx.core.Enemy;
 import haxe.ds.IntMap;
 import flx.core.Facade;
 import flx.core.Player;
-import org.flixel.FlxG;
-import org.flixel.util.FlxPoint;
-import org.flixel.FlxGroup;
-import org.flixel.FlxSprite;
 
 class Hud extends FlxGroup {
 
