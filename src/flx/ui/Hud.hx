@@ -1,6 +1,8 @@
 package flx.ui;
 
 import flixel.*;
+import flixel.math.*;
+import flixel.ui.FlxBar;
 import flixel.group.FlxGroup;
 import flixel.text.FlxText;
 
@@ -51,31 +53,31 @@ class Hud extends FlxGroup {
     public function injectPlayer(player:Player):Void {
         this.player = player;
 
-        var playerHp:FlxBar = new FlxBar(70, 26, FlxBar.FILL_LEFT_TO_RIGHT, 256, 32, player, 'hp', 0, 200, false);
+        var playerHp:FlxBar = new FlxBar(70, 26, FlxBarFillDirection.LEFT_TO_RIGHT, 256, 32, player, 'hp', 0, 200, false);
         playerHp.createImageBar(null, 'assets/an_hero_lifeBar.png', 0x000000);
-        playerHp.currentValue = player.hp;
+        playerHp.value = player.hp;
         playerHp.color = 0xf20000;
-        playerHp.scrollFactor = new FlxPoint(0, 0);
+        // playerHp.scrollFactor = new FlxPoint(0, 0);
         add(playerHp);
 
-        var playerS:FlxBar = new FlxBar(70, 90, FlxBar.FILL_LEFT_TO_RIGHT, 256, 32, player, 'dmg', 0, 40, false);
+        var playerS:FlxBar = new FlxBar(70, 90, FlxBarFillDirection.LEFT_TO_RIGHT, 256, 32, player, 'dmg', 0, 40, false);
         playerS.createImageBar(null, 'assets/an_hero_lifeBar.png', 0x000000);
-        playerS.currentValue = player.dmg;
-        playerS.scrollFactor = new FlxPoint(0, 0);
+        playerS.value = player.dmg;
+        // playerS.scrollFactor = new FlxPoint(0, 0);
         add(playerS);
 
         var heart:FlxSprite = new FlxSprite(10, 10);
-        heart.loadGraphic('assets/HUD_tilesheet.png', true, false, 64, 64, false);
-        heart.addAnimation('normal', [0, 1, 2, 3], 4);
-        heart.play('normal');
-        heart.scrollFactor = new FlxPoint(0, 0);
+        heart.loadGraphic('assets/HUD_tilesheet.png', true, 64, 64, false);
+        heart.animation.add('normal', [0, 1, 2, 3], 4);
+        heart.animation.play('normal');
+        // heart.scrollFactor = new FlxPoint(0, 0);
         add(heart);
 
         var sword:FlxSprite = new FlxSprite(10, 74);
-        sword.loadGraphic('assets/HUD_tilesheet.png', true, false, 64, 64, false);
-        sword.addAnimation('normal', [4, 5, 6, 7], 4);
-        sword.play('normal');
-        sword.scrollFactor = new FlxPoint(0, 0);
+        sword.loadGraphic('assets/HUD_tilesheet.png', true, 64, 64, false);
+        sword.animation.add('normal', [4, 5, 6, 7], 4);
+        sword.animation.play('normal');
+        // sword.scrollFactor = new FlxPoint(0, 0);
         add(sword);
     }
 
@@ -93,19 +95,19 @@ class Hud extends FlxGroup {
 
     public function showLooseScreen():Void {
         var bg:FlxSprite = new FlxSprite(0, 0, 'assets/splash.png');
-        bg.scrollFactor = new FlxPoint(0, 0);
+        // bg.scrollFactor = new FlxPoint(0, 0);
         level.add(bg);
 
         var text:FlxSprite = new FlxSprite(276, 170);
-        text.loadGraphic('assets/youAreDead_tilesheet.png', true, false, 280, 150);
-        text.scrollFactor = new FlxPoint(0, 0);
-        text.addAnimation('reg', [0, 1, 2, 3], 8);
-        text.play('reg');
+        text.loadGraphic('assets/youAreDead_tilesheet.png', true, 280, 150);
+        // text.scrollFactor = new FlxPoint(0, 0);
+        text.animation.add('reg', [0, 1, 2, 3], 8);
+        text.animation.play('reg');
         level.add(text);
 
         var startOverText:FlxText = new FlxText(366 - 50, 400, 200,  'press x to retry', 13);
         startOverText.setFormat(null, 13, 0xFF000000, 'center', 0xFFFFFF, true);
-        startOverText.scrollFactor = new FlxPoint(0, 0);
+        // startOverText.scrollFactor = new FlxPoint(0, 0);
         level.add(startOverText);
 
         restartAllow = true;
@@ -113,32 +115,30 @@ class Hud extends FlxGroup {
 
     public function showWinScreen():Void {
         var bg:FlxSprite = new FlxSprite(0, 0, 'assets/splash.png');
-        bg.scrollFactor = new FlxPoint(0, 0);
+        // bg.scrollFactor = new FlxPoint(0, 0);
         level.add(bg);
 
         var text:FlxSprite = new FlxSprite(336, 190);
-        text.loadGraphic('assets/win_tilesheet.png', true, false, 160, 130);
-        text.scrollFactor = new FlxPoint(0, 0);
-        text.addAnimation('reg', [0, 1, 2, 3], 8);
-        text.play('reg');
+        text.loadGraphic('assets/win_tilesheet.png', true, 160, 130);
+        // text.scrollFactor = new FlxPoint(0, 0);
+        text.animation.add('reg', [0, 1, 2, 3], 8);
+        text.animation.play('reg');
         level.add(text);
 
         var startOverText:FlxText = new FlxText(366 - 50, 400, 200,  'press x to play again', 13);
         startOverText.setFormat(null, 13, 0xFF000000, 'center', 0xFFFFFF, true);
-        startOverText.scrollFactor = new FlxPoint(0, 0);
+        // startOverText.scrollFactor = new FlxPoint(0, 0);
         level.add(startOverText);
 
         restartAllow = true;
     }
 
-    override public function update():Void {
-        super.update();
+    override public function update(dt:Float):Void {
+        super.update(dt);
 
         if (Timer.stamp() - lastNotify > 2) {
              lastNotify = 0;
             notifyText.visible = false;
-        } else {
-
         }
     }
 }

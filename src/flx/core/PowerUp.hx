@@ -9,17 +9,17 @@ class PowerUp extends FlxSprite {
         super(x, y);
 
         this.type = type;
-        this.loadGraphic('assets/powerUps.png', true, false, 64, 64);
+        this.loadGraphic('assets/powerUps.png', true, 64, 64);
         if (type == 'damage') {
-            this.addAnimation('float', [0, 1, 2, 3], 4);
+            this.animation.add('float', [0, 1, 2, 3], 4);
         } else
         if (type == 'health') {
-            this.addAnimation('float', [4, 5, 6, 7], 4);
+            this.animation.add('float', [4, 5, 6, 7], 4);
         } else {
             throw 'wrong type powerup';
         }
 
-        play('float');
+        // play('float');
 
         lvl = level;
 
@@ -30,21 +30,21 @@ class PowerUp extends FlxSprite {
     private var lvl:LevelBase;
     private var myPt:Point;
 
-    override public function update():Void {
-        super.update();
+    override public function update(dt:Float):Void {
+        super.update(dt);
 
-        var _heroFl:Point = new Point(lvl.player.x + lvl.player.width / 2, lvl.player.y + lvl.player.height / 2);
-        var distance:Float = Point.distance(_heroFl, myPt);
+        // var _heroFl:Point = new Point(lvl.player.x + lvl.player.width / 2, lvl.player.y + lvl.player.height / 2);
+        // var distance:Float = Point.distance(_heroFl, myPt);
 
-        if (distance < 60) {
-            if (type == 'damage') {
-                lvl.player.upDmgLevel();
-            } else
-            if (type == 'health') {
-                lvl.player.upHealthLevel();
-            }
+        // if (distance < 60) {
+        //     if (type == 'damage') {
+        //         lvl.player.upDmgLevel();
+        //     } else
+        //     if (type == 'health') {
+        //         lvl.player.upHealthLevel();
+        //     }
 
-            lvl.layoutObjects.remove(this, true);
-        }
+        //     lvl.layoutObjects.remove(this, true);
+        // }
     }
 }

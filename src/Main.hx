@@ -1,11 +1,12 @@
 package ;
+
 import openfl.display.FPS;
-import flash.display.StageScaleMode;
-import flash.display.StageAlign;
-import flx.Game;
-import flash.events.Event;
-import flash.display.Sprite;
-import flash.Lib;
+import openfl.display.StageScaleMode;
+import openfl.display.StageAlign;
+
+import openfl.events.Event;
+import openfl.display.Sprite;
+import openfl.Lib;
 
 class Main extends Sprite {
 
@@ -33,7 +34,7 @@ class Main extends Sprite {
         Lib.current.stage.align = StageAlign.TOP_LEFT;
         Lib.current.stage.scaleMode = StageScaleMode.NO_SCALE;
 
-        addChild(new Game());
-//        addChild(new FPS(10, 10, 0xFFFFFF));
+        // addChild(new Game());
+        addChild(new FPS(10, 10, 0xFFFFFF));
     }
 }

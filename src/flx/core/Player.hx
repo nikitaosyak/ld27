@@ -7,10 +7,10 @@ import haxe.ds.ObjectMap;
 import haxe.ds.IntMap;
 import flash.geom.Point;
 import flash.geom.Point;
-import motion.Actuate.ObjectHash;
 import flx.state.level.LevelBase;
 import haxe.Timer;
 import util.MathHelp;
+
 class Player extends FlxSprite {
 
     public static inline var ANIM_IDLE:String = 'idle';
@@ -21,26 +21,26 @@ class Player extends FlxSprite {
 
     public function new(level:LevelBase) {
         super();
-        loadGraphic('assets/char_tilesheet.png', true, true, 192, 192);
+        this.loadGraphic('assets/char_tilesheet.png', true, 192, 192, false);
         this.antialiasing = true;
-        immovable = false;
+        this.immovable = false;
 
         width = 40;
         height = 32;
-        offset.make(74, 96);
-        setOriginToCenter();
+        offset.add(74, 96);
+        this.centerOrigin();
 
         hpLevel = 0;
         dmgLevel = 0;
 
         attackSpd = Facade.I.attackSpeeds[dmgLevel];
 
-        addAnimation(ANIM_IDLE, [0, 1, 2, 3], 5);
-        addAnimation(ANIM_MOVE, [4, 5, 6, 7], 10);
-        addAnimation(ANIM_SWING, [8, 9, 10, 11, 12, 13, 14, 14, 14], attackSpd, false);
-        addAnimation(ANIM_DEATH, [16, 17, 18, 19, 20, 21, 22, 23, 24, 24, 24], 9, false);
-        addAnimation(ANIM_VICTORY, [28, 29, 30, 31, 28, 29, 30, 31, 28, 29, 30, 31, 28, 29, 30, 31], 8, true);
-        addAnimationCallback(onSwing);
+        this.animation.add(ANIM_IDLE, [0, 1, 2, 3], 5);
+        this.animation.add(ANIM_MOVE, [4, 5, 6, 7], 10);
+        this.animation.add(ANIM_SWING, [8, 9, 10, 11, 12, 13, 14, 14, 14], attackSpd, false);
+        this.animation.add(ANIM_DEATH, [16, 17, 18, 19, 20, 21, 22, 23, 24, 24, 24], 9, false);
+        this.animation.add(ANIM_VICTORY, [28, 29, 30, 31, 28, 29, 30, 31, 28, 29, 30, 31, 28, 29, 30, 31], 8, true);
+        // addAnimationCallback(onSwing);
 
         dead = false;
         this.level = level;
@@ -86,93 +86,93 @@ class Player extends FlxSprite {
         this.y = MathHelp.roundExp(spawnY, 0);
     }
 
-    override public function update():Void {
+    override public function update(dt:Float):Void {
         if (Timer.stamp() - lastHit > 0.130) {
             color = 0x00ffffff;
             lastHit = 0;
         }
 
-        super.update();
+        super.update(dt);
     }
 
     public function receiveHit(damage:Float, fromEnemy:IHitable):Void {
-        if (frame == 24) return;
-        if (enemiesLocked.exists(fromEnemy)) {
-            return;
-        } else {
-            enemiesLocked.set(fromEnemy, fromEnemy);
-        }
-        hp -= damage;
+        // if (frame == 24) return;
+        // if (enemiesLocked.exists(fromEnemy)) {
+        //     return;
+        // } else {
+        //     enemiesLocked.set(fromEnemy, fromEnemy);
+        // }
+        // hp -= damage;
 
-        if (hp <= 0) {
-            play(ANIM_DEATH, false);
-        } else {
-            lastHit = Timer.stamp();
-            color = 0xf20000;
-        }
+        // if (hp <= 0) {
+        //     play(ANIM_DEATH, false);
+        // } else {
+        //     lastHit = Timer.stamp();
+        //     color = 0xf20000;
+        // }
     }
 
     public function releaseHitLock(enemy:IHitable):Void {
-        if (enemiesLocked.exists(enemy)) {
-            enemiesLocked.remove(enemy);
-        }
+        // if (enemiesLocked.exists(enemy)) {
+        //     enemiesLocked.remove(enemy);
+        // }
     }
 
     public function upDmgLevel():Void {
-        dmgLevel = Std.int(Math.min(dmgLevel + 1, 6));
-        dmg = Facade.I.damages[dmgLevel];
-        attackSpd = Facade.I.attackSpeeds[dmgLevel];
-        addAnimation(ANIM_SWING, [8, 9, 10, 11, 12, 13, 14, 14, 14], attackSpd, false);
+        // dmgLevel = Std.int(Math.min(dmgLevel + 1, 6));
+        // dmg = Facade.I.damages[dmgLevel];
+        // attackSpd = Facade.I.attackSpeeds[dmgLevel];
+        // addAnimation(ANIM_SWING, [8, 9, 10, 11, 12, 13, 14, 14, 14], attackSpd, false);
     }
 
     public function upHealthLevel():Void {
-        hpLevel++;
-        maxHp = Facade.I.healths[Std.int(Math.min(hpLevel, Facade.I.healths.length-1))];
-        hp = maxHp;
+        // hpLevel++;
+        // maxHp = Facade.I.healths[Std.int(Math.min(hpLevel, Facade.I.healths.length-1))];
+        // hp = maxHp;
     }
 
     private var lastFrame:Int;
     private var lastAni:String;
 
     private function onSwing(name:String, frame:Int, idx:Int):Void {
-        if (name == ANIM_SWING) {
-            if (frame == 5 || frame == 6 || frame == 7) {
-                var iter:Iterator<IHitable> = hittableEnemies.iterator();
-                while (iter.hasNext()) {
-                    var hitable:IHitable = iter.next();
-                    hitable.receiveHit(dmg);
+        // if (name == ANIM_SWING) {
+        //     if (frame == 5 || frame == 6 || frame == 7) {
+        //         var iter:Iterator<IHitable> = hittableEnemies.iterator();
+        //         while (iter.hasNext()) {
+        //             var hitable:IHitable = iter.next();
+        //             hitable.receiveHit(dmg);
 
-                }
-            }
-            if (frame == 8) {
-                var iter:Iterator<IHitable> = hittableEnemies.iterator();
-                while (iter.hasNext()) {
-                    var hitable:IHitable = iter.next();
-                    hitable.releaseFromHit();
-                }
-                Timer.delay(function():Void {
-                    PlayerController.SWING_LOCK = false;
-                }, 25);
-            }
-        }
+        //         }
+        //     }
+        //     if (frame == 8) {
+        //         var iter:Iterator<IHitable> = hittableEnemies.iterator();
+        //         while (iter.hasNext()) {
+        //             var hitable:IHitable = iter.next();
+        //             hitable.releaseFromHit();
+        //         }
+        //         Timer.delay(function():Void {
+        //             PlayerController.SWING_LOCK = false;
+        //         }, 25);
+        //     }
+        // }
 
-        if (name == ANIM_DEATH) {
-            if (frame == 0) {
-                dead = true;
-            }
-            if (frame == 10) {
-                this.frame = 24;
-                level.hud.showLooseScreen();
-            }
-        }
+        // if (name == ANIM_DEATH) {
+        //     if (frame == 0) {
+        //         dead = true;
+        //     }
+        //     if (frame == 10) {
+        //         this.frame = 24;
+        //         level.hud.showLooseScreen();
+        //     }
+        // }
 
-        if (name == ANIM_VICTORY) {
-            if (frame == 15) {
-                level.hud.showWinScreen();
-            }
-        }
+        // if (name == ANIM_VICTORY) {
+        //     if (frame == 15) {
+        //         level.hud.showWinScreen();
+        //     }
+        // }
 
-        lastAni = name;
-        lastFrame = frame;
+        // lastAni = name;
+        // lastFrame = frame;
     }
 }

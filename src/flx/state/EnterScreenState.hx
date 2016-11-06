@@ -1,6 +1,9 @@
 package flx.state;
-import flx.state.level.LevelBase;
+
 import flixel.*;
+import flixel.text.*;
+import flx.state.level.LevelBase;
+
 class EnterScreenState extends FlxState {
     public function new() {
         super();
@@ -19,7 +22,6 @@ class EnterScreenState extends FlxState {
         var startButton:FlxText = new FlxText(366 - 50, 425, 200,  'x or space to hit', 12);
         startButton.setFormat(null, 12, 0xFFFFFF, 'center', 0xFF000000, true);
         add(startButton);
-
 
         var startButton:FlxText = new FlxText(366 - 100, 475, 300,  'press floor plates to get to the boss', 13);
         startButton.setFormat(null, 12, 0xFFFFFF, 'center', 0xFF000000, true);
@@ -42,13 +44,13 @@ class EnterScreenState extends FlxState {
 
     private var fading:Bool;
 
-    override public function update():Void {
-        super.update();
+    override public function update(dt:Float):Void {
+        super.update(dt);
 
-        if (FlxG.keys.justPressed('X')) {
-            if (fading) return;
-            fading = true;
-            FlxG.fade(0xFF000000, 0.7, false, function():Void { FlxG.switchState(new LevelBase()); });
-        }
+        // if (FlxG.keys.justPressed.X) {
+        //     if (fading) return;
+        //     fading = true;
+        //     FlxG.cameras.fade(0xFF000000, 0.7, false, function():Void { FlxG.switchState(new LevelBase()); });
+        // }
     }
 }

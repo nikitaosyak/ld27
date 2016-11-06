@@ -2,6 +2,7 @@ package flx.state.level;
 
 import flixel.*;
 import flixel.group.FlxGroup;
+import flixel.addons.editors.tiled.*;
 
 import motion.easing.Linear;
 import motion.Actuate;
@@ -17,8 +18,6 @@ import util.MathHelp;
 import util.MathHelp;
 import flx.core.Facade;
 import flx.core.PlayerController;
-import flx.core.SortingGroup;
-import tmx.TiledLevel;
 import openfl.Assets;
 import flx.core.SpawnPlace;
 import flx.core.Enemy;
@@ -31,14 +30,14 @@ class LevelBase extends FlxState {
     }
 
     private var controller:PlayerController;
-    public var level:TiledLevel;
+    public var level:TiledMap;
 
     public var player:Player;
     public var spawnPlaces:Array<SpawnPlace>;
     public var enemies:List<Enemy>;
     public var collideObjects:FlxTypedGroup<FlxSprite>;
     public var backGroundObjects:FlxTypedGroup<FlxSprite>;
-    public var layoutObjects:SortingGroup;
+    // public var layoutObjects:SortingGroup;
 
     public var bossDoors:List<InvisibleCollider>;
     public var bossReleaseImages:List<FlxSprite>;
@@ -49,7 +48,7 @@ class LevelBase extends FlxState {
     override public function create():Void {
         Lever.TOTAL_LEVERS = 0;
         SpawnPlace.currentEnemies = 0;
-        FlxG.visualDebug = false;
+
         controller = new PlayerController();
         spawnPlaces = new Array<SpawnPlace>();
         enemies = new List<Enemy>();
@@ -60,33 +59,33 @@ class LevelBase extends FlxState {
         bossReleaseImages = new List<FlxSprite>();
 
         asRadian = MathHelp.deg2rad(45);
-        level = new TiledLevel("assets/tiled/testmap.tmx");
+        level = new TiledMap("assets/tiled/testmap.tmx");
 
-        var cam:CameraOverride = new CameraOverride();
-        cam.setBounds(0, 0, level.fullWidth, level.fullHeight, true);
-        FlxG.resetCameras(cam);
-        hud.setAll("scrollFactor", new FlxPoint(0, 0));
-        hud.setAll("cameras", [FlxG.camera]);
+        // var cam:CameraOverride = new CameraOverride();
+        // cam.setBounds(0, 0, level.fullWidth, level.fullHeight, true);
+        // FlxG.resetCameras(cam);
+        // hud.setAll("scrollFactor", new FlxPoint(0, 0));
+        // hud.setAll("cameras", [FlxG.camera]);
 
-        add(level.backgroundTiles);
-        add(backGroundObjects);
+        // add(level.backgroundTiles);
+        // add(backGroundObjects);
 //        add(level.foregroundTiles);
 
-        layoutObjects = new SortingGroup();
-        add(layoutObjects);
-        level.loadObjects(this);
-        layoutObjects.sort();
+        // layoutObjects = new SortingGroup();
+        // add(layoutObjects);
+        // level.loadObjects(this);
+        // layoutObjects.sort();
 
         add(hud);
 
         var left:FlxSprite = new FlxSprite(0, 0);
         left.makeGraphic(416, 640, 0xFF000000, false);
-        left.scrollFactor = new FlxPoint(0, 0);
+        // left.scrollFactor = new FlxPoint(0, 0);
         add(left);
 
         var right:FlxSprite = new FlxSprite(417, 0);
         right.makeGraphic(416, 640, 0xFF000000, false);
-        right.scrollFactor = new FlxPoint(0, 0);
+        // right.scrollFactor = new FlxPoint(0, 0);
         add(right);
 
         Actuate.tween(left, 2.5, {x: -420}, true).onComplete(function(state:FlxState):Void {
@@ -109,36 +108,36 @@ class LevelBase extends FlxState {
     private static var asRadian:Float;
     private var fading:Bool;
 
-    override public function update():Void {
+    override public function update(dt:Float):Void {
 
-        if (hud.restartAllow) {
-            if (FlxG.keys.justPressed('X')) {
-                if (fading) return;
-                fading = true;
-                FlxG.fade(0xFF000000, 0.5, false, function():Void {FlxG.resetState();});
-            }
-        }
+        // if (hud.restartAllow) {
+        //     if (FlxG.keys.pressed('X')) {
+        //         if (fading) return;
+        //         fading = true;
+        //         FlxG.fade(0xFF000000, 0.5, false, function():Void {FlxG.resetState();});
+        //     }
+        // }
         var tt:Float = Timer.stamp();
         var timeDiff:Float = FlxG.elapsed;
 
         var moveSpd:Float = Facade.I.moveSpd * timeDiff;
         var wasMove:Bool = true;
 
-        if (player.frame == 24) {
-            super.update();
+        // if (player.frame == 24) {
+        //     super.update();
+        //     return;
+        // }
+        if (player.animation.curAnim.name == Player.ANIM_VICTORY) {
+            super.update(dt);
             return;
         }
-        if (player.curAnim == Player.ANIM_VICTORY) {
-            super.update();
-            return;
-        }
-        if (player.curAnim == Player.ANIM_DEATH) {
+        if (player.animation.curAnim.name == Player.ANIM_DEATH) {
 
         } else
         if (PlayerController.SWING_LOCK) {
             wasMove = false;
-            if (player.curAnim != Player.ANIM_SWING) {
-                player.play(Player.ANIM_SWING);
+            if (player.animation.curAnim.name != Player.ANIM_SWING) {
+                player.animation.play(Player.ANIM_SWING);
             }
         } else
         if (controller.accX != 0 && controller.accY != 0) {
@@ -154,7 +153,7 @@ class LevelBase extends FlxState {
             } else {
                 player.facing = FlxObject.RIGHT;
             }
-            player.play(Player.ANIM_MOVE);
+            player.animation.play(Player.ANIM_MOVE);
         } else if (controller.accX != 0) {
             player.x = MathHelp.roundExp(player.x + controller.accX * moveSpd, 5);
             if (controller.accX > 0) {
@@ -162,17 +161,17 @@ class LevelBase extends FlxState {
             } else {
                 player.facing = FlxObject.RIGHT;
             }
-            player.play(Player.ANIM_MOVE);
+            player.animation.play(Player.ANIM_MOVE);
         } else if (controller.accY != 0) {
             player.y = MathHelp.roundExp(player.y + controller.accY * moveSpd, 5);
-            player.play(Player.ANIM_MOVE);
+            player.animation.play(Player.ANIM_MOVE);
         } else {
             wasMove = false;
-            player.play(Player.ANIM_IDLE);
+            player.animation.play(Player.ANIM_IDLE);
         }
 
         if (wasMove) {
-            level.collideWithLevel(player, onTileMapCollide, null);
+            // level.collideWithLevel(player, onTileMapCollide, null);
         }
 
         if (wasMove) {
@@ -180,7 +179,7 @@ class LevelBase extends FlxState {
         }
 
         if (wasMove) {
-            layoutObjects.sort();
+            // layoutObjects.sort();
         }
 
         if (wasMove && !bossStage && bossOpened) {
@@ -194,7 +193,7 @@ class LevelBase extends FlxState {
             }
         }
 
-        super.update();
+        super.update(dt);
     }
 
     public function openBoss():Void {

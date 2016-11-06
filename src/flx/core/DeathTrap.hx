@@ -6,7 +6,7 @@ class DeathTrap extends FlxSprite {
         super();
 
         this.makeGraphic(64, 64, 0xFF0000, false);
-        this.visible = FlxG.visualDebug;
+        this.visible = true;
         this.immovable = true;
 
         this.x = x;

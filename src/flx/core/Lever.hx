@@ -17,8 +17,7 @@ class Lever extends FlxSprite {
 
         LEVERS_PULLED = 0;
 
-        this.loadGraphic('assets/button1_tilesheet.png', false, false, 64, 64);
-        frame = 0;
+        super.loadGraphic('assets/button1_tilesheet.png', true, 64, 64, false);
 
         lvl = level;
         myPt = new Point(this.x + 32, this.y + 32);
@@ -27,26 +26,26 @@ class Lever extends FlxSprite {
     private var lvl:LevelBase;
     private var myPt:Point;
 
-    override public function update():Void {
-        super.update();
+    override public function update(dt:Float):Void {
+        super.update(dt);
 
-        if (frame == 1) return;
+        // if (frame == 1) return;
 
-        var _heroFl:Point = new Point(lvl.player.x + lvl.player.width / 2, lvl.player.y + lvl.player.height / 2);
-        var distance:Float = Point.distance(_heroFl, myPt);
+        // var _heroFl:Point = new Point(lvl.player.x + lvl.player.width / 2, lvl.player.y + lvl.player.height / 2);
+        // var distance:Float = Point.distance(_heroFl, myPt);
 
-        if (distance < 32) {
-            if (frame == 0) {
-                frame = 1;
-                FlxG.camera.shake(0.005, 0.7);
-                LEVERS_PULLED++;
-                if (TOTAL_LEVERS == LEVERS_PULLED) {
-                    lvl.hud.notify('Path to boss was opened..');
-                    lvl.openBoss();
-                } else {
-                    lvl.hud.notify('Only ' + (TOTAL_LEVERS - LEVERS_PULLED) + ' more to go...');
-                }
-            }
-        }
+        // if (distance < 32) {
+        //     if (frame == 0) {
+        //         frame = 1;
+        //         FlxG.camera.shake(0.005, 0.7);
+        //         LEVERS_PULLED++;
+        //         if (TOTAL_LEVERS == LEVERS_PULLED) {
+        //             lvl.hud.notify('Path to boss was opened..');
+        //             lvl.openBoss();
+        //         } else {
+        //             lvl.hud.notify('Only ' + (TOTAL_LEVERS - LEVERS_PULLED) + ' more to go...');
+        //         }
+        //     }
+        // }
     }
 }
